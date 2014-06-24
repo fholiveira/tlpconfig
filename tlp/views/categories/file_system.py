@@ -1,11 +1,9 @@
-from gi.repository import Gtk
+from tlp.views import ViewLoader
 
 
 class FileSystem():
     def __init__(self):
-        builder = Gtk.Builder()
-        builder.add_from_file('tlp/ui/categories/file_system.ui')
-        builder.connect_signals(self)
+        loader = ViewLoader('tlp/ui/categories/file_system.ui', handler=self)
         
-        self.menu = builder.get_object('file_system_row')
-        self.panel = builder.get_object('file_system_panel')
+        self.menu = loader.get('file_system_row')
+        self.panel = loader.get('file_system_panel')

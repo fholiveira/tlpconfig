@@ -1,11 +1,9 @@
-from gi.repository import Gtk
+from tlp.views import ViewLoader
 
 
 class ProcessorAndFrequenceScaling():
     def __init__(self):
-        builder = Gtk.Builder()
-        builder.add_from_file('tlp/ui/categories/processor.ui')
-        builder.connect_signals(self)
+        loader = ViewLoader('tlp/ui/categories/processor.ui', handler=self)
         
-        self.menu = builder.get_object('processor_row')
-        self.panel = builder.get_object('processor_panel')
+        self.menu = loader.get('processor_row')
+        self.panel = loader.get('processor_panel')

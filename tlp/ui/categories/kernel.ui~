@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
-  <object class="GtkBox" id="file_system_panel">
+  <object class="GtkBox" id="kernel_panel">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="orientation">vertical</property>
@@ -13,7 +13,7 @@
       <object class="GtkLabel" id="label1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="label" translatable="yes">File system</property>
+        <property name="label" translatable="yes">Kernel</property>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -25,7 +25,7 @@
       <placeholder/>
     </child>
   </object>
-  <object class="GtkListBoxRow" id="file_system_row">
+  <object class="GtkListBoxRow" id="kernel_row">
     <property name="visible">True</property>
     <property name="can_focus">True</property>
     <child>
@@ -33,11 +33,11 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="xalign">0</property>
-        <property name="label" translatable="yes">File System</property>
-        <style>
-          <class name="category"/>
-        </style>
+        <property name="label" translatable="yes">Kernel</property>
       </object>
     </child>
+    <style>
+      <class name="category"/>
+    </style>
   </object>
 </interface>

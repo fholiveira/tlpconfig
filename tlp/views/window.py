@@ -1,47 +1,52 @@
-from tlp.views.categories import FileSystem, ProcessorAndFrequenceScaling
+from tlp.views.categories import *
+from tlp.views import ViewLoader
 from gi.repository import Gtk
 
 
 class Window():
-    categories = [FileSystem(), ProcessorAndFrequenceScaling()]
+    categories = [FileSystem(), ProcessorAndFrequenceScaling(), Kernel()]
 
     def __init__(self, app):
-        builder = Gtk.Builder()
-        builder.add_from_file('tlp/ui/window.ui')
-        builder.connect_signals(self)
-
-        self.panel = builder.get_object('panel')
-        self.window = builder.get_object('window')
-        self.categories_list = builder.get_object('categories')
-        self.window.set_titlebar(self.get_headerbar())
-
-    def get_headerbar(self):
-        builder = Gtk.Builder()
-        builder.add_from_file('tlp/ui/header.ui')
-        builder.connect_signals(self)
-
-        return builder.get_object('header')
+        self._load_childs()
+        self._list_categories()
+        self.window.set_titlebar(self._load_headerbar())
 
     def save(self, button):
         print('Save!', button)
 
     def show(self):
-        self.make_category_list()
         self.window.show_all()
 
     def present(self):
         self.window.present()
 
     def select_row(self, listbox, row):
-        if not row: pass
-        print('aaa')
+        if not row:
+            return
 
-    def make_category_list(self):
-        self.categories_list.set_header_func(self.create_row_header, None)
+        self.stack.set_visible_child_name(Gtk.Buildable.get_name(row))
+
+    def _load_childs(self):
+        loader = ViewLoader('tlp/ui/window.ui', handler=self)
+
+        self.panel = loader.get('panel')
+        self.window = loader.get('window')
+        self.categories_list = loader.get('categories')
+        self.stack = Gtk.Stack()
+
+        loader.get('category_content').add(self.stack)
+
+    def _load_headerbar(self):
+        return ViewLoader('tlp/ui/header.ui', handler=self).get('header')
+
+    def _list_categories(self):
+        def header(row, before, user_data):
+            if before and not row.get_header():
+                row.set_header(Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL))
+
+        self.categories_list.set_header_func(header, None)
 
         for category in self.categories:
             self.categories_list.add(category.menu)
-
-    def create_row_header(self, row, before, user_data):
-        if before and not row.get_header():
-            row.set_header(Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL))
+            self.stack.add_named(category.panel,
+                                 Gtk.Buildable.get_name(category.menu))
