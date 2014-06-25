@@ -11,6 +11,8 @@ class Window():
                   load_view(Kernel)]
 
     def __init__(self, loader):
+        loader.connect(self)
+
         self._load_childs(loader)
         self._list_categories()
 
