@@ -1,9 +1,8 @@
-from tlp.views import ViewLoader
-
-
 class Kernel():
-    def __init__(self):
-        loader = ViewLoader('tlp/ui/categories/kernel.ui', handler=self)
+    UI = 'categories/kernel.ui'
+
+    def __init__(self, loader):
+        loader.connect(self)
         
         self.menu = loader.get('kernel_row')
         self.panel = loader.get('kernel_panel')

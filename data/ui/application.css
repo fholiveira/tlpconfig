@@ -1,0 +1,12 @@
+.main-container {
+    padding: 20px;
+}
+
+.categories {
+    background-color: shade(@theme_bg_color, 0.99);
+}
+
+GtkListBoxRow.category {
+    padding: 10px;
+    border: 1px;
+}

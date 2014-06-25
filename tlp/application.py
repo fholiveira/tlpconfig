@@ -1,38 +1,32 @@
 from gi.repository import Gtk, Gio, Gdk
-from tlp.views import Window, ViewLoader
+from tlp.views import Window, Shell, load_css, load_view 
+
 
 class App(Gtk.Application):
     
     def __init__(self):
         Gtk.Application.__init__(self, application_id='TLP.Configuration')
+        self.shell = load_view(Shell)
         self.window = None
 
     def do_activate(self):
-        ViewLoader.load_css('tlp/ui/shell.css', Gdk.Screen.get_default())
+        load_css('application.css', Gdk.Screen.get_default())
 
         if not self.window:
-            self.window = Window(self)
+            self.window = load_view(Window)
             self.add_window(self.window.window)
-            self.window.show()
 
-        self.window.present()
+        self.window.show()
         
     def do_startup(self):
         Gtk.Application.do_startup(self)
         
-        self.builder = Gtk.Builder()
-        self.builder.add_from_file('tlp/ui/shell.ui')
-        
-        appmenu = self.builder.get_object('appmenu')
-        self.set_app_menu(appmenu)
+        self.set_app_menu(self.shell.menu)
 
         about_action = Gio.SimpleAction.new('about', None)
-        about_action.connect('activate', self.about)
+        about_action.connect('activate', self.shell.show_about)
         self.add_action(about_action)
 
         quit_action = Gio.SimpleAction.new('quit', None)
         quit_action.connect('activate', lambda *args: self.quit())
         self.add_action(quit_action)
-
-    def about(self, action, parameter):
-        ViewLoader('tlp/ui/about.ui').get('about').show()

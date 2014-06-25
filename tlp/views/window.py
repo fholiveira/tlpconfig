@@ -1,48 +1,44 @@
 from tlp.views.categories import *
-from tlp.views import ViewLoader
+from tlp.views import load_view
 from gi.repository import Gtk
 
 
 class Window():
-    categories = [FileSystem(), ProcessorAndFrequenceScaling(), Kernel()]
+    UI = ('window.ui', 'header.ui')
 
-    def __init__(self, app):
-        self._load_childs()
+    categories = [load_view(FileSystem), 
+                  load_view(ProcessorAndFrequenceScaling),
+                  load_view(Kernel)]
+
+    def __init__(self, loader):
+        self._load_childs(loader)
         self._list_categories()
-        self.window.set_titlebar(self._load_headerbar())
 
     def save(self, button):
         print('Save!', button)
 
     def show(self):
-        self.window.show_all()
-
-    def present(self):
         self.window.present()
 
     def select_row(self, listbox, row):
-        if not row:
-            return
+        if row:
+            self.stack.set_visible_child_name(Gtk.Buildable.get_name(row))
 
-        self.stack.set_visible_child_name(Gtk.Buildable.get_name(row))
-
-    def _load_childs(self):
-        loader = ViewLoader('tlp/ui/window.ui', handler=self)
-
+    def _load_childs(self, loader):
         self.panel = loader.get('panel')
         self.window = loader.get('window')
         self.categories_list = loader.get('categories')
-        self.stack = Gtk.Stack()
 
+        self.stack = Gtk.Stack()
         loader.get('category_content').add(self.stack)
 
-    def _load_headerbar(self):
-        return ViewLoader('tlp/ui/header.ui', handler=self).get('header')
+        self.window.set_titlebar(loader.get('header'))
 
     def _list_categories(self):
         def header(row, before, user_data):
             if before and not row.get_header():
-                row.set_header(Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL))
+                sep = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
+                row.set_header(sep)
 
         self.categories_list.set_header_func(header, None)
 
