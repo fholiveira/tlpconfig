@@ -9,6 +9,18 @@
     <property name="icon_name">document-save-symbolic</property>
     <property name="icon_size">1</property>
   </object>
+  <object class="GtkImage" id="saveas_image">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">document-save-as-symbolic</property>
+    <property name="icon_size">1</property>
+  </object>
+  <object class="GtkImage" id="status_image">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">content-loading-symbolic</property>
+    <property name="icon_size">1</property>
+  </object>
   <object class="GtkHeaderBar" id="header">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -19,13 +31,25 @@
       <class name="titlebar"/>
     </style>
     <child>
+      <object class="GtkButton" id="status">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="halign">end</property>
+        <property name="use_stock">True</property>
+        <property name="tooltip_text" translatable="yes">Show TLP status</property>
+        <property name="image">status_image</property>
+        <signal name="clicked" handler="status" swapped="no"/>
+      </object>
+    </child>
+    <child>
       <object class="GtkButton" id="save">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">True</property>
         <property name="halign">end</property>
         <property name="use_stock">True</property>
-        <property name="tooltip_text" translatable="yes">Save the configuration file</property>
+        <property name="tooltip_text" translatable="yes">Save</property>
         <property name="image">save_image</property>
         <signal name="clicked" handler="save" swapped="no"/>
         <style>
@@ -36,6 +60,20 @@
         <property name="pack_type">end</property>
       </packing>
     </child>
+    <child>
+      <object class="GtkButton" id="saveas">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="halign">end</property>
+        <property name="use_stock">True</property>
+        <property name="tooltip_text" translatable="yes">Save as ...</property>
+        <property name="image">saveas_image</property>
+        <signal name="clicked" handler="save_as" swapped="no"/>
+      </object>
+      <packing>
+        <property name="pack_type">end</property>
+      </packing>
+    </child>
   </object>
-  <object class="GtkToggleAction" id="toggleaction1"/>
 </interface>

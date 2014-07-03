@@ -2,19 +2,39 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
-  <!-- interface-css-provider-path ../application.css -->
   <object class="GtkBox" id="kernel_panel">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="orientation">vertical</property>
     <child>
-      <placeholder/>
-    </child>
-    <child>
-      <object class="GtkLabel" id="label1">
+      <object class="GtkLabel" id="name">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Kernel</property>
+        <property name="xalign">0</property>
+        <property name="xpad">5</property>
+        <property name="label" translatable="yes">NMI Watchdog</property>
+        <style>
+          <class name="config-title"/>
+        </style>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="description">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_top">10</property>
+        <property name="margin_bottom">10</property>
+        <property name="label" translatable="yes">Activate kernel NMI watchdog timer. Enable it is relevant for kernel debugging only.</property>
+        <property name="use_markup">True</property>
+        <property name="wrap">True</property>
+        <style>
+          <class name="config-description"/>
+        </style>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -23,7 +43,38 @@
       </packing>
     </child>
     <child>
-      <placeholder/>
+      <object class="GtkBox" id="content">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel" id="label2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Enable</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="energy_value">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">2</property>
+      </packing>
     </child>
   </object>
   <object class="GtkListBoxRow" id="kernel_row">

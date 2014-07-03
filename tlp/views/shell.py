@@ -6,6 +6,6 @@ class Shell():
         self.about = loader.get('about')
         self.menu = loader.get('appmenu')
 
-    def show_about(self, action, parameter):
+    def show_about(self, *args):
         self.about.run()
         self.about.hide()

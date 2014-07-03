@@ -1,5 +1,5 @@
 from tlp.views.categories import *
-from tlp.views import load_view
+from tlp.views import Status, load_view
 from gi.repository import Gtk
 
 
@@ -17,7 +17,23 @@ class Window():
         self._list_categories()
 
     def save(self, button):
-        print('Save!', button)
+        print('Save!')
+
+    def save_as(self, button):
+        buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+                   Gtk.STOCK_SAVE, Gtk.ResponseType.OK)
+
+        dialog = Gtk.FileChooserDialog('Save TLP configuration file',
+                                       self.window, Gtk.FileChooserAction.SAVE,
+                                       buttons)
+
+        if dialog.run() == Gtk.ResponseType.OK:
+            print("File selected: " + dialog.get_filename())
+    
+        dialog.destroy()
+
+    def status(self, button):
+        load_view(Status).show(self.window)
 
     def show(self):
         self.window.present()
@@ -32,6 +48,7 @@ class Window():
         self.categories_list = loader.get('categories')
 
         self.stack = Gtk.Stack()
+        self.stack.set_visible(True)
         loader.get('category_content').add(self.stack)
 
         self.window.set_titlebar(loader.get('header'))

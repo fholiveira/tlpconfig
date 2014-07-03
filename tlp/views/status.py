@@ -1,0 +1,15 @@
+class Status():
+    UI = 'status.ui'
+
+    def __init__(self, loader):
+        loader.connect(self)
+        self.dialog = loader.get('status')
+        self.content = loader.get('content')
+
+    def show(self, parent):
+        self.dialog.set_transient_for(parent)
+        self.dialog.run()
+        self.dialog.hide()
+
+    def close(self, *args):
+        self.dialog.hide()

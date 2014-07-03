@@ -10,3 +10,17 @@ GtkListBoxRow.category {
     padding: 10px;
     border: 1px;
 }
+
+.config-title {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.config-description {
+  margin: 0 10px;
+}
+
+
+#kernel_panel #content  GtkLabel {
+  margin: 10px 5px 20px 10px;
+}
