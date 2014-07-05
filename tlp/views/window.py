@@ -8,7 +8,8 @@ class Window():
 
     categories = [load_view(FileSystem), 
                   load_view(ProcessorAndFrequenceScaling),
-                  load_view(Kernel)]
+                  load_view(Kernel),
+                  load_view(Undervolting)]
 
     def __init__(self, loader):
         loader.connect(self)
