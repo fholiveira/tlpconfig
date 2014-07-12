@@ -9,7 +9,18 @@ class Window():
     categories = [load_view(FileSystem), 
                   load_view(ProcessorAndFrequenceScaling),
                   load_view(Kernel),
-                  load_view(Undervolting)]
+                  load_view(Undervolting),
+                  load_view(DisksAndControllers),
+                  load_view(PciExpressBus),
+                  load_view(GraphicsCards),
+                  load_view(Networking),
+                  load_view(Audio),
+                  load_view(DriveSlotUltrabay),
+                  load_view(RuntimePowerManagement),
+                  load_view(Usb),
+                  load_view(SystemStartAndShutdown),
+                  load_view(WirelessRadioSwitch),
+                  load_view(BatteryChargeThresholds)]
 
     def __init__(self, loader):
         loader.connect(self)
