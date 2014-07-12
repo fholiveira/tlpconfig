@@ -11,13 +11,14 @@ GtkListBoxRow.category {
     border: 1px;
 }
 
-.config-title {
-  font-size: 12px;
+.configuration > .title {
+  font-size: 11px;
   font-weight: bold;
 }
 
-.config-description {
-  margin: 0 10px;
+.configuration > .subtitle {
+  font-size: 11px;
+  font-style: italic;
 }
 
 .monospace {

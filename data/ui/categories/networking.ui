@@ -8,9 +8,10 @@
     <property name="orientation">vertical</property>
     <child>
       <object class="GtkLabel" id="label1">
+        <property name="name">15</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_bottom">15</property>
         <property name="xalign">0</property>
         <property name="label" translatable="yes">Wifi Power Management</property>
         <style>
