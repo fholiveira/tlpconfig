@@ -24,6 +24,9 @@
     <child>
       <placeholder/>
     </child>
+    <style>
+      <class name="configuration"/>
+    </style>
   </object>
   <object class="GtkListBoxRow" id="wireless_radio_switch_row">
     <property name="visible">True</property>

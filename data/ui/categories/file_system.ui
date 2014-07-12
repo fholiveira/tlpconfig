@@ -172,6 +172,9 @@
         <property name="margin_right">20</property>
         <property name="margin_top">20</property>
         <property name="margin_bottom">20</property>
+        <style>
+          <class name="configuration"/>
+        </style>
       </object>
       <packing>
         <property name="expand">False</property>

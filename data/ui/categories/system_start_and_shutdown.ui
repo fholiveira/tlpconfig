@@ -24,6 +24,9 @@
     <child>
       <placeholder/>
     </child>
+    <style>
+      <class name="configuration"/>
+    </style>
   </object>
   <object class="GtkListBoxRow" id="system_start_and_shutdown_row">
     <property name="visible">True</property>

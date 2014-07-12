@@ -24,6 +24,9 @@
     <child>
       <placeholder/>
     </child>
+    <style>
+      <class name="configuration"/>
+    </style>
   </object>
   <object class="GtkListBoxRow" id="runtime_power_management_row">
     <property name="visible">True</property>

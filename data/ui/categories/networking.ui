@@ -247,6 +247,9 @@
         <property name="position">7</property>
       </packing>
     </child>
+    <style>
+      <class name="configuration"/>
+    </style>
   </object>
   <object class="GtkSizeGroup" id="networking_column_definition">
     <widgets>

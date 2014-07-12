@@ -729,6 +729,9 @@
     <child>
       <placeholder/>
     </child>
+    <style>
+      <class name="configuration"/>
+    </style>
   </object>
   <object class="GtkSizeGroup" id="column_definition">
     <widgets>
