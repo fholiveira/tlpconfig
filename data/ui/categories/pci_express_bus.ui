@@ -42,7 +42,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkBox" id="pci_power_save">
+      <object class="GtkBox" id="pci_power_saving">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_left">20</property>
@@ -50,13 +50,16 @@
         <property name="margin_top">15</property>
         <property name="margin_bottom">15</property>
         <child>
-          <object class="GtkBox" id="pci_power_save_left">
+          <object class="GtkBox" id="pci_power_saving_left">
+            <property name="width_request">250</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="baseline_position">top</property>
             <child>
-              <object class="GtkLabel" id="label2">
+              <object class="GtkLabel" id="label11">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="xalign">0</property>
                 <property name="label" translatable="yes">Energy</property>
               </object>
               <packing>
@@ -66,7 +69,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBox" id="pci_power_save_energy">
+              <object class="GtkComboBox" id="pci_power_saving_energy">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="margin_left">10</property>
@@ -94,7 +97,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSeparator" id="pci_power_save_separator">
+          <object class="GtkSeparator" id="pci_power_saving_separator">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
@@ -106,24 +109,25 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="pci_power_save_right">
+          <object class="GtkBox" id="pci_power_saving_right">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="baseline_position">bottom</property>
             <child>
-              <object class="GtkLabel" id="label1">
+              <object class="GtkLabel" id="label12">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_left">10</property>
+                <property name="xalign">1</property>
                 <property name="label" translatable="yes">Battery</property>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <object class="GtkComboBox" id="pci_power_save_battery">
+              <object class="GtkComboBox" id="pci_power_saving_battery">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="margin_left">10</property>
@@ -150,6 +154,9 @@
             <property name="position">2</property>
           </packing>
         </child>
+        <style>
+          <class name="configuration"/>
+        </style>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -163,8 +170,8 @@
   </object>
   <object class="GtkSizeGroup" id="pci_power_save_column_definition">
     <widgets>
-      <widget name="pci_power_save_left"/>
-      <widget name="pci_power_save_right"/>
+      <widget name="pci_power_saving_left"/>
+      <widget name="pci_power_saving_right"/>
     </widgets>
   </object>
   <object class="GtkListBoxRow" id="pci_express_bus_row">
