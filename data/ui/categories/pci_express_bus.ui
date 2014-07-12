@@ -24,14 +24,17 @@
     <property name="can_focus">False</property>
     <property name="orientation">vertical</property>
     <child>
-      <object class="GtkLabel" id="name">
+      <object class="GtkLabel" id="label23">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="margin_top">10</property>
+        <property name="margin_bottom">10</property>
         <property name="xalign">0</property>
-        <property name="xpad">5</property>
-        <property name="label" translatable="yes">Active State Power Management</property>
+        <property name="label" translatable="yes">Sets &lt;a href="http://www.lesswatts.org/projects/devices-power-management/pcie.php"&gt;PCIe ASPM&lt;/a&gt; power saving mode. Available with kernel 2.6.35 and above.</property>
+        <property name="use_markup">True</property>
+        <property name="wrap">True</property>
         <style>
-          <class name="config-title"/>
+          <class name="description"/>
         </style>
       </object>
       <packing>
@@ -41,19 +44,114 @@
       </packing>
     </child>
     <child>
-      <object class="GtkLabel" id="description">
+      <object class="GtkBox" id="pci_power_save">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">10</property>
-        <property name="margin_bottom">10</property>
-        <property name="xalign">0</property>
-        <property name="label" translatable="yes">Sets &lt;a href="http://www.lesswatts.org/projects/devices-power-management/pcie.php"&gt;PCIe ASPM&lt;/a&gt; power saving mode.
-Available with kernel 2.6.35 and above.</property>
-        <property name="use_markup">True</property>
-        <property name="wrap">True</property>
-        <style>
-          <class name="config-description"/>
-        </style>
+        <property name="margin_left">20</property>
+        <property name="margin_right">20</property>
+        <property name="margin_top">15</property>
+        <property name="margin_bottom">15</property>
+        <child>
+          <object class="GtkBox" id="pci_power_save_left">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="label2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Energy</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="pci_power_save_energy">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">10</property>
+                <property name="model">combo_options</property>
+                <property name="active">0</property>
+                <property name="id_column">0</property>
+                <child>
+                  <object class="GtkCellRendererText" id="pci_power_save_energy_renderer"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="pci_power_save_separator">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="pci_power_save_right">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="label1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">10</property>
+                <property name="label" translatable="yes">Battery</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="pci_power_save_battery">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">10</property>
+                <property name="model">combo_options</property>
+                <property name="active">0</property>
+                <property name="id_column">0</property>
+                <child>
+                  <object class="GtkCellRendererText" id="pci_power_save_battery_renderer"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -61,78 +159,15 @@ Available with kernel 2.6.35 and above.</property>
         <property name="position">1</property>
       </packing>
     </child>
-    <child>
-      <object class="GtkGrid" id="content">
-        <property name="name">TrocasComponent</property>
-        <property name="height_request">35</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="row_homogeneous">True</property>
-        <child>
-          <object class="GtkLabel" id="label2">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Energy</property>
-          </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkSeparator" id="separator1">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-          </object>
-          <packing>
-            <property name="left_attach">2</property>
-            <property name="top_attach">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="label1">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Battery</property>
-          </object>
-          <packing>
-            <property name="left_attach">3</property>
-            <property name="top_attach">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkComboBox" id="combobox1">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="model">combo_options</property>
-            <property name="active">0</property>
-            <property name="id_column">0</property>
-          </object>
-          <packing>
-            <property name="left_attach">1</property>
-            <property name="top_attach">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkComboBox" id="combobox2">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="model">combo_options</property>
-            <property name="active">0</property>
-            <property name="id_column">0</property>
-          </object>
-          <packing>
-            <property name="left_attach">4</property>
-            <property name="top_attach">0</property>
-          </packing>
-        </child>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">2</property>
-      </packing>
-    </child>
+    <style>
+      <class name="configuration"/>
+    </style>
+  </object>
+  <object class="GtkSizeGroup" id="pci_power_save_column_definition">
+    <widgets>
+      <widget name="pci_power_save_left"/>
+      <widget name="pci_power_save_right"/>
+    </widgets>
   </object>
   <object class="GtkListBoxRow" id="pci_express_bus_row">
     <property name="visible">True</property>
