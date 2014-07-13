@@ -12,7 +12,7 @@ class Parameter:
     def is_changed(self):
         return self.value != self.initial_state['value']
 
-    def write(self, configuration)
+    def write(self, configuration):
         template = '{0}={1}'
         current = template.format(self.name, self.initial_state['value'])
         new = template.format(self.name, self.value)

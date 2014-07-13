@@ -1,5 +1,6 @@
-from gi.repository import Gtk, Gio, Gdk
 from tlp.views import Window, Shell, load_css, load_view 
+from gi.repository import Gtk, Gio, Gdk
+from tlp.models import Configuration
 
 
 class App(Gtk.Application):
@@ -8,6 +9,10 @@ class App(Gtk.Application):
         Gtk.Application.__init__(self, application_id='TLP.Configuration')
         self.shell = load_view(Shell)
         self.window = None
+
+    def start(self, config_file):
+        self.configuration = Configuration(config_file)
+        self.run(None)
 
     def do_activate(self):
         load_css('application.css', Gdk.Screen.get_default())

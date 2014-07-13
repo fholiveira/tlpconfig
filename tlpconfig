@@ -3,4 +3,4 @@ from tlp.application import App
 from sys import exit
 
 
-exit(App().run(None))
+exit(App().start('/etc/default/tlp'))

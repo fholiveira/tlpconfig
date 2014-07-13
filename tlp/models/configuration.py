@@ -4,7 +4,7 @@ import re
 
 
 class Configuration:
-    def __init__(selfi, file_path):
+    def __init__(self, file_path):
         self.file_path = file_path
         self.refresh()
     
@@ -14,7 +14,7 @@ class Configuration:
             self.text = config_file.read()
 
             self.parameters = [Parameter(row) 
-                               for row in self.configuration.splitlines()
+                               for row in self.text.splitlines()
                                if regex.match(row)]
 
     def save_as(self, file_path):
