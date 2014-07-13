@@ -11,7 +11,7 @@ class App(Gtk.Application):
         self.window = None
 
     def start(self, config_file):
-        self.configuration = Configuration(config_file)
+        self.config = Configuration(config_file)
         self.run(None)
 
     def do_activate(self):
@@ -19,6 +19,7 @@ class App(Gtk.Application):
 
         if not self.window:
             self.window = load_view(Window)
+            self.window.load_configuration(self.config)
             self.add_window(self.window.window)
 
         self.window.show()

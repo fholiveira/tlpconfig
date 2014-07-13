@@ -1,9 +1,9 @@
 
 class Parameter:
-    def __init__(self, line):
-        parameter = line.split('=')
+    def __init__(self, text):
+        parameter = text.split('=')
 
-        self.initial_state = {'active' : not line.startswith('#'),
+        self.initial_state = {'active' : not text.startswith('#'),
                               'value' : parameter[1].replace('"', '')}
 
         self.name = parameter[0].replace('#', '')

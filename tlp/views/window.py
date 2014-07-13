@@ -1,31 +1,36 @@
 from tlp.views.categories import *
-from tlp.views import Status, load_view
+from tlp.views import Status, create_category_loader 
 from gi.repository import Gtk
 
 
 class Window():
     UI = ('window.ui', 'header.ui')
 
-    categories = [load_view(FileSystem), 
-                  load_view(ProcessorAndFrequenceScaling),
-                  load_view(Kernel),
-                  load_view(Undervolting),
-                  load_view(DisksAndControllers),
-                  load_view(PciExpressBus),
-                  load_view(GraphicsCards),
-                  load_view(Networking),
-                  load_view(Audio),
-                  load_view(DriveSlotUltrabay),
-                  load_view(RuntimePowerManagement),
-                  load_view(Usb),
-                  load_view(SystemStartAndShutdown),
-                  load_view(WirelessRadioSwitch),
-                  load_view(BatteryChargeThresholds)]
-
     def __init__(self, loader):
         loader.connect(self)
 
         self._load_childs(loader)
+
+    def load_configuration(self, configuration):
+        self.config = configuration
+
+        load_view = create_category_loader(configuration.parameters)
+        self.categories = [load_view(FileSystem), 
+                           load_view(ProcessorAndFrequenceScaling),
+                           load_view(Kernel),
+                           load_view(Undervolting),
+                           load_view(DisksAndControllers),
+                           load_view(PciExpressBus),
+                           load_view(GraphicsCards),
+                           load_view(Networking),
+                           load_view(Audio),
+                           load_view(DriveSlotUltrabay),
+                           load_view(RuntimePowerManagement),
+                           load_view(Usb),
+                           load_view(SystemStartAndShutdown),
+                           load_view(WirelessRadioSwitch),
+                           load_view(BatteryChargeThresholds)]
+
         self._list_categories()
 
     def save(self, button):
