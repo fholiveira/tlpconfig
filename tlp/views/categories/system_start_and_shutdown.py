@@ -18,6 +18,9 @@ class SystemStartAndShutdown():
         self.panel = loader.get('system_start_and_shutdown_panel')
         
         self.startup_actions = loader.get('actions_on_startup')
+    
+    def get_parameters(self):
+        pass
 
     def set_parameters(self, parameters):
         self.parameters = { param.name: (param, self.loader.get(param.name))
