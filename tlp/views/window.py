@@ -1,5 +1,5 @@
 from tlp.views.categories import *
-from tlp.views import Status, create_category_loader 
+from tlp.views import Status, create_category_loader, load_view 
 from gi.repository import Gtk
 
 

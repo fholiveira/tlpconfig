@@ -42,7 +42,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSwitch" id="restore_state_on_startup">
+          <object class="GtkSwitch" id="RESTORE_DEVICE_STATE_ON_STARTUP">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="margin_left">10</property>
@@ -97,7 +97,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="disable_devices_on_startup">
+          <object class="GtkBox" id="DEVICES_TO_DISABLE_ON_STARTUP">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="margin_left">20</property>
@@ -206,7 +206,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="enable_devices_on_startup">
+          <object class="GtkBox" id="DEVICES_TO_ENABLE_ON_STARTUP">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="margin_left">20</property>
@@ -306,7 +306,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkBox" id="disable_devices_on_shutdown">
+      <object class="GtkBox" id="DEVICES_TO_DISABLE_ON_SHUTDOWN">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_left">20</property>
@@ -399,7 +399,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkBox" id="enable_devices_on_shutdown">
+      <object class="GtkBox" id="DEVICES_TO_ENABLE_ON_SHUTDOWN">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_left">20</property>
@@ -496,5 +496,4 @@
       <class name="category"/>
     </style>
   </object>
-  <object class="GtkToggleAction" id="toggleaction1"/>
 </interface>
