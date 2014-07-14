@@ -43,7 +43,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkEntry" id="phc_controls">
+          <object class="GtkEntry" id="PHC_CONTROLS">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="margin_left">10</property>

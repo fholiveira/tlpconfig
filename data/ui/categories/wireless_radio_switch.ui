@@ -39,7 +39,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkEntry" id="radio_devices">
+      <object class="GtkEntry" id="DEVICES_TO_ENABLE_ON_RADIOSW">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="margin_left">20</property>

@@ -45,7 +45,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSwitch" id="nmi_watchdog">
+          <object class="GtkSwitch" id="NMI_WATCHDOG">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="margin_left">10</property>

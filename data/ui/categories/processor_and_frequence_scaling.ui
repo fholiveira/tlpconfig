@@ -93,7 +93,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton" id="cpu_scaling_energy">
+              <object class="GtkSpinButton" id="CPU_SCALING_GOVERNOR_ON_AC">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>
@@ -144,7 +144,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton" id="cpu_scaling_battery">
+              <object class="GtkSpinButton" id="CPU_SCALING_GOVERNOR_ON_BAT">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>
@@ -274,7 +274,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton" id="frequency_min_energy">
+              <object class="GtkSpinButton" id="CPU_SCALING_MIN_FREQ_ON_AC">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">5</property>
@@ -289,7 +289,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton" id="frequency_max_energy">
+              <object class="GtkSpinButton" id="CPU_SCALING_MAX_FREQ_ON_AC">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">5</property>
@@ -371,7 +371,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id="frequency_min_battery">
+                  <object class="GtkSpinButton" id="CPU_SCALING_MIN_FREQ_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="halign">end</property>
@@ -387,7 +387,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id="frequency_max_battery">
+                  <object class="GtkSpinButton" id="CPU_SCALING_MAX_FREQ_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="halign">end</property>
@@ -498,7 +498,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSwitch" id="turbo_boost_energy">
+              <object class="GtkSwitch" id="CPU_BOOST_ON_AC">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>
@@ -547,7 +547,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSwitch" id="turbo_boost_battery">
+              <object class="GtkSwitch" id="CPU_BOOST_ON_BAT">
                 <property name="name">10</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -651,7 +651,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSwitch" id="cpu_cores_energy">
+              <object class="GtkSwitch" id="SCHED_POWERSAVE_ON_AC">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>
@@ -700,7 +700,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSwitch" id="cpu_cores_battery">
+              <object class="GtkSwitch" id="SCHED_POWERSAVE_ON_BAT">
                 <property name="name">10</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>

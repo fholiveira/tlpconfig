@@ -68,7 +68,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSwitch" id="wifi_power_saving_energy">
+              <object class="GtkSwitch" id="WIFI_PWR_ON_AC">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>
@@ -117,7 +117,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSwitch" id="wifi_power_saving_battery">
+              <object class="GtkSwitch" id="WIFI_PWR_ON_BAT">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>
@@ -213,7 +213,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSwitch" id="wake_on_lan">
+          <object class="GtkSwitch" id="WOL_DISABLE">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="margin_left">10</property>

@@ -121,7 +121,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton" id="thresholds_main_lower">
+              <object class="GtkSpinButton" id=" START_CHARGE_THRESH_BAT0">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>
@@ -173,7 +173,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton" id="thresholds_main_upper">
+              <object class="GtkSpinButton" id="STOP_CHARGE_THRESH_BAT0">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>
@@ -247,7 +247,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton" id="thresholds_auxiliary_lower">
+              <object class="GtkSpinButton" id=" START_CHARGE_THRESH_BAT1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>
@@ -298,7 +298,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSpinButton" id="thresholds_auxiliary_upper">
+              <object class="GtkSpinButton" id=" STOP_CHARGE_THRESH_BAT1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>
@@ -393,7 +393,7 @@ The &lt;a href="https://github.com/linrunner/TLP/blob/master/default"&gt;default
           </packing>
         </child>
         <child>
-          <object class="GtkSwitch" id="tpacpi_bat">
+          <object class="GtkSwitch" id=" DISABLE_TPACPIBAT">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="margin_left">10</property>

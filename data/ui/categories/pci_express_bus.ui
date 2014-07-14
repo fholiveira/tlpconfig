@@ -69,7 +69,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBox" id="pci_power_saving_energy">
+              <object class="GtkComboBox" id=" PCIE_ASPM_ON_AC">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="margin_left">10</property>
@@ -127,7 +127,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBox" id="pci_power_saving_battery">
+              <object class="GtkComboBox" id=" PCIE_ASPM_ON_BAT">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="margin_left">10</property>
