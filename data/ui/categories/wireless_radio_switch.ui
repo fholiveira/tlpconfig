@@ -2,15 +2,123 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
-  <object class="GtkBox" id="wireless_radio_switch_panel">
+  <object class="GtkGrid" id="wireless_radio_switch_panel">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkBox" id="box_1234">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="label2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">20</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">Radio devices to enable when wireless radio switch is turned on.</property>
+            <property name="wrap">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="DEVICES_TO_ENABLE_ON_RADIOSW">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="margin_left">20</property>
+            <property name="margin_right">20</property>
+            <property name="margin_top">15</property>
+            <property name="margin_bottom">15</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">20</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; this feature is only available for ThinkPads with a slide switch (&lt;i&gt;not&lt;/i&gt; Fn+F5!) running Ubuntu.</property>
+            <property name="use_markup">True</property>
+            <property name="wrap">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <style>
+          <class name="configuration"/>
+        </style>
+      </object>
+      <packing>
+        <property name="left_attach">2</property>
+        <property name="top_attach">2</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="separator1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_top">20</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">3</property>
+        <property name="width">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="separator2">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_top">20</property>
+        <property name="margin_bottom">20</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">1</property>
+        <property name="width">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="separator3">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_left">20</property>
+        <property name="margin_right">20</property>
+        <property name="orientation">vertical</property>
+      </object>
+      <packing>
+        <property name="left_attach">1</property>
+        <property name="top_attach">2</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSwitch" id="switch1">
+        <property name="height_request">35</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="valign">center</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">2</property>
+      </packing>
+    </child>
     <child>
       <object class="GtkLabel" id="label1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_bottom">15</property>
         <property name="xalign">0</property>
         <property name="label" translatable="yes">ThinkPads / Ubuntu only</property>
         <style>
@@ -18,60 +126,11 @@
         </style>
       </object>
       <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">0</property>
+        <property name="left_attach">0</property>
+        <property name="top_attach">0</property>
+        <property name="width">3</property>
       </packing>
     </child>
-    <child>
-      <object class="GtkLabel" id="label2">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="xalign">0</property>
-        <property name="label" translatable="yes">Radio devices to enable when wireless radio switch is turned on.</property>
-        <property name="wrap">True</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">1</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkEntry" id="DEVICES_TO_ENABLE_ON_RADIOSW">
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
-        <property name="margin_top">15</property>
-        <property name="margin_bottom">15</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">2</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkLabel" id="label3">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="xalign">0</property>
-        <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; this feature is only available for ThinkPads with a slide switch (&lt;i&gt;not&lt;/i&gt; Fn+F5!) running Ubuntu.</property>
-        <property name="use_markup">True</property>
-        <property name="wrap">True</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">3</property>
-      </packing>
-    </child>
-    <style>
-      <class name="configuration"/>
-    </style>
   </object>
   <object class="GtkListBoxRow" id="wireless_radio_switch_row">
     <property name="visible">True</property>

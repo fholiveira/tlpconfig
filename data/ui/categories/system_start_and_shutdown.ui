@@ -2,38 +2,22 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
-  <object class="GtkBox" id="system_start_and_shutdown_panel">
+  <object class="GtkGrid" id="system_start_and_shutdown_panel">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="orientation">vertical</property>
     <child>
-      <object class="GtkLabel" id="label2">
+      <object class="GtkBox" id="box123">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="xalign">0</property>
-        <property name="label" translatable="yes">Restore radio device state (&lt;i&gt;builtin&lt;/i&gt; Bluetooth, Wirelles LAN, Wireless Wide Area Network (UMTS)) from previous shutdown on system startup</property>
-        <property name="use_markup">True</property>
-        <property name="wrap">True</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">0</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkBox" id="grid34">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
-        <property name="margin_top">15</property>
-        <property name="margin_bottom">15</property>
+        <property name="orientation">vertical</property>
         <child>
-          <object class="GtkLabel" id="label3">
+          <object class="GtkLabel" id="label2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Enable</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">Restore radio device state (&lt;i&gt;builtin&lt;/i&gt; Bluetooth, Wirelles LAN, Wireless Wide Area Network (UMTS)) from previous shutdown on system startup</property>
+            <property name="use_markup">True</property>
+            <property name="wrap">True</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -42,11 +26,38 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSwitch" id="RESTORE_DEVICE_STATE_ON_STARTUP">
+          <object class="GtkBox" id="grid34">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="margin_left">10</property>
-            <signal name="notify::active" handler="change_restore_devices_on_startup" swapped="no"/>
+            <property name="can_focus">False</property>
+            <property name="margin_left">20</property>
+            <property name="margin_right">20</property>
+            <property name="margin_top">15</property>
+            <property name="margin_bottom">15</property>
+            <child>
+              <object class="GtkLabel" id="label3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Enable</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSwitch" id="RESTORE_DEVICE_STATE_ON_STARTUP">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <signal name="notify::active" handler="change_restore_devices_on_startup" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -54,65 +65,45 @@
             <property name="position">1</property>
           </packing>
         </child>
+        <style>
+          <class name="configuration"/>
+        </style>
       </object>
       <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">1</property>
+        <property name="left_attach">2</property>
+        <property name="top_attach">1</property>
       </packing>
     </child>
     <child>
       <object class="GtkSeparator" id="separator2">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
-        <property name="margin_top">5</property>
+        <property name="margin_top">20</property>
         <property name="margin_bottom">20</property>
       </object>
       <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">2</property>
+        <property name="left_attach">0</property>
+        <property name="top_attach">2</property>
+        <property name="width">3</property>
       </packing>
     </child>
     <child>
-      <object class="GtkBox" id="actions_on_startup">
+      <object class="GtkGrid" id="actions_on_startup">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
         <child>
-          <object class="GtkLabel" id="label4">
+          <object class="GtkBox" id="box4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="xalign">0</property>
-            <property name="label" translatable="yes">Disable &lt;i&gt;builtin&lt;/i&gt; radio devices upon system start:</property>
-            <property name="use_markup">True</property>
-            <property name="wrap">True</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkBox" id="DEVICES_TO_DISABLE_ON_STARTUP">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="orientation">vertical</property>
             <child>
-              <object class="GtkCheckButton" id="checkbutton1">
-                <property name="label" translatable="yes">Bluetooth</property>
-                <property name="name">bluetooth</property>
+              <object class="GtkLabel" id="label4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
+                <property name="can_focus">False</property>
                 <property name="xalign">0</property>
-                <property name="draw_indicator">True</property>
+                <property name="label" translatable="yes">Disable &lt;i&gt;builtin&lt;/i&gt; radio devices upon system start:</property>
+                <property name="use_markup">True</property>
+                <property name="wrap">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -121,14 +112,61 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton3">
-                <property name="label" translatable="yes">Wireless LAN</property>
-                <property name="name">wifi</property>
+              <object class="GtkBox" id="DEVICES_TO_DISABLE_ON_STARTUP">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="xalign">0</property>
-                <property name="draw_indicator">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">20</property>
+                <property name="margin_right">20</property>
+                <property name="margin_top">15</property>
+                <property name="margin_bottom">15</property>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton1">
+                    <property name="label" translatable="yes">Bluetooth</property>
+                    <property name="name">bluetooth</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="xalign">0</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton3">
+                    <property name="label" translatable="yes">Wireless LAN</property>
+                    <property name="name">wifi</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="xalign">0</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton2">
+                    <property name="label" translatable="yes">Wireless Wide Area Network (UMTS)</property>
+                    <property name="name">wwan</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="xalign">0</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -137,14 +175,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton2">
-                <property name="label" translatable="yes">Wireless Wide Area Network (UMTS)</property>
-                <property name="name">wwan</property>
+              <object class="GtkLabel" id="label7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">20</property>
                 <property name="xalign">0</property>
-                <property name="draw_indicator">True</property>
+                <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; this feature is not available for all laptops. It depends on &lt;a href="http://wireless.kernel.org/en/users/Documentation/rfkill"&gt;rfkill&lt;/a&gt; support for your model.</property>
+                <property name="use_markup">True</property>
+                <property name="wrap">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -154,59 +192,205 @@
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="label7">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="xalign">0</property>
-            <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; this feature is not available for all laptops. It depends on &lt;a href="http://wireless.kernel.org/en/users/Documentation/rfkill"&gt;rfkill&lt;/a&gt; support for your model.</property>
-            <property name="use_markup">True</property>
-            <property name="wrap">True</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">2</property>
+            <property name="left_attach">2</property>
+            <property name="top_attach">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkSeparator" id="separator3">
+            <property name="name">5</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
             <property name="margin_top">20</property>
             <property name="margin_bottom">20</property>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">3</property>
+            <property name="left_attach">0</property>
+            <property name="top_attach">1</property>
+            <property name="width">3</property>
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="label5">
+          <object class="GtkBox" id="box3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkLabel" id="label5">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">Linux enables all &lt;i&gt;builtin&lt;/i&gt; radio devices by default. In case of exception you can use this setting to enable the missing devices upon system startup.</property>
+                <property name="use_markup">True</property>
+                <property name="wrap">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="DEVICES_TO_ENABLE_ON_STARTUP">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">20</property>
+                <property name="margin_right">20</property>
+                <property name="margin_top">15</property>
+                <property name="margin_bottom">15</property>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton4">
+                    <property name="label" translatable="yes">Bluetooth</property>
+                    <property name="name">bluetooth</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="xalign">0</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton5">
+                    <property name="label" translatable="yes">Wireless LAN</property>
+                    <property name="name">wifi</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="xalign">0</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton6">
+                    <property name="label" translatable="yes">Wireless Wide Area Network (UMTS)</property>
+                    <property name="name">wwan</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="xalign">0</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="left_attach">2</property>
+            <property name="top_attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="separator6">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_top">20</property>
+            <property name="margin_bottom">20</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">3</property>
+            <property name="width">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="separator9">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">20</property>
+            <property name="margin_right">20</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="separator10">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">20</property>
+            <property name="margin_right">20</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="switch2">
+            <property name="height_request">35</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="valign">center</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="switch3">
+            <property name="height_request">35</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="valign">center</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">2</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">3</property>
+        <property name="width">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox" id="box2">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="label1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="xalign">0</property>
-            <property name="label" translatable="yes">Linux enables all &lt;i&gt;builtin&lt;/i&gt; radio devices by default. In case of exception you can use this setting to enable the missing devices upon system startup.</property>
+            <property name="label" translatable="yes">Disables &lt;i&gt;builtin&lt;/i&gt; radio devices upon system shutdown. May be used as a workaround when enabled radio devices block the shutdown process.</property>
             <property name="use_markup">True</property>
             <property name="wrap">True</property>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">4</property>
+            <property name="position">0</property>
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="DEVICES_TO_ENABLE_ON_STARTUP">
+          <object class="GtkBox" id="DEVICES_TO_DISABLE_ON_SHUTDOWN">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="margin_left">20</property>
@@ -214,7 +398,7 @@
             <property name="margin_top">15</property>
             <property name="margin_bottom">15</property>
             <child>
-              <object class="GtkCheckButton" id="checkbutton4">
+              <object class="GtkCheckButton" id="checkbutton7">
                 <property name="label" translatable="yes">Bluetooth</property>
                 <property name="name">bluetooth</property>
                 <property name="visible">True</property>
@@ -230,7 +414,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton5">
+              <object class="GtkCheckButton" id="checkbutton8">
                 <property name="label" translatable="yes">Wireless LAN</property>
                 <property name="name">wifi</property>
                 <property name="visible">True</property>
@@ -246,7 +430,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton6">
+              <object class="GtkCheckButton" id="checkbutton9">
                 <property name="label" translatable="yes">Wireless Wide Area Network (UMTS)</property>
                 <property name="name">wwan</property>
                 <property name="visible">True</property>
@@ -265,156 +449,41 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">5</property>
-          </packing>
-        </child>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">3</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkSeparator" id="separator6">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
-        <property name="margin_top">5</property>
-        <property name="margin_bottom">20</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">4</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkLabel" id="label1">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="xalign">0</property>
-        <property name="label" translatable="yes">Disables &lt;i&gt;builtin&lt;/i&gt; radio devices upon system shutdown. May be used as a workaround when enabled radio devices block the shutdown process.</property>
-        <property name="use_markup">True</property>
-        <property name="wrap">True</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">5</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkBox" id="DEVICES_TO_DISABLE_ON_SHUTDOWN">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
-        <property name="margin_top">15</property>
-        <property name="margin_bottom">15</property>
-        <child>
-          <object class="GtkCheckButton" id="checkbutton7">
-            <property name="label" translatable="yes">Bluetooth</property>
-            <property name="name">bluetooth</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">False</property>
-            <property name="xalign">0</property>
-            <property name="draw_indicator">True</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkCheckButton" id="checkbutton8">
-            <property name="label" translatable="yes">Wireless LAN</property>
-            <property name="name">wifi</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">False</property>
-            <property name="xalign">0</property>
-            <property name="draw_indicator">True</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
             <property name="position">1</property>
           </packing>
         </child>
-        <child>
-          <object class="GtkCheckButton" id="checkbutton9">
-            <property name="label" translatable="yes">Wireless Wide Area Network (UMTS)</property>
-            <property name="name">wwan</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">False</property>
-            <property name="xalign">0</property>
-            <property name="draw_indicator">True</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">2</property>
-          </packing>
-        </child>
       </object>
       <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">6</property>
+        <property name="left_attach">2</property>
+        <property name="top_attach">4</property>
       </packing>
     </child>
     <child>
       <object class="GtkSeparator" id="separator1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
-        <property name="margin_top">5</property>
+        <property name="margin_top">20</property>
         <property name="margin_bottom">20</property>
       </object>
       <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">7</property>
+        <property name="left_attach">0</property>
+        <property name="top_attach">5</property>
+        <property name="width">3</property>
       </packing>
     </child>
     <child>
-      <object class="GtkLabel" id="label6">
+      <object class="GtkBox" id="box1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="xalign">0</property>
-        <property name="label" translatable="yes">Enables &lt;i&gt;builtin&lt;/i&gt; radio devices upon system shutdown. May be used as a workaround to prevent other operating systems from missing disabled devices.</property>
-        <property name="use_markup">True</property>
-        <property name="wrap">True</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">8</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkBox" id="DEVICES_TO_ENABLE_ON_SHUTDOWN">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
-        <property name="margin_top">15</property>
-        <property name="margin_bottom">15</property>
+        <property name="orientation">vertical</property>
         <child>
-          <object class="GtkCheckButton" id="checkbutton10">
-            <property name="label" translatable="yes">Bluetooth</property>
-            <property name="name">bluetooth</property>
+          <object class="GtkLabel" id="label6">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">False</property>
+            <property name="can_focus">False</property>
             <property name="xalign">0</property>
-            <property name="draw_indicator">True</property>
+            <property name="label" translatable="yes">Enables &lt;i&gt;builtin&lt;/i&gt; radio devices upon system shutdown. May be used as a workaround to prevent other operating systems from missing disabled devices.</property>
+            <property name="use_markup">True</property>
+            <property name="wrap">True</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -423,14 +492,61 @@
           </packing>
         </child>
         <child>
-          <object class="GtkCheckButton" id="checkbutton11">
-            <property name="label" translatable="yes">Wireless LAN</property>
-            <property name="name">wifi</property>
+          <object class="GtkBox" id="DEVICES_TO_ENABLE_ON_SHUTDOWN">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">False</property>
-            <property name="xalign">0</property>
-            <property name="draw_indicator">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">20</property>
+            <property name="margin_right">20</property>
+            <property name="margin_top">15</property>
+            <property name="margin_bottom">15</property>
+            <child>
+              <object class="GtkCheckButton" id="checkbutton10">
+                <property name="label" translatable="yes">Bluetooth</property>
+                <property name="name">bluetooth</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="xalign">0</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="checkbutton11">
+                <property name="label" translatable="yes">Wireless LAN</property>
+                <property name="name">wifi</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="xalign">0</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="checkbutton12">
+                <property name="label" translatable="yes">Wireless Wide Area Network (UMTS)</property>
+                <property name="name">wwan</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="xalign">0</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -438,32 +554,111 @@
             <property name="position">1</property>
           </packing>
         </child>
-        <child>
-          <object class="GtkCheckButton" id="checkbutton12">
-            <property name="label" translatable="yes">Wireless Wide Area Network (UMTS)</property>
-            <property name="name">wwan</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">False</property>
-            <property name="xalign">0</property>
-            <property name="draw_indicator">True</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">2</property>
-          </packing>
-        </child>
       </object>
       <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">9</property>
+        <property name="left_attach">2</property>
+        <property name="top_attach">6</property>
       </packing>
     </child>
-    <style>
-      <class name="configuration"/>
-    </style>
+    <child>
+      <object class="GtkSeparator" id="separator4">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_top">20</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">7</property>
+        <property name="width">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="separator5">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_bottom">20</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">0</property>
+        <property name="width">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="separator7">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_left">20</property>
+        <property name="margin_right">20</property>
+        <property name="orientation">vertical</property>
+      </object>
+      <packing>
+        <property name="left_attach">1</property>
+        <property name="top_attach">6</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="separator8">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_left">20</property>
+        <property name="margin_right">20</property>
+        <property name="orientation">vertical</property>
+      </object>
+      <packing>
+        <property name="left_attach">1</property>
+        <property name="top_attach">4</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="separator11">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_left">20</property>
+        <property name="margin_right">20</property>
+        <property name="orientation">vertical</property>
+      </object>
+      <packing>
+        <property name="left_attach">1</property>
+        <property name="top_attach">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSwitch" id="switch1">
+        <property name="height_request">35</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="valign">center</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSwitch" id="switch4">
+        <property name="height_request">35</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="valign">center</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">4</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSwitch" id="switch5">
+        <property name="height_request">35</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="valign">center</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">6</property>
+      </packing>
+    </child>
   </object>
   <object class="GtkSizeGroup" id="system_start_and_shutdown_column_definition">
     <widgets>

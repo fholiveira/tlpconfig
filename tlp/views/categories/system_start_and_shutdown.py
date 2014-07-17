@@ -20,6 +20,15 @@ class SystemStartAndShutdown():
         self.startup_actions = loader.get('actions_on_startup')
     
     def get_parameters(self):
+        for param, ui in self.parameters.values():
+            if isinstance(ui, Gtk.Switch):
+                param.value = ui.get_active()
+            else:
+                param.value = ' '.join([children.get_active() 
+                                        for children in ui.get.children()])
+
+    def change_restore_devices_on_startup(self, switch, gparam):
+        self.startup_actions.set_sensitive(not switch.get_active())
         pass
 
     def set_parameters(self, parameters):
@@ -35,7 +44,7 @@ class SystemStartAndShutdown():
                     children.set_active(children.get_name() in devices)
 
     def change_restore_devices_on_startup(self, switch, gparam):
-        self.startup_actions.set_sensitive(not switch.get_active())
+        self.startup_actions.set_visible(not switch.get_active())
 
     def _get_devices(self, container):
         devices = [device.get_name() for device in container.get_children()
