@@ -1,14 +1,11 @@
+from .category import Category
+
+
 class DisksAndControllers():
-    UI = 'categories/disks_and_controllers.ui'
-    PARAMETERS_NAME = ['DISK_DEVICES',
-                       'DISK_DEVICES',
-                       'DISK_APM_LEVEL_ON_AC',
-                       'DISK_APM_LEVEL_ON_BAT']
+    CATEGORY='DISKS_AND_CONTROLLERS'
 
     def __init__(self, loader):
-        loader.connect(self)
-        self.menu = loader.get('disks_and_controllers_row')
-        self.panel = loader.get('disks_and_controllers_panel')
+        Category.__init__(self, self.CATEGORY, loader)
 
     def set_parameters(self, parameters):
         pass

@@ -1,13 +1,11 @@
+from .category import Category
+
+
 class Audio():
-    UI = 'categories/audio.ui'
-    PARAMETERS_NAME = ['SOUND_POWER_SAVE_ON_AC',
-                       'SOUND_POWER_SAVE_ON_BAT',
-                       'SOUND_POWER_SAVE_CONTROLLER']
+    CATEGORY='AUDIO'
 
     def __init__(self, loader):
-        loader.connect(self)
-        self.menu = loader.get('audio_row')
-        self.panel = loader.get('audio_panel')
+        Category.__init__(self, self.CATEGORY, loader)
 
     def set_parameters(self, parameters):
         pass

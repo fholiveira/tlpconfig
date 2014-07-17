@@ -1,12 +1,11 @@
+from .category import Category
+
+
 class Undervolting():
-    UI = 'categories/undervolting.ui'
-    PARAMETERS_NAME = ['PHC_CONTROLS']
+    CATEGORY='UNDERVOLTING'
 
     def __init__(self, loader):
-        loader.connect(self)
-        
-        self.menu = loader.get('undervolting_row')
-        self.panel = loader.get('undervolting_panel')
+        Category.__init__(self, self.CATEGORY, loader)
 
     def set_parameters(self, parameters):
         pass

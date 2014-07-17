@@ -1,15 +1,11 @@
-class Usb():
-    UI = 'categories/usb.ui'
-    PARAMETERS_NAME = ['USB_AUTOSUSPEND',
-                       'USB_BLACKLIST',
-                       'USB_BLACKLIST_WWAN',
-                       'USB_AUTOSUSPEND_DISABLE_ON_SHUTDOWN']
+from .category import Category
 
+
+class Usb():
+    CATEGORY='USB'
 
     def __init__(self, loader):
-        loader.connect(self)
-        self.menu = loader.get('usb_row')
-        self.panel = loader.get('usb_panel')
+        Category.__init__(self, self.CATEGORY, loader)
 
     def set_parameters(self, parameters):
         pass

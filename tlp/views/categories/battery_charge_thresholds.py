@@ -1,15 +1,11 @@
+from .category import Category
+
+
 class BatteryChargeThresholds():
-    UI = 'categories/battery_charge_thresholds.ui'
-    PARAMETERS_NAME = ['START_CHARGE_THRESH_BAT0',
-                       'STOP_CHARGE_THRESH_BAT0',
-                       'START_CHARGE_THRESH_BAT1',
-                       'STOP_CHARGE_THRESH_BAT1',
-                       'DISABLE_TPACPIBAT']
+    CATEGORY='BATTERY_CHARGE_THRESHOLDS'
 
     def __init__(self, loader):
-        loader.connect(self)
-        self.menu = loader.get('battery_charge_thresholds_row')
-        self.panel = loader.get('battery_charge_thresholds_panel')
+        Category.__init__(self, self.CATEGORY, loader)
 
     def set_parameters(self, parameters):
         pass

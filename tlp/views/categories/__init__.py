@@ -10,6 +10,7 @@ from .graphics_cards import GraphicsCards
 from .undervolting import Undervolting
 from .file_system import FileSystem
 from .networking import Networking
+from .category import Category
 from .kernel import Kernel
 from .audio import Audio
 from .usb import Usb

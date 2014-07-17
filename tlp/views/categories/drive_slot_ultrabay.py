@@ -1,12 +1,11 @@
-class DriveSlotUltrabay():
-    PARAMETERS_NAME = ['BAY_POWEROFF_ON_BAT', 'BAY_DEVICE']
-    UI = 'categories/drive_slot_ultrabay.ui'
+from .category import Category
 
+
+class DriveSlotUltrabay():
+    CATEGORY='DRIVE_SLOT_ULTRABAY'
 
     def __init__(self, loader):
-        loader.connect(self)
-        self.menu = loader.get('drive_slot_ultrabay_row')
-        self.panel = loader.get('drive_slot_ultrabay_panel')
+        Category.__init__(self, self.CATEGORY, loader)
 
     def set_parameters(self, parameters):
         pass

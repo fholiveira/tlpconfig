@@ -1,23 +1,14 @@
 from gi.repository import Gtk
+from .category import Category
 
 
-class SystemStartAndShutdown():
-    PARAMETERS_NAME = ['RESTORE_DEVICE_STATE_ON_STARTUP',
-                       'DEVICES_TO_DISABLE_ON_STARTUP',
-                       'DEVICES_TO_ENABLE_ON_STARTUP',
-                       'DEVICES_TO_DISABLE_ON_SHUTDOWN',
-                       'DEVICES_TO_ENABLE_ON_SHUTDOWN']
-
-    UI = 'categories/system_start_and_shutdown.ui'
+class SystemStartAndShutdown(Category):
+    CATEGORY='SYSTEM_START_AND_SHUTDOWN'
 
     def __init__(self, loader):
-        loader.connect(self)
-        self.loader = loader
-
-        self.menu = loader.get('system_start_and_shutdown_row')
-        self.panel = loader.get('system_start_and_shutdown_panel')
+        Category.__init__(self, self.CATEGORY, loader)
         
-        self.startup_actions = loader.get('actions_on_startup')
+        self.startup_actions = self.load_control('actions_on_startup')
     
     def get_parameters(self):
         for param, ui in self.parameters.values():

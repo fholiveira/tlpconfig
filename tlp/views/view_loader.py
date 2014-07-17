@@ -15,16 +15,14 @@ def load_view(view):
 
     return view(builder)
 
-def create_category_loader(parameters):
-    params = { param.name : param for param in parameters }
+
+def create_category_loader():
+    file_name = UI_PATH + 'categories/{0}.ui'
 
     def loader(view):
-        ui = load_view(view)
-
-        if hasattr(view, 'PARAMETERS_NAME'):
-            ui.set_parameters([params[name] for name in view.PARAMETERS_NAME])
-        
-        return ui
+        builder = Builder()
+        builder.load(file_name.format(view.CATEGORY.lower()))
+        return view(builder)
 
     return loader
 

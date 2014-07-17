@@ -1,11 +1,11 @@
+from .category import Category
+
+
 class PciExpressBus():
-    PARAMETERS_NAME = ['PCIE_ASPM_ON_AC', 'PCIE_ASPM_ON_BAT']
-    UI = 'categories/pci_express_bus.ui'
+    CATEGORY='PCI_EXPRESS_BUS'
 
     def __init__(self, loader):
-        loader.connect(self)
-        self.menu = loader.get('pci_express_bus_row')
-        self.panel = loader.get('pci_express_bus_panel')
+        Category.__init__(self, self.CATEGORY, loader)
 
     def set_parameters(self, parameters):
         pass

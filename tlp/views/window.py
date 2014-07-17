@@ -14,22 +14,22 @@ class Window():
     def load_configuration(self, configuration):
         self.config = configuration
 
-        load_view = create_category_loader(configuration.parameters)
-        self.categories = [load_view(FileSystem), 
-                           load_view(ProcessorAndFrequenceScaling),
-                           load_view(Kernel),
-                           load_view(Undervolting),
-                           load_view(DisksAndControllers),
-                           load_view(PciExpressBus),
-                           load_view(GraphicsCards),
-                           load_view(Networking),
-                           load_view(Audio),
-                           load_view(DriveSlotUltrabay),
-                           load_view(RuntimePowerManagement),
-                           load_view(Usb),
-                           load_view(SystemStartAndShutdown),
-                           load_view(WirelessRadioSwitch),
-                           load_view(BatteryChargeThresholds)]
+        load = create_category_loader()
+        self.categories = [load(FileSystem), 
+                           load(ProcessorAndFrequenceScaling),
+                           load(Kernel),
+                           load(Undervolting),
+                           load(DisksAndControllers),
+                           load(PciExpressBus),
+                           load(GraphicsCards),
+                           load(Networking),
+                           load(Audio),
+                           load(DriveSlotUltrabay),
+                           load(RuntimePowerManagement),
+                           load(Usb),
+                           load(SystemStartAndShutdown),
+                           load(WirelessRadioSwitch),
+                           load(BatteryChargeThresholds)]
 
         self._list_categories()
 
