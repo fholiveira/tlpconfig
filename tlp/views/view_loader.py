@@ -16,13 +16,13 @@ def load_view(view):
     return view(builder)
 
 
-def create_category_loader():
+def create_category_loader(categories):
     file_name = UI_PATH + 'categories/{0}.ui'
 
     def loader(view):
         builder = Builder()
         builder.load(file_name.format(view.CATEGORY.lower()))
-        return view(builder)
+        return view(builder, categories.get(view.CATEGORY) or [])
 
     return loader
 

@@ -14,7 +14,7 @@ class Window():
     def load_configuration(self, configuration):
         self.config = configuration
 
-        load = create_category_loader()
+        load = create_category_loader(configuration.categories)
         self.categories = [load(FileSystem), 
                            load(ProcessorAndFrequenceScaling),
                            load(Kernel),

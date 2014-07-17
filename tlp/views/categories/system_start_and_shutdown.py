@@ -1,12 +1,13 @@
 from gi.repository import Gtk
 from .category import Category
+from itertools import chain
 
 
 class SystemStartAndShutdown(Category):
     CATEGORY='SYSTEM_START_AND_SHUTDOWN'
 
-    def __init__(self, loader):
-        Category.__init__(self, self.CATEGORY, loader)
+    def __init__(self, loader, configuration_groups):
+        Category.__init__(self, self.CATEGORY, configuration_groups, loader)
         
         self.startup_actions = self.load_control('actions_on_startup')
     
@@ -21,11 +22,14 @@ class SystemStartAndShutdown(Category):
     def change_restore_devices_on_startup(self, switch, gparam):
         self.startup_actions.set_sensitive(not switch.get_active())
 
-    def set_parameters(self, parameters):
-        self.parameters = { param.name: (param, self.loader.get(param.name))
-                            for param in parameters }
+    def set_parameters(self, groups):
+        self.groups = groups
+        self._set_enabled_groups();
 
-        for param, ui in self.parameters.values():
+        parameters = chain.from_iterable(group.parameters.values() for group in groups)
+        
+        for param in parameters:
+            ui = self.load_control(param.name)
             if isinstance(ui, Gtk.Switch):
                 ui.set_active(param.value == '1')
             else:

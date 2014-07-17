@@ -1,4 +1,3 @@
 from .configuration import Configuration
-from .categories import categories
-from .parameter import Parameter
+from .parameter import Parameter, Group
 from .status import get_status

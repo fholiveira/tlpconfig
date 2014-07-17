@@ -1,0 +1,58 @@
+[
+  { 
+    "category": "FILE_SYSTEM",
+    "groups": [ 
+      { "name": "DISK_IDLE_SECS", "parameters": ["DISK_IDLE_SECS_ON_AC", "DISK_IDLE_SECS_ON_BAT"] },
+      { "name": "MAX_LOST_WORK_SECS", "parameters": ["MAX_LOST_WORK_SECS_ON_AC", "MAX_LOST_WORK_SECS_ON_BAT"] } 
+    ]
+  },
+  { 
+    "category": "PROCESSOR_AND_FREQUENCE_SCALING",
+    "groups": [ 
+      { "name": "CPU_SCALING_GOVERNOR", "parameters": ["CPU_SCALING_GOVERNOR_ON_AC", "CPU_SCALING_GOVERNOR_ON_BAT"] },
+      { "name": "CPU_SCALING_FREQ", "parameters": ["CPU_SCALING_MIN_FREQ_ON_AC", "CPU_SCALING_MAX_FREQ_ON_AC", "CPU_SCALING_MIN_FREQ_ON_BAT", "CPU_SCALING_MAX_FREQ_ON_BAT"] },
+      { "name": "CPU_BOOST", "parameters": ["CPU_BOOST_ON_AC", "CPU_BOOST_ON_BAT"] },
+      { "name": "SCHED_POWERSAVE", "parameters": ["SCHED_POWERSAVE_ON_AC", "SCHED_POWERSAVE_ON_BAT"] } 
+    ]
+  },
+  {
+    "category": "KERNEL",
+    "groups": [ { "name": "NMI", "parameters": ["NMI_WATCHDOG"] } ]
+  },
+  {
+    "category": "UNDERVOLTING",
+    "groups": [ { "name": "PHC", "parameters": ["PHC_CONTROLS"] } ]
+  },
+  {
+    "category": "PCI_EXPRESS_BUS",
+    "groups": [ { "name": "PCIE_ASPM", "parameters": ["PCIE_ASPM_ON_AC", "PCIE_ASPM_ON_BAT"] } ]
+  },
+  {
+    "category": "NETWORKING",
+    "groups": [
+        { "name": "WIFI_PWR", "parameters": ["WIFI_PWR_ON_AC", "WIFI_PWR_ON_BAT"] },
+        { "name": "WAKE_ON_LAN", "parameters": ["WOL_DISABLE"] } 
+      ]
+    },
+  {
+    "category": "SYSTEM_START_AND_SHUTDOWN",
+    "groups": [
+      { "name": "DEVICE_STATE", "parameters": ["RESTORE_DEVICE_STATE_ON_STARTUP"] },
+      { "name": "DISABLE_ON_STARTUP", "parameters": ["DEVICES_TO_DISABLE_ON_STARTUP"] },
+      { "name": "ENABLE_ON_STARTUP", "parameters": ["DEVICES_TO_ENABLE_ON_STARTUP"] },
+      { "name": "DISABLE_ON_SHUTDOWN", "parameters": ["DEVICES_TO_DISABLE_ON_SHUTDOWN"] },
+      { "name": "ENABLE_ON_SHUTDOWN", "parameters": ["DEVICES_TO_ENABLE_ON_SHUTDOWN"] }
+    ]
+  },
+  {
+    "category": "WIRELESS_RADIO_SWITCH",
+    "groups": [ { "name": "ENABLE_ON_RADIOSW", "parameters": ["DEVICES_TO_ENABLE_ON_RADIOSW"] } ]
+  },
+  {
+    "category": "BATTERY_CHARGE_THRESHOLDS",
+    "groups": [
+      { "name": "CHARGE_THRESHOLDS", "parameters": ["START_CHARGE_THRESH_BAT0", "STOP_CHARGE_THRESH_BAT0", "START_CHARGE_THRESH_BAT1", "STOP_CHARGE_THRESH_BAT1"] },
+      { "name": "TPACPIBAT", "parameters": ["DISABLE_TPACPIBAT"] }
+    ]
+  }
+]
