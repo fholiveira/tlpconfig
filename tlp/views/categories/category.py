@@ -1,4 +1,5 @@
 from gi.repository import Gtk
+from itertools import chain
 
 
 class Category:
@@ -9,7 +10,7 @@ class Category:
         self.menu = loader.get('_'.join([category.lower(), 'row']))
         self.panel = loader.get('_'.join([category.lower(), 'panel']))
 
-        self.set_parameters(configuration_groups)
+        self.set_groups(configuration_groups)
 
     def load_control(self, control_id):
         return self.loader.get(control_id);
@@ -23,12 +24,15 @@ class Category:
             switch = self.load_control('ACTIVE_' + group.name)
             switch.set_active(group.is_active)
             self._active_switch_changed(switch, None);
-        
 
-    def set_parameters(self, groups):
+    @property
+    def parameters(self):
+        return chain.from_iterable(group.parameters.values()
+                                   for group in self.groups)
+
+    def set_groups(self, groups):
         self.groups = groups
-        self._set_enabled_groups();
+        self._set_enabled_groups()
 
-    def get_parameters(self):
+    def get_groups(self):
         pass
-

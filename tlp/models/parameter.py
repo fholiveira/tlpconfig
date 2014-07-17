@@ -1,34 +1,9 @@
-class Group:
-    def __init__(self, name, parameters):
-        self.name = name
-        self.parameters = parameters
-
-    @property
-    def is_active(self):
-        return not any(p for p in self.parameters.values()
-                       if not p or not p.active)
-
 class Parameter:
-    def __init__(self, name,  active=False):
-        self.active = active
+    def __init__(self, name):
+        self.active = False
         self.name = name
-        self.value = None
+        self._value = ''
         self.initial_state = {}
-
-    @classmethod
-    def from_text(cls, text):
-        parameter = text.split('=')
-
-        initial_state = {'active' : not text.startswith('#'),
-                         'value' : parameter[1].replace('"', '')}
-
-        parameter = cls(parameter[0].replace('#', ''),
-                        active=initial_state['active'])
-
-        parameter.initial_state = initial_state
-        parameter.value = initial_state['value']
-
-        return parameter
 
     def is_changed(self):
         start_active = self.initial_state['active']
@@ -47,3 +22,52 @@ class Parameter:
             current = '#' + current
 
         return configuration.replace(current, new)
+
+
+class TextParameter(Parameter):
+    def __init__(self, name, quotes=''):
+        Parameter.__init__(self, name)
+        self.quotes = quotes
+
+    @property
+    def value(self):
+        return self._value.strip().replace(self.quotes, '')
+
+    @value.setter
+    def value(self, value):
+        self._value = '{0}{1}{0}'.format(self.quotes, self._value.strip())
+
+
+class ListParameter(Parameter):
+    @property
+    def value(self):
+        return self._value.strip().replace('"', '').split(' ')
+
+    @value.setter
+    def value(self, value):
+        self._value = '"{0}"'.format(' '.join(value))
+
+
+class BooleanParameter(Parameter):
+    def __init__(self, name, yes='1', no='0'):
+        Parameter.__init__(self, name)
+        self.yes = yes
+        self.no = no
+
+    @property
+    def value(self):
+        return self._value.strip() == self.yes
+
+    @value.setter
+    def value(self, value):
+        self._value = self.yes if value else self.no
+
+
+class NumericParameter(Parameter):
+    @property
+    def value(self):
+        return int(self._value)
+
+    @value.setter
+    def value(self, value):
+        self._value = str(value)

@@ -1,6 +1,8 @@
-from .parameter import Parameter, Group
+from .parameter_loader import ParameterLoader
+from .parameter import Parameter
 from functools import reduce
 from itertools import chain
+from .group import Group
 import json
 import re
 
@@ -32,11 +34,12 @@ class Configuration:
         
         with open(self.file_path) as config_file:
             self.text = config_file.read()
-
+            loader = ParameterLoader()
             params = {parameter.name: parameter for parameter
-                      in [Parameter.from_text(row)
+                      in [loader.from_text(row)
                           for row in self.text.splitlines() 
-                          if regex.match(row)]}
+                          if regex.match(row)]
+                      if parameter}
                           
         get = lambda name: params[name] if name in params else Parameter(name)
         groups = chain.from_iterable(groups for groups in self.categories.values())
