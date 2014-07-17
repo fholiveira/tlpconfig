@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class ProcessorAndFrequenceScaling():
+class ProcessorAndFrequenceScaling(Category):
     CATEGORY='PROCESSOR_AND_FREQUENCE_SCALING'
 
     def __init__(self, loader):

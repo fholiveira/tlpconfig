@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class GraphicsCards():
+class GraphicsCards(Category):
     CATEGORY='GRAPHICS_CARDS'
 
     def __init__(self, loader):

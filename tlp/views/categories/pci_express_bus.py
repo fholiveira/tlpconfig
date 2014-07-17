@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class PciExpressBus():
+class PciExpressBus(Category):
     CATEGORY='PCI_EXPRESS_BUS'
 
     def __init__(self, loader):

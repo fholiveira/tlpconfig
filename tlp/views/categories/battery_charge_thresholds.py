@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class BatteryChargeThresholds():
+class BatteryChargeThresholds(Category):
     CATEGORY='BATTERY_CHARGE_THRESHOLDS'
 
     def __init__(self, loader):

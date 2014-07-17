@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class Undervolting():
+class Undervolting(Category):
     CATEGORY='UNDERVOLTING'
 
     def __init__(self, loader):

@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class Usb():
+class Usb(Category):
     CATEGORY='USB'
 
     def __init__(self, loader):

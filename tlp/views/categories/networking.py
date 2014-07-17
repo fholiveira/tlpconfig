@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class Networking():
+class Networking(Category):
     CATEGORY='NETWORKING'
 
     def __init__(self, loader):

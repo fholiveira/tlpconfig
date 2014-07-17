@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class Audio():
+class Audio(Category):
     CATEGORY='AUDIO'
 
     def __init__(self, loader):

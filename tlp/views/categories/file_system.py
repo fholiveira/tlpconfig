@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class FileSystem():
+class FileSystem(Category):
     CATEGORY='FILE_SYSTEM'
 
     def __init__(self, loader):

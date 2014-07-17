@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class Kernel():
+class Kernel(Category):
     CATEGORY='KERNEL'
 
     def __init__(self, loader):

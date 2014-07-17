@@ -20,7 +20,6 @@ class SystemStartAndShutdown(Category):
 
     def change_restore_devices_on_startup(self, switch, gparam):
         self.startup_actions.set_sensitive(not switch.get_active())
-        pass
 
     def set_parameters(self, parameters):
         self.parameters = { param.name: (param, self.loader.get(param.name))

@@ -109,6 +109,7 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="valign">center</property>
+            <signal name="notify::active" handler="_active_switch_changed" swapped="no"/>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -121,6 +122,7 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="valign">center</property>
+            <signal name="notify::active" handler="_active_switch_changed" swapped="no"/>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -133,6 +135,7 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="valign">center</property>
+            <signal name="notify::active" handler="_active_switch_changed" swapped="no"/>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -145,6 +148,7 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="valign">center</property>
+            <signal name="notify::active" handler="_active_switch_changed" swapped="no"/>
       </object>
       <packing>
         <property name="left_attach">0</property>

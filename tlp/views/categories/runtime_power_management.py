@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class RuntimePowerManagement():
+class RuntimePowerManagement(Category):
     CATEGORY='RUNTIME_POWER_MANAGEMENT'
 
     def __init__(self, loader):

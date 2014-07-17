@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class DisksAndControllers():
+class DisksAndControllers(Category):
     CATEGORY='DISKS_AND_CONTROLLERS'
 
     def __init__(self, loader):

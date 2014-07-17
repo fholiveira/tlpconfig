@@ -1,7 +1,7 @@
 from .category import Category
 
 
-class DriveSlotUltrabay():
+class DriveSlotUltrabay(Category):
     CATEGORY='DRIVE_SLOT_ULTRABAY'
 
     def __init__(self, loader):
