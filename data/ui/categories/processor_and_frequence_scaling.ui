@@ -408,7 +408,6 @@
           <object class="GtkLabel" id="label3">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_left">20</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">&lt;b&gt;intel_pstate:&lt;/b&gt; since kernel 3.9 the new scaling driver intel_pstate is available and enabled by default on Intel Sandy Bridge (or newer) hardware. intel_pstate supports the governors powersave (recommended default) and performance only. To determine the active scaling driver, refer to tlp-stat output, section "+++ Processor".
 
@@ -656,7 +655,6 @@
           <object class="GtkLabel" id="label5">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_left">20</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; after enabling the processor defaults a restart is required to ensure that the new setting takes.
 
@@ -802,7 +800,6 @@
           <object class="GtkLabel" id="label14">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">Disable cpu "turbo boost" (Intel) or "turbo core" (AMD) feature.
 

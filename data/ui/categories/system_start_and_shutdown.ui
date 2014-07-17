@@ -178,7 +178,6 @@
               <object class="GtkLabel" id="label7">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_left">20</property>
                 <property name="xalign">0</property>
                 <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; this feature is not available for all laptops. It depends on &lt;a href="http://wireless.kernel.org/en/users/Documentation/rfkill"&gt;rfkill&lt;/a&gt; support for your model.</property>
                 <property name="use_markup">True</property>

@@ -49,7 +49,6 @@
           <object class="GtkLabel" id="label2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">Set ThinkPad battery charge thresholds for main battery and auxiliary/Ultrabay battery. Values are given as a percentage of the full capacity.</property>
             <property name="wrap">True</property>
@@ -315,7 +314,6 @@
           <object class="GtkLabel" id="label4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">Charging starts upon connecting AC power, but only if the remaining capacity is below the value of lower threshold. Charging stops when reaching the  upper threshold value. If, however when you connect the AC adapter, charge is above the lower threshold, then it will not charge.
 
@@ -417,7 +415,6 @@ The &lt;a href="https://github.com/linrunner/TLP/blob/master/default"&gt;default
           <object class="GtkLabel" id="label5">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">&lt;b&gt;Hints:&lt;/b&gt; 
     - The charging process is not controlled by software, but by hardware. TLP just writes the thresholds to the hardware registers (via &lt;a href="http://www.thinkwiki.org/wiki/Tp_smapi"&gt;tp-smapi&lt;/a&gt; or &lt;a href="https://github.com/teleshoes/tpacpi-bat"&gt;tpacpi-bat&lt;/a&gt;).
