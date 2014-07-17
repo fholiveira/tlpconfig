@@ -41,7 +41,7 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkBox" id="box43">
+      <object class="GtkBox" id="CHARGE_THRESHOLDS">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
@@ -354,7 +354,7 @@ The &lt;a href="https://github.com/linrunner/TLP/blob/master/default"&gt;default
       </packing>
     </child>
     <child>
-      <object class="GtkBox" id="box1">
+      <object class="GtkBox" id="TPACPIBAT">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
@@ -501,7 +501,7 @@ For further questions concerning battery thresholds consult the &lt;a href="./tl
       </packing>
     </child>
     <child>
-      <object class="GtkSwitch" id="switch1">
+      <object class="GtkSwitch" id="ACTIVE_CHARGE_THRESHOLDS">
         <property name="height_request">35</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
@@ -513,7 +513,7 @@ For further questions concerning battery thresholds consult the &lt;a href="./tl
       </packing>
     </child>
     <child>
-      <object class="GtkSwitch" id="switch2">
+      <object class="GtkSwitch" id="ACTIVE_TPACPIBAT">
         <property name="height_request">35</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>

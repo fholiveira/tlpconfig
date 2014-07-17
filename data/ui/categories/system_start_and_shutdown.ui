@@ -6,7 +6,7 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkBox" id="box123">
+      <object class="GtkBox" id="DEVICE_STATE">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
@@ -92,7 +92,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <child>
-          <object class="GtkBox" id="box4">
+          <object class="GtkBox" id="DISABLE_ON_STARTUP">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
@@ -210,7 +210,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="box3">
+          <object class="GtkBox" id="ENABLE_ON_STARTUP">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
@@ -338,7 +338,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSwitch" id="switch2">
+          <object class="GtkSwitch" id="ACTIVE_DISABLE_ON_STARTUP">
             <property name="height_request">35</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
@@ -350,7 +350,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSwitch" id="switch3">
+          <object class="GtkSwitch" id="ACTIVE_ENABLE_ON_STARTUP">
             <property name="height_request">35</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
@@ -369,7 +369,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkBox" id="box2">
+      <object class="GtkBox" id="DISABLE_ON_SHUTDOWN">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
@@ -471,7 +471,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkBox" id="box1">
+      <object class="GtkBox" id="ENABLE_ON_SHUTDOWN">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
@@ -623,7 +623,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkSwitch" id="switch1">
+      <object class="GtkSwitch" id="ACTIVE_DEVICE_STATE">
         <property name="height_request">35</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
@@ -635,7 +635,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkSwitch" id="switch4">
+      <object class="GtkSwitch" id="ACTIVE_DISABLE_ON_SHUTDOWN">
         <property name="height_request">35</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
@@ -647,7 +647,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkSwitch" id="switch5">
+      <object class="GtkSwitch" id="ACTIVE_ENABLE_ON_SHUTDOWN">
         <property name="height_request">35</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>

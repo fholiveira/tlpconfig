@@ -6,7 +6,7 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkBox" id="box19">
+      <object class="GtkBox" id="WIFI_PWR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
@@ -175,7 +175,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkBox" id="box1">
+      <object class="GtkBox" id="WAKE_ON_LAN">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
@@ -322,7 +322,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkSwitch" id="switch1">
+      <object class="GtkSwitch" id="ACTIVE_WIFI_PWR">
         <property name="height_request">35</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
@@ -334,7 +334,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkSwitch" id="switch2">
+      <object class="GtkSwitch" id="ACTIVE_WAKE_ON_LAN">
         <property name="height_request">35</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
