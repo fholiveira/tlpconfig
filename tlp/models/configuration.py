@@ -1,7 +1,6 @@
 from .parameter import Parameter, Group
 from functools import reduce
 from itertools import chain
-from underscore import _
 import json
 import re
 

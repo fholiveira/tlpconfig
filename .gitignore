@@ -6,6 +6,10 @@ __pycache__/
 *.ui#
 *.glade*
 
+#Development envioronment
+.tlp/
+.env
+
 # C extensions
 *.so
 

@@ -1,6 +1,18 @@
 #!/usr/bin/python
 from tlp.application import App
-from sys import exit
+from sys import exit, argv
+from docopt import docopt
 
 
-exit(App().start('/etc/default/tlp'))
+if __name__ == '__main__':
+    arguments = {}
+
+    try:  
+        with open('data/help') as help_file:
+            arguments = docopt(help_file.read(), version='0.4')
+    except Exception as error:
+        print(error.message)
+
+    config = arguments.get('configuration-file') or '/etc/default/tlp'
+
+    exit(App().start(config))
