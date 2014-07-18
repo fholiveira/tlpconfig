@@ -33,7 +33,14 @@
         { "name": "WIFI_PWR", "parameters": ["WIFI_PWR_ON_AC", "WIFI_PWR_ON_BAT"] },
         { "name": "WAKE_ON_LAN", "parameters": ["WOL_DISABLE"] } 
       ]
-    },
+  },
+  {
+    "category": "AUDIO",
+    "groups": [
+        { "name": "SOUND_POWER_SAVE", "parameters": ["SOUND_POWER_SAVE_ON_AC", "SOUND_POWER_SAVE_ON_BAT"] },
+        { "name": "SOUND_POWER_CONTROLLER", "parameters": ["SOUND_POWER_SAVE_CONTROLLER"] } 
+      ]
+  },
   {
     "category": "SYSTEM_START_AND_SHUTDOWN",
     "groups": [

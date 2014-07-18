@@ -13,7 +13,8 @@ class Window():
 
     def load_configuration(self, configuration):
         self.config = configuration
-
+        self.header.set_subtitle(configuration.file_path)
+        
         load = create_category_loader(configuration.categories)
         self.categories = [load(FileSystem), 
                            load(ProcessorAndFrequenceScaling),
@@ -63,12 +64,13 @@ class Window():
         self.panel = loader.get('panel')
         self.window = loader.get('window')
         self.categories_list = loader.get('categories')
+        self.header = loader.get('header')
 
         self.stack = Gtk.Stack()
         self.stack.set_visible(True)
         loader.get('category_content').add(self.stack)
 
-        self.window.set_titlebar(loader.get('header'))
+        self.window.set_titlebar(self.header)
 
     def _list_categories(self):
         def header(row, before, user_data):

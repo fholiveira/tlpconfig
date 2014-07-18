@@ -142,6 +142,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
+                    <property name="margin_right">30</property>
                     <property name="xalign">0</property>
                     <property name="draw_indicator">True</property>
                   </object>
@@ -666,18 +667,14 @@
   </object>
   <object class="GtkSizeGroup" id="system_start_and_shutdown_column_definition">
     <widgets>
-      <widget name="checkbutton1"/>
-      <widget name="checkbutton3"/>
-      <widget name="checkbutton2"/>
       <widget name="checkbutton4"/>
       <widget name="checkbutton5"/>
-      <widget name="checkbutton6"/>
-      <widget name="checkbutton7"/>
-      <widget name="checkbutton8"/>
-      <widget name="checkbutton9"/>
       <widget name="checkbutton10"/>
       <widget name="checkbutton11"/>
-      <widget name="checkbutton12"/>
+      <widget name="checkbutton8"/>
+      <widget name="checkbutton7"/>
+      <widget name="checkbutton1"/>
+      <widget name="checkbutton3"/>
     </widgets>
   </object>
   <object class="GtkListBoxRow" id="system_start_and_shutdown_row">
