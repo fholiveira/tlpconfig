@@ -49,6 +49,6 @@ class ParameterLoader():
         if parameter:
             parameter.initial_state = initial_state
             parameter.active = initial_state['active']
-            parameter.value = initial_state['value']
+            parameter._value = initial_state['value']
 
         return parameter

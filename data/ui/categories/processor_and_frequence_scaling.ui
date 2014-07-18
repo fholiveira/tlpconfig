@@ -2,6 +2,26 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
+  <object class="GtkListStore" id="combo_options">
+    <columns>
+      <!-- column-name Values -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">ondemand</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">powersave</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">performance</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">conservative</col>
+      </row>
+    </data>
+  </object>
   <object class="GtkAdjustment" id="frequency_max_battery_adjustment">
     <property name="upper">100</property>
     <property name="step_increment">1</property>
@@ -18,31 +38,6 @@
     <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="frequency_min_energy_adjustment">
-    <property name="upper">100</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-  </object>
-  <object class="GtkListBoxRow" id="processor_and_frequence_scaling_row">
-    <property name="visible">True</property>
-    <property name="can_focus">True</property>
-    <child>
-      <object class="GtkLabel" id="label">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="xalign">0</property>
-        <property name="label" translatable="yes">Processor and Frequency Scaling</property>
-      </object>
-    </child>
-    <style>
-      <class name="category"/>
-    </style>
-  </object>
-  <object class="GtkAdjustment" id="scaling_battery_adjustment">
-    <property name="upper">100</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="scaling_energy_adjustment">
     <property name="upper">100</property>
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
@@ -330,12 +325,19 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id="CPU_SCALING_GOVERNOR_ON_AC">
+                  <object class="GtkComboBox" id="CPU_SCALING_GOVERNOR_ON_AC">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
+                    <property name="can_focus">False</property>
                     <property name="margin_left">10</property>
-                    <property name="text" translatable="yes">0</property>
-                    <property name="adjustment">scaling_energy_adjustment</property>
+                    <property name="model">combo_options</property>
+                    <property name="active">0</property>
+                    <property name="id_column">0</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="CPU_SCALING_GOVERNOR_ON_AC_renderer"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -381,12 +383,19 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id="CPU_SCALING_GOVERNOR_ON_BAT">
+                  <object class="GtkComboBox" id="CPU_SCALING_GOVERNOR_ON_BAT">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
+                    <property name="can_focus">False</property>
                     <property name="margin_left">10</property>
-                    <property name="text" translatable="yes">0</property>
-                    <property name="adjustment">scaling_battery_adjustment</property>
+                    <property name="model">combo_options</property>
+                    <property name="active">0</property>
+                    <property name="id_column">0</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="CPU_SCALING_GOVERNOR_ON_BAT_renderer"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -904,5 +913,30 @@
       <widget name="cpu_cores_left"/>
       <widget name="cpu_cores_right"/>
     </widgets>
+  </object>
+  <object class="GtkListBoxRow" id="processor_and_frequence_scaling_row">
+    <property name="visible">True</property>
+    <property name="can_focus">True</property>
+    <child>
+      <object class="GtkLabel" id="label">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="xalign">0</property>
+        <property name="label" translatable="yes">Processor and Frequency Scaling</property>
+      </object>
+    </child>
+    <style>
+      <class name="category"/>
+    </style>
+  </object>
+  <object class="GtkAdjustment" id="scaling_battery_adjustment">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="scaling_energy_adjustment">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
   </object>
 </interface>

@@ -35,7 +35,7 @@ class TextParameter(Parameter):
 
     @value.setter
     def value(self, value):
-        self._value = '{0}{1}{0}'.format(self.quotes, self._value.strip())
+        self._value = '{0}{1}{0}'.format(self.quotes, value.strip())
 
 
 class ListParameter(Parameter):

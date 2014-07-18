@@ -106,7 +106,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id=" START_CHARGE_THRESH_BAT0">
+                  <object class="GtkSpinButton" id="START_CHARGE_THRESH_BAT0">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="margin_left">10</property>
@@ -232,7 +232,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id=" START_CHARGE_THRESH_BAT1">
+                  <object class="GtkSpinButton" id="START_CHARGE_THRESH_BAT1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="margin_left">10</property>
@@ -283,7 +283,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id=" STOP_CHARGE_THRESH_BAT1">
+                  <object class="GtkSpinButton" id="STOP_CHARGE_THRESH_BAT1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="margin_left">10</property>
@@ -393,7 +393,7 @@ The &lt;a href="https://github.com/linrunner/TLP/blob/master/default"&gt;default
               </packing>
             </child>
             <child>
-              <object class="GtkSwitch" id=" DISABLE_TPACPIBAT">
+              <object class="GtkSwitch" id="DISABLE_TPACPIBAT">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="margin_left">10</property>

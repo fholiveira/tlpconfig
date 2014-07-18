@@ -73,7 +73,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkComboBox" id=" PCIE_ASPM_ON_AC">
+                  <object class="GtkComboBox" id="PCIE_ASPM_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="margin_left">10</property>
@@ -131,7 +131,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkComboBox" id=" PCIE_ASPM_ON_BAT">
+                  <object class="GtkComboBox" id="PCIE_ASPM_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="margin_left">10</property>
@@ -220,7 +220,7 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="valign">center</property>
-            <signal name="notify::active" handler="_active_switch_changed" swapped="no"/>
+        <signal name="notify::active" handler="_active_switch_changed" swapped="no"/>
       </object>
       <packing>
         <property name="left_attach">0</property>

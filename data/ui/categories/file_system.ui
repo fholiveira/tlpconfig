@@ -324,7 +324,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id=" MAX_LOST_WORK_SECS_ON_AC">
+                  <object class="GtkSpinButton" id="MAX_LOST_WORK_SECS_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="margin_left">10</property>
@@ -376,7 +376,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id=" MAX_LOST_WORK_SECS_ON_BAT">
+                  <object class="GtkSpinButton" id="MAX_LOST_WORK_SECS_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="margin_left">10</property>
