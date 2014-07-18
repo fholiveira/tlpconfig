@@ -67,6 +67,7 @@ class Window():
         self.header = loader.get('header')
 
         self.stack = Gtk.Stack()
+        self.stack.set_homogeneous(False)
         self.stack.set_visible(True)
         loader.get('category_content').add(self.stack)
 
