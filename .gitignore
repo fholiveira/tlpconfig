@@ -2,13 +2,15 @@
 __pycache__/
 *.py[cod]
 
+#Glade automatic files
 *.ui~
 *.ui#
 *.glade*
 
-#Development envioronment
-.tlp/
+#Development environment
+.gtk/
 .env
+examples/
 
 # C extensions
 *.so

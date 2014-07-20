@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 from tlp.application import App
 from sys import exit, argv
 from docopt import docopt
