@@ -7,7 +7,8 @@ class SystemStartAndShutdown(Category):
     CATEGORY='SYSTEM_START_AND_SHUTDOWN'
 
     def __init__(self, loader, configuration_groups):
-        Category.__init__(self, self.CATEGORY, configuration_groups, loader)
+        Category.__init__(self, self.CATEGORY, loader)
+        self.set_groups(configuration_groups)
     
     def load_controls(self):
         super().load_controls()
