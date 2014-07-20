@@ -9,16 +9,19 @@ class Parameter:
         start_active = self.initial_state['active']
         start_value = self.initial_state['value']
         active = self.active
-        value = self.value
+        value = self._value
 
         return active != start_active or (active and value != start_value)
 
     def write(self, configuration):
         template = '{0}={1}'
         current = template.format(self.name, self.initial_state['value'])
-        new = template.format(self.name, self.value)
+        new = template.format(self.name, self._value)
 
         if not self.active:
+            new = '#' + new
+
+        if not self.initial_state['active']:
             current = '#' + current
 
         return configuration.replace(current, new)
