@@ -1,5 +1,4 @@
-from tlp.views.categories import *
-from tlp.views import Status, create_category_loader, load_view 
+from tlp.views import Status, CategoriesGroup, load_view 
 from gi.repository import Gtk
 
 
@@ -8,31 +7,14 @@ class Window():
 
     def __init__(self, loader):
         loader.connect(self)
-
         self._load_childs(loader)
 
     def load_configuration(self, configuration):
         self.config = configuration
         self.header.set_subtitle(configuration.file_path)
-        
-        load = create_category_loader(configuration.categories)
-        self.categories = [load(FileSystem), 
-                           load(ProcessorAndFrequenceScaling),
-                           load(Kernel),
-                           load(Undervolting),
-                           load(DisksAndControllers),
-                           load(PciExpressBus),
-                           load(GraphicsCards),
-                           load(Networking),
-                           load(Audio),
-                           load(DriveSlotUltrabay),
-                           load(RuntimePowerManagement),
-                           load(Usb),
-                           load(SystemStartAndShutdown),
-                           load(WirelessRadioSwitch),
-                           load(BatteryChargeThresholds)]
-
-        self._list_categories()
+    
+        self.categories = CategoriesGroup(self.categories_list, self.stack)
+        self.categories.render(configuration.categories)
 
     def save(self, button):
         print('Save!')
@@ -72,16 +54,3 @@ class Window():
         loader.get('category_content').add(self.stack)
 
         self.window.set_titlebar(self.header)
-
-    def _list_categories(self):
-        def header(row, before, user_data):
-            if before and not row.get_header():
-                sep = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
-                row.set_header(sep)
-
-        self.categories_list.set_header_func(header, None)
-
-        for category in self.categories:
-            self.categories_list.add(category.menu)
-            self.stack.add_named(category.panel,
-                                 Gtk.Buildable.get_name(category.menu))
