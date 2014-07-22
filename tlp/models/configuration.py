@@ -2,51 +2,42 @@ from .parameter_loader import ParameterLoader
 from .parameter import Parameter
 from functools import reduce
 from itertools import chain
-from .group import Group
-import json
 import re
 
 
 class Configuration:
     def __init__(self, file_path):
         self.file_path = file_path
-        self.load_groups();
-        self.refresh()
+        self.load();
     
-    def load_groups(self):
-        categories = None
-        with open('data/categories.json') as config:
-            categories = json.loads(config.read())
+    def load(self):
+        configs = self._get_parameters_from_config()
+        categories = ParameterLoader().load_categories('data/categories.json')
+        parameters = chain.from_iterable(group.parameters.values()
+                                         for groups in categories.values()
+                                         for group in groups)
 
-        load_parameters = lambda parameters: {parameter: None 
-                                              for parameter in parameters}
-
-        load_groups = lambda groups: [Group(group['name'],
-                                            load_parameters(group['parameters']))
-                             for group in groups]
-
-        self.categories = {category['category']: load_groups(category['groups'])
-                           for category in categories}
-
-    def refresh(self):
-        parameters = []
-        regex = re.compile('^([A-Z]|_|[0-9]|#)*=.*')
+        for parameter in parameters:
+            self._set_param_state(parameter, configs.get(parameter.name)) 
         
-        with open(self.file_path) as config_file:
-            self.text = config_file.read()
-            loader = ParameterLoader()
-            params = {parameter.name: parameter for parameter
-                      in [loader.from_text(row)
-                          for row in self.text.splitlines() 
-                          if regex.match(row)]
-                      if parameter}
-                          
-        get = lambda name: params[name] if name in params else Parameter(name)
-        groups = chain.from_iterable(groups for groups in self.categories.values())
+        self.categories = categories
 
-        for group in groups:
-            group.parameters = {name: get(name)
-                                for name in group.parameters.keys()}
+    def _get_parameters_from_config(self):
+        regex = re.compile('^([A-Z]|_|[0-9]|#)*=.*')
+        with open(self.file_path) as config_file:
+            get_name = lambda text: text.split('=')[0].replace('#', '')
+            return {get_name(row): row 
+                    for row in config_file.read().splitlines() 
+                    if regex.match(row)}
+
+    def _set_param_state(self, parameter, text):
+        values = text.split('=')
+        initial_state = {'active' : not text.startswith('#'),
+                         'value' : values[1].replace('"', '')}
+
+        parameter.initial_state = initial_state
+        parameter.active = initial_state['active']
+        parameter._value = initial_state['value']
 
     def save_as(self, file_path):
         self.file_path = file_path
