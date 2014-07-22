@@ -11,7 +11,7 @@
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkLabel" id="label2">
+          <object class="GtkLabel" id="ENABLE_ON_RADIOSW_DESCRIPTION">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="xalign">0</property>
@@ -32,7 +32,7 @@
             <property name="margin_top">15</property>
             <property name="margin_bottom">15</property>
             <child>
-              <object class="GtkCheckButton" id="checkbutton4">
+              <object class="GtkCheckButton" id="ENABLE_ON_RADIOSW_BLUETOOTH">
                 <property name="label" translatable="yes">Bluetooth</property>
                 <property name="name">bluetooth</property>
                 <property name="visible">True</property>
@@ -48,7 +48,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton5">
+              <object class="GtkCheckButton" id="ENABLE_ON_RADIOSW_WIFI">
                 <property name="label" translatable="yes">Wireless LAN</property>
                 <property name="name">wifi</property>
                 <property name="visible">True</property>
@@ -65,7 +65,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton6">
+              <object class="GtkCheckButton" id="ENABLE_ON_RADIOSW_WWAN">
                 <property name="label" translatable="yes">Wireless Wide Area Network (UMTS)</property>
                 <property name="name">wwan</property>
                 <property name="visible">True</property>
@@ -88,7 +88,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="label3">
+          <object class="GtkLabel" id="ENABLE_ON_RADIOSW_HINT">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="xalign">0</property>
@@ -112,7 +112,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkSeparator" id="separator1">
+      <object class="GtkSeparator" id="ENABLE_ON_RADIOSW_BOTTOM_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_top">20</property>
@@ -124,7 +124,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkSeparator" id="separator2">
+      <object class="GtkSeparator" id="ENABLE_ON_RADIOSW_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_top">20</property>
@@ -137,7 +137,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkSeparator" id="separator3">
+      <object class="GtkSeparator" id="ENABLE_ON_RADIOSW_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_left">20</property>
@@ -163,7 +163,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkLabel" id="label1">
+      <object class="GtkLabel" id="WIRELESS_RADIO_SWITCH_TITLE">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="xalign">0</property>
@@ -182,17 +182,17 @@
       <class name="configuration"/>
     </style>
   </object>
-  <object class="GtkSizeGroup" id="wireless_radio_switch_column_definition">
+  <object class="GtkSizeGroup" id="WIRELESS_RADIO_SWITCH_COLUMN_DEFINITION">
     <widgets>
-      <widget name="checkbutton4"/>
-      <widget name="checkbutton5"/>
+      <widget name="ENABLE_ON_RADIOSW_BLUETOOTH"/>
+      <widget name="ENABLE_ON_RADIOSW_WIFI"/>
     </widgets>
   </object>
   <object class="GtkListBoxRow" id="wireless_radio_switch_row">
     <property name="visible">True</property>
     <property name="can_focus">True</property>
     <child>
-      <object class="GtkLabel" id="label">
+      <object class="GtkLabel" id="WIRELESS_RADIO_SWITCH_ROW_TEXT">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="xalign">0</property>
