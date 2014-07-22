@@ -178,6 +178,9 @@
         <property name="width">3</property>
       </packing>
     </child>
+    <style>
+      <class name="configuration"/>
+    </style>
   </object>
   <object class="GtkSizeGroup" id="wireless_radio_switch_column_definition">
     <widgets>

@@ -11,28 +11,9 @@
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkLabel" id="label1">
-            <property name="name">15</property>
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="margin_bottom">15</property>
-            <property name="xalign">0</property>
-            <property name="label" translatable="yes">Wifi Power Management</property>
-            <style>
-              <class name="title"/>
-            </style>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkLabel" id="label3">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">Sets wifi power saving mode. Adapter support depends on kernel and driver</property>
             <property name="use_markup">True</property>
@@ -41,7 +22,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">1</property>
+            <property name="position">0</property>
           </packing>
         </child>
         <child>
@@ -153,7 +134,6 @@
           <object class="GtkLabel" id="label2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; power save can cause an unstable wifi link.</property>
             <property name="use_markup">True</property>
@@ -171,7 +151,7 @@
       </object>
       <packing>
         <property name="left_attach">2</property>
-        <property name="top_attach">1</property>
+        <property name="top_attach">2</property>
       </packing>
     </child>
     <child>
@@ -180,28 +160,11 @@
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkLabel" id="label4">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="xalign">0</property>
-            <property name="label" translatable="yes">Wake On LAN</property>
-            <style>
-              <class name="title"/>
-            </style>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkBox" id="grid34">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="margin_left">20</property>
             <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
             <property name="margin_bottom">15</property>
             <child>
               <object class="GtkLabel" id="label6">
@@ -239,7 +202,6 @@
             <property name="name">40</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; after enabling a restart is required to ensure that the new setting takes.</property>
             <property name="use_markup">True</property>
@@ -254,7 +216,7 @@
       </object>
       <packing>
         <property name="left_attach">2</property>
-        <property name="top_attach">3</property>
+        <property name="top_attach">6</property>
       </packing>
     </child>
     <child>
@@ -267,7 +229,7 @@
       </object>
       <packing>
         <property name="left_attach">0</property>
-        <property name="top_attach">2</property>
+        <property name="top_attach">3</property>
         <property name="width">3</property>
       </packing>
     </child>
@@ -279,7 +241,7 @@
       </object>
       <packing>
         <property name="left_attach">0</property>
-        <property name="top_attach">4</property>
+        <property name="top_attach">7</property>
         <property name="width">3</property>
       </packing>
     </child>
@@ -287,11 +249,12 @@
       <object class="GtkSeparator" id="separator2">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="margin_top">20</property>
         <property name="margin_bottom">20</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
-        <property name="top_attach">0</property>
+        <property name="top_attach">1</property>
         <property name="width">3</property>
       </packing>
     </child>
@@ -305,7 +268,7 @@
       </object>
       <packing>
         <property name="left_attach">1</property>
-        <property name="top_attach">3</property>
+        <property name="top_attach">6</property>
       </packing>
     </child>
     <child>
@@ -318,7 +281,7 @@
       </object>
       <packing>
         <property name="left_attach">1</property>
-        <property name="top_attach">1</property>
+        <property name="top_attach">2</property>
       </packing>
     </child>
     <child>
@@ -327,11 +290,11 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="valign">center</property>
-            <signal name="notify::active" handler="_active_switch_changed" swapped="no"/>
+        <signal name="notify::active" handler="_active_switch_changed" swapped="no"/>
       </object>
       <packing>
         <property name="left_attach">0</property>
-        <property name="top_attach">1</property>
+        <property name="top_attach">2</property>
       </packing>
     </child>
     <child>
@@ -340,13 +303,63 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="valign">center</property>
-            <signal name="notify::active" handler="_active_switch_changed" swapped="no"/>
+        <signal name="notify::active" handler="_active_switch_changed" swapped="no"/>
       </object>
       <packing>
         <property name="left_attach">0</property>
-        <property name="top_attach">3</property>
+        <property name="top_attach">6</property>
       </packing>
     </child>
+    <child>
+      <object class="GtkLabel" id="label1">
+        <property name="name">15</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="xalign">0</property>
+        <property name="label" translatable="yes">Wifi Power Management</property>
+        <style>
+          <class name="title"/>
+        </style>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">0</property>
+        <property name="width">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="label4">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="xalign">0</property>
+        <property name="label" translatable="yes">Wake On LAN</property>
+        <style>
+          <class name="title"/>
+        </style>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">4</property>
+        <property name="width">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="separator5">
+        <property name="name">0</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_top">20</property>
+        <property name="margin_bottom">20</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">5</property>
+        <property name="width">3</property>
+      </packing>
+    </child>
+    <style>
+      <class name="configuration"/>
+    </style>
   </object>
   <object class="GtkSizeGroup" id="networking_column_definition">
     <widgets>

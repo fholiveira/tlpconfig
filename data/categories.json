@@ -28,6 +28,14 @@
     "groups": [ { "name": "PCIE_ASPM", "parameters": ["PCIE_ASPM_ON_AC", "PCIE_ASPM_ON_BAT"] } ]
   },
   {
+    "category": "GRAPHICS_CARDS",
+    "groups": [
+        { "name": "RADEON_POWER_PROFILE", "parameters": ["RADEON_POWER_PROFILE_ON_AC", "RADEON_POWER_PROFILE_ON_BAT"] },
+        { "name": "RADEON_DPM_STATE", "parameters": ["RADEON_DPM_STATE_ON_AC", "RADEON_DPM_STATE_ON_BAT"] },
+        { "name": "RADEON_DPM_PERF_LEVEL", "parameters": ["RADEON_DPM_PERF_LEVEL_ON_AC", "RADEON_DPM_PERF_LEVEL_ON_BAT"] }
+      ]
+  },
+  {
     "category": "NETWORKING",
     "groups": [
         { "name": "WIFI_PWR", "parameters": ["WIFI_PWR_ON_AC", "WIFI_PWR_ON_BAT"] },

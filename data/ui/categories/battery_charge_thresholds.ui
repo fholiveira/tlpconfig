@@ -526,6 +526,9 @@ For further questions concerning battery thresholds consult the &lt;a href="./tl
         <property name="top_attach">4</property>
       </packing>
     </child>
+    <style>
+      <class name="configuration"/>
+    </style>
   </object>
   <object class="GtkSizeGroup" id="thresholds_column_definition">
     <widgets>
