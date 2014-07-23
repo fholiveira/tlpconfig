@@ -39,3 +39,8 @@ class CategoriesGroup:
             self.list_control.add(category.menu)
             self.stack.add_named(category.panel,
                                  Gtk.Buildable.get_name(category.menu))
+    
+    def get_parameters(self):
+        return [parameter 
+                for view in self.categories 
+                for parameter in view.get_parameters()]

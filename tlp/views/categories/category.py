@@ -17,17 +17,16 @@ class Category:
         self.menu = self.loader.get('_'.join([self.CATEGORY.lower(), 'row']))
         self.panel = self.loader.get('_'.join([self.CATEGORY.lower(), 'panel']))
 
-    @property
-    def parameters(self):
-        return chain.from_iterable(group.parameters.values()
-                                   for group in self.groups)
-
     def load(self, control_id):
         return self.loader.get(control_id)
     
     def _active_switch_changed(self, switch, parameter):
-        group = Gtk.Buildable.get_name(switch).replace('ACTIVE_', '')
-        self.load(group).set_sensitive(switch.get_active())
+        group_name = Gtk.Buildable.get_name(switch).replace('ACTIVE_', '')
+
+        group = [group for group in self.groups if group.name == group_name][0]
+        group.is_active = switch.get_active()
+
+        self.load(group_name).set_sensitive(switch.get_active())
 
     def _set_enabled_groups(self):
         for group in self.groups:
@@ -39,7 +38,21 @@ class Category:
         self.groups = groups
         self._set_enabled_groups()
 
-        for parameter in self.parameters:
+        parameters = chain.from_iterable(group.parameters.values()
+                                         for group in self.groups)
+
+        for parameter in parameters:
             self.value_binders  \
                 .get_from(parameter) \
                 .set_value_to(self.load(parameter.name))
+
+    def get_parameters(self):
+        parameters = list(chain.from_iterable(group.parameters.values()
+                                         for group in self.groups))
+
+        for parameter in parameters:
+            parameter.value = self.value_binders  \
+                                  .get_from(parameter) \
+                                  .get_value_from(self.load(parameter.name))
+
+        return parameters

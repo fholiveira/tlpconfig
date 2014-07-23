@@ -25,9 +25,10 @@ class Configuration:
     def _get_parameters_from_config(self):
         regex = re.compile('^([A-Z]|_|[0-9]|#)*=.*')
         with open(self.file_path) as config_file:
+            self.text = config_file.read()
             get_name = lambda text: text.split('=')[0].replace('#', '')
             return {get_name(row): row 
-                    for row in config_file.read().splitlines() 
+                    for row in self.text.splitlines() 
                     if regex.match(row)}
 
     def _set_param_state(self, parameter, text):
@@ -39,14 +40,15 @@ class Configuration:
         parameter.active = initial_state['active']
         parameter._value = initial_state['value']
 
-    def save_as(self, file_path):
+    def save_as(self, parameters, file_path):
         self.file_path = file_path
-        self.save()
+        self.save(parameters)
 
-    def save(self):
-        reduce(lambda text, param: param.write(text),
-               [param for param in self.parameters if param.is_changed()],
-               initializer=self.text)
+    def save(self, parameters):
+        with open(self.file_path, 'w') as config_file:
+            text = reduce(lambda text, param: param.write(text),
+                          [param for param in parameters if param.is_changed()],
+                          self.text)
+            config_file.write(text)
 
-        with open(file_path, 'w') as config_file:
-            config_file.write(self.text)
+        self.load()

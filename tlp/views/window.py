@@ -17,7 +17,8 @@ class Window():
         self.categories.render(configuration.categories)
 
     def save(self, button):
-        print('Save!')
+        parameters = self.categories.get_parameters()
+        self.config.save(parameters)
 
     def save_as(self, button):
         buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
@@ -28,7 +29,9 @@ class Window():
                                        buttons)
 
         if dialog.run() == Gtk.ResponseType.OK:
-            print("File selected: " + dialog.get_filename())
+            parameters = self.categories.get_parameters()
+            self.config.save_as(parameters, dialog.get_filename())
+            self.header.set_subtitle(self.config.file_path)
     
         dialog.destroy()
 

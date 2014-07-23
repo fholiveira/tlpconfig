@@ -73,4 +73,4 @@ class NumericParameter(Parameter):
 
     @value.setter
     def value(self, value):
-        self._value = str(value)
+        self._value = str(int(value))

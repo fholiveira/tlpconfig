@@ -703,7 +703,7 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="xalign">0</property>
-            <property name="label" translatable="yes">Disable cpu "turbo boost" (Intel) or "turbo core" (AMD) feature.</property>
+            <property name="label" translatable="yes">CPU "turbo boost" (Intel) or "turbo core" (AMD) feature.</property>
             <property name="use_markup">True</property>
             <property name="wrap">True</property>
           </object>
@@ -822,7 +822,7 @@
             <property name="xalign">0</property>
             <property name="label" translatable="yes">&lt;b&gt;Hints:&lt;/b&gt;
     - Requires Linux 3.7 and above
-    - A value of 1 does not activate boosting, it just allows it
+    - This configuration does &lt;i&gt;not&lt;/i&gt; activate boosting, it just allows it
     - This may conflict with your distribution's governor settings</property>
             <property name="use_markup">True</property>
             <property name="wrap">True</property>
