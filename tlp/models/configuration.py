@@ -8,7 +8,6 @@ import re
 class Configuration:
     def __init__(self, file_path):
         self.file_path = file_path
-        self.load();
     
     def load(self):
         configs = self._get_parameters_from_config()
@@ -20,7 +19,7 @@ class Configuration:
         for parameter in parameters:
             self._set_param_state(parameter, configs.get(parameter.name)) 
         
-        self.categories = categories
+        return categories
 
     def _get_parameters_from_config(self):
         regex = re.compile('^([A-Z]|_|[0-9]|#)*=.*')

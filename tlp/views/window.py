@@ -14,7 +14,7 @@ class Window():
         self.header.set_subtitle(configuration.file_path)
     
         self.categories = CategoriesGroup(self.categories_list, self.stack)
-        self.categories.render(configuration.categories)
+        self.categories.render(configuration.load())
 
     def save(self, button):
         parameters = self.categories.get_parameters()
@@ -49,11 +49,15 @@ class Window():
         self.panel = loader.get('panel')
         self.window = loader.get('window')
         self.categories_list = loader.get('categories')
-        self.header = loader.get('header')
 
-        self.stack = Gtk.Stack()
-        self.stack.set_homogeneous(False)
-        self.stack.set_visible(True)
+        self.stack = self._create_categories_stack()
         loader.get('category_content').add(self.stack)
 
+        self.header = loader.get('header')
         self.window.set_titlebar(self.header)
+
+    def _create_categories_stack(self):
+        stack = Gtk.Stack()
+        stack.set_homogeneous(False)
+        stack.set_visible(True)
+        return stack
