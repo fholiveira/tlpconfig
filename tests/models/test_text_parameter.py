@@ -1,5 +1,5 @@
 from unittest import TestCase
-from tlp.models.parameter import TextParameter
+from tlp.models import TextParameter
 
 
 class TestTextParameter(TestCase):

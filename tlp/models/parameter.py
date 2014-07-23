@@ -69,8 +69,8 @@ class BooleanParameter(Parameter):
 class NumericParameter(Parameter):
     @property
     def value(self):
-        return int(self._value)
+        return float(self._value)
 
     @value.setter
     def value(self, value):
-        self._value = str(int(value))
+        self._value = str(value).replace('.0', '')
