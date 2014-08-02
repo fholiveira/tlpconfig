@@ -1,4 +1,4 @@
-# TLP Configuration Tool
+TLP Configuration Tool
 ========================
 
 [![Build Status](https://snap-ci.com/fholiveira/tlpconfig/branch/master/build_image)](https://snap-ci.com/fholiveira/tlpconfig/branch/master)
