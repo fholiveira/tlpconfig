@@ -1,4 +1,4 @@
-from tlp.views import Status, CategoriesGroup, load_view 
+from . import Status, CategoriesGroup, load_view 
 from gi.repository import Gtk
 
 

@@ -1,6 +1,6 @@
-from tlp.views import Window, Shell, load_css, load_view 
+from .views import Window, Shell, load_css, load_view 
 from gi.repository import Gtk, Gio, Gdk
-from tlp.models import Configuration
+from .models import Configuration
 
 
 class App(Gtk.Application):

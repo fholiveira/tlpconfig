@@ -1,4 +1,4 @@
-from tlp.models import get_status
+from tlpconfig.tlp.models import get_status
 
 
 class Status():

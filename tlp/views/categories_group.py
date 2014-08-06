@@ -1,5 +1,5 @@
-from tlp.views import create_category_loader
-from tlp.views.categories import *
+from . import create_category_loader
+from .categories import *
 from gi.repository import Gtk
 
 class CategoriesGroup:

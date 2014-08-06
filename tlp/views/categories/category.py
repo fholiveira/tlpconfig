@@ -1,8 +1,8 @@
 from gi.repository import Gtk
 from itertools import chain
-from tlp.models import (TextParameter, BooleanParameter,
-                        ListParameter, NumericParameter)
-from tlp.views.binders import ParameterBinderSelector
+from tlpconfig.tlp.models import (TextParameter, BooleanParameter,
+                                  ListParameter, NumericParameter)
+from tlpconfig.tlp.views.binders import ParameterBinderSelector
 
 
 class Category:

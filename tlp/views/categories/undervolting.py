@@ -1,5 +1,5 @@
-from tlp.views.binders import FreeTextParameterBinder
-from tlp.models import TextParameter
+from tlpconfig.tlp.views.binders import FreeTextParameterBinder
+from tlpconfig.tlp.models import TextParameter
 from .category import Category
 
 
