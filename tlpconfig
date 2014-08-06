@@ -7,7 +7,6 @@ except ImportError:
     from tlp.application import App
     from tlp import DATA_PATH, VERSION
 
-
 from sys import exit, argv
 from docopt import docopt
 
