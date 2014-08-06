@@ -1,5 +1,5 @@
 from unittest import TestCase
-from tlp.models import ListParameter
+from tlpconfig.tlp.models import ListParameter
 
 
 class TestListParameter(TestCase):
