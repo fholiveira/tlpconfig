@@ -1,8 +1,5 @@
 from gi.repository import Gtk
-
-
-UI_PATH = 'data/ui/'
-
+from .. import UI_PATH
 
 def load_view(view):
     builder = Builder()

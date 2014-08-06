@@ -2,9 +2,11 @@
 
 try:
     from tlpconfig.tlp.application import App
+    from tlpconfig.tlp import DATA_PATH
 except ImportError:
     from tlp.application import App
-    
+    from tlp import DATA_PATH
+
 
 from sys import exit, argv
 from docopt import docopt
@@ -14,7 +16,7 @@ if __name__ == '__main__':
     arguments = {}
 
     try:
-        with open('data/help') as help_file:
+        with open(DATA_PATH + 'help') as help_file:
             with open('VERSION') as version:
                 arguments = docopt(help_file.read(), version=version.read())
     except Exception as error:

@@ -2,6 +2,7 @@ from .parameter_loader import ParameterLoader
 from .parameter import Parameter
 from functools import reduce
 from itertools import chain
+from .. import DATA_PATH
 import re
 
 
@@ -11,7 +12,7 @@ class Configuration:
     
     def load(self):
         configs = self._get_parameters_from_config()
-        categories = ParameterLoader().load_categories('data/categories.json')
+        categories = ParameterLoader().load_categories(DATA_PATH + 'categories.json')
         parameters = chain.from_iterable(group.parameters.values()
                                          for groups in categories.values()
                                          for group in groups)
