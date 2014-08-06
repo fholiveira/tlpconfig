@@ -1,5 +1,5 @@
 from unittest import TestCase
-from tlpconfig.tlp.models import BooleanParameter
+from tlp.models import BooleanParameter
 
 
 class TestBooleanParameter(TestCase):

@@ -1,5 +1,5 @@
 from unittest import TestCase
-from tlpconfig.tlp.models import Group, TextParameter
+from tlp.models import Group, TextParameter
 
 
 class TestGroup(TestCase):

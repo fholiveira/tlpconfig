@@ -3,3 +3,5 @@ from .categories_group import CategoriesGroup
 from .status import Status
 from .window import Window
 from .shell import Shell
+
+from .. import models
