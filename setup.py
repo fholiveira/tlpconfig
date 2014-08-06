@@ -37,11 +37,9 @@ setup(
                               'data/ui/*.ui',
                               'data/ui/*.css',
                               'data/ui/categories/*.ui']},
-  classifiers = ['Development Status :: 4 - Beta',
-                 'License :: OSI Approved :: BSD License',
+  classifiers = ['License :: OSI Approved :: BSD License',
                  'Operating System :: POSIX :: Linux',
                  'Programming Language :: Python :: 3.3',
                  'Programming Language :: Python :: 3.4',
-                 'Intended Audience :: End Users/Desktop',
-  ]
+                 'Intended Audience :: End Users/Desktop']
 )
