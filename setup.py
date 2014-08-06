@@ -25,6 +25,6 @@ setup(
     'Operating System :: POSIX :: Linux',
     'Programming Language :: Python :: 3.3',
     'Programming Language :: Python :: 3.4',
-    'Intended Audience :: End Users/Desktop'
+    'Intended Audience :: End Users/Desktop',
   ]
 )
