@@ -1,4 +1,4 @@
-from . import Status, CategoriesGroup, load_view 
+from . import Status, CategoriesGroup, SavedMessage, load_view 
 from gi.repository import Gtk
 
 
@@ -19,6 +19,8 @@ class Window():
     def save(self, button):
         parameters = self.categories.get_parameters()
         self.config.save(parameters)
+
+        load_view(SavedMessage).show(self.window)
 
     def save_as(self, button):
         buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
