@@ -19,7 +19,7 @@ class CategoriesGroup:
                            load(Networking),
                            load(Audio),
                            #load(DriveSlotUltrabay),
-                           #load(RuntimePowerManagement),
+                           load(RuntimePowerManagement),
                            #load(Usb),
                            load(SystemStartAndShutdown),
                            load(WirelessRadioSwitch),

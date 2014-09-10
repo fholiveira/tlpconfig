@@ -34,7 +34,7 @@ class Configuration:
     def _set_param_state(self, parameter, text):
         values = text.split('=')
         initial_state = {'active' : not text.startswith('#'),
-                         'value' : values[1].replace('"', '')}
+                         'value' : values[1]}
 
         parameter.initial_state = initial_state
         parameter.active = initial_state['active']

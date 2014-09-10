@@ -127,6 +127,24 @@
       }]
   },
   {
+    "category": "RUNTIME_POWER_MANAGEMENT",
+    "groups": [
+      { 
+        "name": "RUNTIME_PM",
+        "parameters": [
+          { "name": "RUNTIME_PM_ON_AC", "type": "boolean", "yes": "auto", "no": "on" },
+          { "name": "RUNTIME_PM_ON_BAT", "type": "boolean", "yes": "auto", "no": "on" }]
+      },
+      { 
+        "name": "RUNTIME_PM_ALL_CONFIG",
+        "parameters": [{ "name": "RUNTIME_PM_ALL", "type": "text"}]
+      },
+      { 
+        "name": "RUNTIME_PM_BLACKLIST_CONFIG",
+        "parameters": [{ "name": "RUNTIME_PM_BLACKLIST", "type": "text", "quotes": "\"" }]
+      }]
+  },
+  {
     "category": "SYSTEM_START_AND_SHUTDOWN",
     "groups": [
       { 

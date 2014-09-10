@@ -23,7 +23,7 @@ class Parameter:
 
         if not self.initial_state['active']:
             current = '#' + current
-
+        
         return configuration.replace(current, new)
 
 

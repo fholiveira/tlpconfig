@@ -9,6 +9,6 @@ class Undervolting(Category):
     def __init__(self, loader, configuration_groups):
         Category.__init__(self, self.CATEGORY, loader)
 
-        self.value_binders.set_binder(TextParameter, FreeTextParameterBinder)
+        self.value_binders.set_binder_by_type(TextParameter, FreeTextParameterBinder)
 
         self.set_groups(configuration_groups)

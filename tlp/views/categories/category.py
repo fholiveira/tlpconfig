@@ -49,7 +49,7 @@ class Category:
     def get_parameters(self):
         parameters = list(chain.from_iterable(group.parameters.values()
                                          for group in self.groups))
-
+        
         for parameter in parameters:
             parameter.value = self.value_binders  \
                                   .get_from(parameter) \
