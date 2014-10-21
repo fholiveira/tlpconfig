@@ -174,15 +174,6 @@
       }]
   },
   {
-    "category": "WIRELESS_RADIO_SWITCH",
-    "groups": [ 
-      { 
-        "name": "ENABLE_ON_RADIOSW",
-        "parameters": [
-          { "name": "DEVICES_TO_ENABLE_ON_RADIOSW", "type": "list" }]
-      }]
-  },
-  {
     "category": "BATTERY_CHARGE_THRESHOLDS",
     "groups": [
       { 

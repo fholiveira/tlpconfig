@@ -22,7 +22,6 @@ class CategoriesGroup:
                            load(RuntimePowerManagement),
                            #load(Usb),
                            load(SystemStartAndShutdown),
-                           load(WirelessRadioSwitch),
                            load(BatteryChargeThresholds)]
 
         self._render_all()
