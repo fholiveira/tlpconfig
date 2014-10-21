@@ -22,6 +22,7 @@ class App(Gtk.Application):
             self.window.load_configuration(self.config)
             self.add_window(self.window.window)
 
+        self.shell.main_window = self.window
         self.window.show()
         
     def do_startup(self):

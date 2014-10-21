@@ -2,7 +2,7 @@ from . import Status, CategoriesGroup, SavedMessage, load_view
 from gi.repository import Gtk
 
 
-class Window():
+class Window:
     UI = ('window.ui', 'header.ui')
 
     def __init__(self, loader):
@@ -20,7 +20,7 @@ class Window():
         parameters = self.categories.get_parameters()
         self.config.save(parameters)
 
-        load_view(SavedMessage).show(self.window)
+        load_view(SavedMessage).show(self)
 
     def save_as(self, button):
         buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
@@ -38,7 +38,7 @@ class Window():
         dialog.destroy()
 
     def status(self, button):
-        load_view(Status).show(self.window)
+        load_view(Status).show(self)
 
     def show(self):
         self.window.present()

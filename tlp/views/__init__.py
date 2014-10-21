@@ -3,4 +3,5 @@ from .categories_group import CategoriesGroup
 from .saved_message import SavedMessage
 from .status import Status
 from .window import Window
+from .about import About
 from .shell import Shell

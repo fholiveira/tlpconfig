@@ -12,6 +12,6 @@ class Status():
         self.content.set_text(get_status('tlp-stat'))
 
     def show(self, parent):
-        self.dialog.set_transient_for(parent)
+        self.dialog.set_transient_for(parent.window)
         self.dialog.run()
         self.dialog.hide()

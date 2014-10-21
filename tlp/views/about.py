@@ -1,13 +1,15 @@
-class SavedMessage():
-    UI = 'save.ui'
+from tlp import VERSION
+
+
+class About:
+    UI = 'about.ui'
 
     def __init__(self, loader):
         loader.connect(self)
-        self.dialog = loader.get('saved_message')
-    
+        self.dialog = loader.get('about')
+
     def show(self, parent):
         self.dialog.set_transient_for(parent.window)
+        self.dialog.set_version(VERSION)
         self.dialog.run()
-
-    def _button_clicked(self, button):
         self.dialog.hide()
