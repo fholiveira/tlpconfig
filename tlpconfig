@@ -1,13 +1,6 @@
 #!/usr/bin/env python
-
-try:
-    from tlpconfig.tlp.application import App
-    from tlpconfig.tlp import DATA_PATH, VERSION
-except ImportError:
-    from tlp.application import App
-    from tlp import DATA_PATH, VERSION
-
-
+from tlp import DATA_PATH, VERSION
+from tlp.application import App
 from sys import exit, argv
 from docopt import docopt
 

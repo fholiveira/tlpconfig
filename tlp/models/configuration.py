@@ -2,7 +2,7 @@ from .parameter_loader import ParameterLoader
 from .parameter import Parameter
 from functools import reduce
 from itertools import chain
-from .. import DATA_PATH
+from tlp import DATA_PATH
 import re
 
 

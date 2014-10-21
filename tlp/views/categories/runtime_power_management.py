@@ -1,5 +1,5 @@
 from ..binders import FreeTextParameterBinder
-from ...models import TextParameter
+from tlp.models import TextParameter
 from .category import Category
 
 

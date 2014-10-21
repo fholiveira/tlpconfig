@@ -1,5 +1,5 @@
 from gi.repository import Gtk
-from .. import UI_PATH
+from tlp import UI_PATH
 
 def load_view(view):
     builder = Builder()

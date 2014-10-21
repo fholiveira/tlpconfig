@@ -1,5 +1,5 @@
-from ...models import (BooleanParameter, ListParameter,
-                       NumericParameter, TextParameter)
+from tlp.models import (BooleanParameter, ListParameter,
+                        NumericParameter, TextParameter)
 from .default_binders import (BooleanParameterBinder, ListParameterBinder,
                               NumericParameterBinder, TextParameterBinder )
 
