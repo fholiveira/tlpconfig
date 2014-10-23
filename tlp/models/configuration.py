@@ -1,7 +1,4 @@
-from .parameter_loader import ParameterLoader
 from .parameter import Parameter
-from functools import reduce
-from itertools import chain
 from tlp import DATA_PATH
 import re
 
@@ -10,17 +7,11 @@ class Configuration:
     def __init__(self, file_path):
         self.file_path = file_path
     
-    def load(self):
+    def load_parameters(self, parameters_names):
         configs = self._get_parameters_from_config()
-        categories = ParameterLoader().load_categories(DATA_PATH + 'categories.json')
-        parameters = chain.from_iterable(group.parameters.values()
-                                         for groups in categories.values()
-                                         for group in groups)
-
-        for parameter in parameters:
-            self._set_param_state(parameter, configs.get(parameter.name)) 
-        
-        return categories
+        return {name: self._get_param_value(text) 
+                for name, text in configs.items()} 
+     
 
     def _get_parameters_from_config(self):
         regex = re.compile('^([A-Z]|_|[0-9]|#)*=.*')
@@ -31,14 +22,9 @@ class Configuration:
                     for row in self.text.splitlines() 
                     if regex.match(row)}
 
-    def _set_param_state(self, parameter, text):
-        values = text.split('=')
-        initial_state = {'active' : not text.startswith('#'),
-                         'value' : values[1]}
-
-        parameter.initial_state = initial_state
-        parameter.active = initial_state['active']
-        parameter._value = initial_state['value']
+    def _get_param_value(self, text):
+        value = text.split('=')[1]
+        return {'active' : not text.startswith('#'), 'value' : value}
 
     def save_as(self, parameters, file_path):
         self.file_path = file_path

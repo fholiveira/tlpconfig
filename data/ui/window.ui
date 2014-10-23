@@ -32,7 +32,6 @@
                     <property name="can_focus">False</property>
                     <property name="resize_mode">immediate</property>
                     <property name="selection_mode">browse</property>
-                    <signal name="row-selected" handler="select_row" swapped="no"/>
                     <style>
                       <class name="categories"/>
                     </style>

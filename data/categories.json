@@ -112,21 +112,6 @@
       }]
   },
   {
-    "category": "AUDIO",
-    "groups": [
-      { 
-        "name": "SOUND_POWER_SAVE",
-        "parameters": [
-          { "name": "SOUND_POWER_SAVE_ON_AC", "type": "numeric" },
-          { "name": "SOUND_POWER_SAVE_ON_BAT", "type": "numeric" }]
-      },
-      { 
-        "name": "SOUND_POWER_CONTROLLER",
-        "parameters": [
-          { "name": "SOUND_POWER_SAVE_CONTROLLER", "type": "text" }]
-      }]
-  },
-  {
     "category": "RUNTIME_POWER_MANAGEMENT",
     "groups": [
       { 
@@ -173,21 +158,5 @@
           { "name": "DEVICES_TO_ENABLE_ON_SHUTDOWN", "type": "list" }]
       }]
   },
-  {
-    "category": "BATTERY_CHARGE_THRESHOLDS",
-    "groups": [
-      { 
-        "name": "CHARGE_THRESHOLDS",
-        "parameters": [
-          { "name": "START_CHARGE_THRESH_BAT0", "type": "numeric" },
-          { "name": "STOP_CHARGE_THRESH_BAT0", "type": "numeric" },
-          { "name": "START_CHARGE_THRESH_BAT1", "type": "numeric" },
-          { "name": "STOP_CHARGE_THRESH_BAT1", "type": "numeric" }]
-      },
-      { 
-        "name": "TPACPIBAT",
-        "parameters": [
-          { "name": "DISABLE_TPACPIBAT", "type": "boolean" }]
-      }]
-  }
+
 ]

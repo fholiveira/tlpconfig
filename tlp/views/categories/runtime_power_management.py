@@ -1,20 +1,16 @@
 from ..binders import FreeTextParameterBinder
 from tlp.models import TextParameter
-from .category import Category
+from .category import CategoryView
 
 
-class RuntimePowerManagement(Category):
-    CATEGORY='RUNTIME_POWER_MANAGEMENT'
+class RuntimePowerManagementView(CategoryView):
 
-    def __init__(self, loader, configuration_groups):
-        Category.__init__(self, self.CATEGORY, loader)
-
+    def __init__(self, loader, name, category):
+        CategoryView.__init__(self, loader, name, category)
         self.value_binders.set_binder_by_name('RUNTIME_PM_BLACKLIST', FreeTextParameterBinder)
-
-        self.set_groups(configuration_groups)
     
-    def load_controls(self):
-        super().load_controls()
+    def load_controls(self, name):
+        super().load_controls(name)
         self.blacklist = self.load('PM_BLACKLIST')
     
     def _devices_changed(self, combo):

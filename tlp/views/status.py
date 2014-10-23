@@ -1,7 +1,7 @@
 from tlp.models import get_status
 
 
-class Status():
+class StatusView:
     UI = 'status.ui'
 
     def __init__(self, loader):

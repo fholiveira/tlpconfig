@@ -1,20 +1,15 @@
-from . import Status, CategoriesGroup, SavedMessage, load_view 
+from . import StatusView, CategoriesStack, SavedMessageView 
 from gi.repository import Gtk
 
 
-class Window:
-    UI = ('window.ui', 'header.ui')
+class MainView:
+    UI = ('window.ui', 'header.ui', 'shell.ui')
 
-    def __init__(self, loader):
+    def __init__(self, loader, controller, factory):
         loader.connect(self)
-        self._load_childs(loader)
-
-    def load_configuration(self, configuration):
-        self.config = configuration
-        self.header.set_subtitle(configuration.file_path)
-    
-        self.categories = CategoriesGroup(self.categories_list, self.stack)
-        self.categories.render(configuration.load())
+        self.model = controller
+        self.factory = factory
+        self._load_ui(loader)
 
     def save(self, button):
         parameters = self.categories.get_parameters()
@@ -30,6 +25,8 @@ class Window:
                                        self.window, Gtk.FileChooserAction.SAVE,
                                        buttons)
 
+        dialog.set_default_size(500, 600)
+
         if dialog.run() == Gtk.ResponseType.OK:
             parameters = self.categories.get_parameters()
             self.config.save_as(parameters, dialog.get_filename())
@@ -40,26 +37,20 @@ class Window:
     def status(self, button):
         load_view(Status).show(self)
 
+    def show_about(self, *args):
+        load_view(About).show(self.window)
+
     def show(self):
         self.window.present()
 
-    def select_row(self, listbox, row):
-        if row:
-            self.stack.set_visible_child_name(Gtk.Buildable.get_name(row))
-
-    def _load_childs(self, loader):
+    def _load_ui(self, loader):
         self.panel = loader.get('panel')
+        self.appmenu = loader.get('appmenu')
         self.window = loader.get('window')
-        self.categories_list = loader.get('categories')
-
-        self.stack = self._create_categories_stack()
-        loader.get('category_content').add(self.stack)
-
         self.header = loader.get('header')
+        self.header.set_subtitle(self.model.configuration.file_path)
         self.window.set_titlebar(self.header)
-
-    def _create_categories_stack(self):
-        stack = Gtk.Stack()
-        stack.set_homogeneous(False)
-        stack.set_visible(True)
-        return stack
+        self.categories = CategoriesStack(self.factory)
+        self.categories.bind(loader.get('category_content'),
+                             loader.get('categories'))
+        self.categories.render(self.model.categories)

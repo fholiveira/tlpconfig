@@ -1,7 +1,7 @@
 from tlp import VERSION
 
 
-class About:
+class AboutView:
     UI = 'about.ui'
 
     def __init__(self, loader):

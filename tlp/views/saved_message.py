@@ -1,4 +1,4 @@
-class SavedMessage():
+class SavedMessageView():
     UI = 'save.ui'
 
     def __init__(self, loader):
