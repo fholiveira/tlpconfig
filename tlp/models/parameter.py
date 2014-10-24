@@ -1,6 +1,9 @@
-class Parameter:
+from . import ChangesNotifier
+
+
+class Parameter(ChangesNotifier):
     def __init__(self, name):
-        self.changes_handlers = []
+        ChangesNotifier.__init__(self)
         self.initial_state = {}
         self._active = False
         self._value = ''
@@ -37,13 +40,6 @@ class Parameter:
             current = '#' + current
         
         return configuration.replace(current, new)
- 
-    def watch(self, handler):
-        self.changes_handlers.append(handler)
-
-    def notify_changes(self):
-        for handler in self.changes_handlers:
-            handler(self)
 
     def _set_value(self, new_value):
         if self._value == new_value:
