@@ -41,6 +41,7 @@ class MainView:
         load_view(About).show(self.window)
 
     def show(self):
+        self.categories.render(self.model.categories)
         self.window.present()
 
     def _load_ui(self, loader):
@@ -53,4 +54,3 @@ class MainView:
         self.categories = CategoriesStack(self.factory)
         self.categories.bind(loader.get('category_content'),
                              loader.get('categories'))
-        self.categories.render(self.model.categories)

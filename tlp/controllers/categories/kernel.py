@@ -1,7 +1,7 @@
-from tlp.models import Group, TextParameter
+from tlp.models import Group, BooleanParameter
 
 
 class KernelController:
 
     def __init__(self):
-        self.groups= [Group('NMI', [TextParameter('NMI_WATCHDOG')])]
+        self.groups= [Group('NMI', [BooleanParameter('NMI_WATCHDOG')])]

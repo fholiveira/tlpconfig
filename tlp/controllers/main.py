@@ -10,16 +10,16 @@ class MainController:
         self._bind_configuration()
 
     def _bind_configuration(self):
-        parameters = chain.from_iterable(group.parameters
-                                         for category in self.categories
-                                         for group in category.groups)
+        parameters = list(chain.from_iterable(group.parameters
+                                              for category in self.categories
+                                              for group in category.groups))
         names = [parameter.name for parameter in parameters]
-
+ 
         initial_values = self.configuration.load_parameters(names)
         for parameter in parameters:
             state = initial_values[parameter.name]
             parameter.initial_state = state
-            parameter.value = state.get('value')
+            parameter._value = state.get('value')
             parameter.active = state.get('active')
 
     def _create_categories(self):
@@ -33,7 +33,7 @@ class MainController:
                 NetworkingController(),
                 AudioController(),
                 #DriveSlotUltrabayController(),
-                RuntimePowerManagementController(),
+                #RuntimePowerManagementController(),
                 #Usb(),
-                SystemStartAndShutdownController(),
+                #SystemStartAndShutdownController(),
                 BatteryChargeThresholdsController()]

@@ -1,5 +1,6 @@
 class Group:
     def __init__(self, name, parameters):
+        self.changes_handlers = []
         self.name = name
         self.parameters = parameters
 
@@ -12,3 +13,10 @@ class Group:
     def is_active(self, value):
         for parameter in self.parameters:
             parameter.active = value
+
+    def watch(self, handler):
+        self.changes_handlers.append(handler)
+
+    def notify_changes(self):
+        for handler in self.changes_handlers:
+            handler(self)

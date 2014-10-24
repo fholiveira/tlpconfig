@@ -1,9 +1,21 @@
 class Parameter:
     def __init__(self, name):
-        self.active = False
-        self.name = name
-        self._value = ''
+        self.changes_handlers = []
         self.initial_state = {}
+        self._active = False
+        self._value = ''
+        self.name = name
+
+    @property
+    def active(self):
+        return self._active
+
+    @active.setter
+    def active(self, value):
+        if value == self._active:
+            return
+        self._active = value
+        self.notify_changes()
 
     def is_changed(self):
         start_active = self.initial_state['active']
@@ -25,6 +37,20 @@ class Parameter:
             current = '#' + current
         
         return configuration.replace(current, new)
+ 
+    def watch(self, handler):
+        self.changes_handlers.append(handler)
+
+    def notify_changes(self):
+        for handler in self.changes_handlers:
+            handler(self)
+
+    def _set_value(self, new_value):
+        if self._value == new_value:
+            return
+
+        self._value = new_value
+        self.notify_changes()
 
 
 class TextParameter(Parameter):
@@ -38,7 +64,7 @@ class TextParameter(Parameter):
 
     @value.setter
     def value(self, value):
-        self._value = '{0}{1}{0}'.format(self.quotes, value.strip())
+        self._set_value('{0}{1}{0}'.format(self.quotes, value.strip()))
 
 
 class ListParameter(Parameter):
@@ -48,7 +74,7 @@ class ListParameter(Parameter):
 
     @value.setter
     def value(self, value):
-        self._value = '"{0}"'.format(' '.join(value))
+        self._set_value('"{0}"'.format(' '.join(value)))
 
 
 class BooleanParameter(Parameter):
@@ -63,7 +89,7 @@ class BooleanParameter(Parameter):
 
     @value.setter
     def value(self, value):
-        self._value = self.yes if value else self.no
+        self._set_value(self.yes if value else self.no)
 
 
 class NumericParameter(Parameter):
@@ -73,4 +99,4 @@ class NumericParameter(Parameter):
 
     @value.setter
     def value(self, value):
-        self._value = str(value).replace('.0', '')
+        self._set_value(str(value).replace('.0', ''))

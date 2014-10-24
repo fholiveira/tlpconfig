@@ -7,7 +7,7 @@ class RuntimePowerManagementView(CategoryView):
 
     def __init__(self, loader, name, category):
         CategoryView.__init__(self, loader, name, category)
-        self.value_binders.set_binder_by_name('RUNTIME_PM_BLACKLIST', FreeTextParameterBinder)
+        #self.value_binders.set_binder_by_name('RUNTIME_PM_BLACKLIST', FreeTextParameterBinder)
     
     def load_controls(self, name):
         super().load_controls(name)

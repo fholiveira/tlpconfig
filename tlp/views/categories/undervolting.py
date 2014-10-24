@@ -1,10 +1,11 @@
-from ..binders import FreeTextParameterBinder
+from tlp.views.binders import ParameterBinderSelector
+from tlp.views.binders import FreeTextParameterBinder
 from tlp.models import TextParameter
 from .category import CategoryView
 
 
 class UndervoltingView(CategoryView):
-
-    def __init__(self, loader, name, category):
-        CategoryView.__init__(self, loader, name, category)
-        self.value_binders.set_binder_by_type(TextParameter, FreeTextParameterBinder)
+    def create_selector(self):
+        selector = ParameterBinderSelector()
+        selector.set_binder_by_type(TextParameter, FreeTextParameterBinder)
+        return selector

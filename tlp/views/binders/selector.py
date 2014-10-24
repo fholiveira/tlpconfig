@@ -1,7 +1,7 @@
 from tlp.models import (BooleanParameter, ListParameter,
                         NumericParameter, TextParameter)
-from .default_binders import (BooleanParameterBinder, ListParameterBinder,
-                              NumericParameterBinder, TextParameterBinder )
+from . import (BooleanParameterBinder, ListParameterBinder,
+               NumericParameterBinder, TextParameterBinder )
 
 
 class ParameterBinderSelector:
