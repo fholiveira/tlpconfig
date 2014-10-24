@@ -1,4 +1,5 @@
 from .changes_notifier import ChangesNotifier
+from .parameter_watcher import ParameterWatcher
 from .configuration import Configuration
 from .status import get_status
 from .group import Group

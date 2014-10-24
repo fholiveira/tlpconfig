@@ -42,9 +42,14 @@ class MainView:
 
     def show(self):
         self.categories.render(self.model.categories)
+
+        self.model.changes.watch(lambda config: self.save_button.set_sensitive(config.is_changed()))
+        self.model.changes.notify_changes()
+
         self.window.present()
 
     def _load_ui(self, loader):
+        self.save_button = loader.get('save')
         self.panel = loader.get('panel')
         self.appmenu = loader.get('appmenu')
         self.window = loader.get('window')

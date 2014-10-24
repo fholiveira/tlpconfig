@@ -11,7 +11,6 @@ class Configuration:
         configs = self._get_parameters_from_config()
         return {name: self._get_param_value(text) 
                 for name, text in configs.items()} 
-     
 
     def _get_parameters_from_config(self):
         regex = re.compile('^([A-Z]|_|[0-9]|#)*=.*')

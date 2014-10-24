@@ -17,16 +17,9 @@ class Parameter(ChangesNotifier):
     def active(self, value):
         if value == self._active:
             return
+
         self._active = value
         self.notify_changes()
-
-    def is_changed(self):
-        start_active = self.initial_state['active']
-        start_value = self.initial_state['value']
-        active = self.active
-        value = self._value
-
-        return active != start_active or (active and value != start_value)
 
     def write(self, configuration):
         template = '{0}={1}'
@@ -40,6 +33,9 @@ class Parameter(ChangesNotifier):
             current = '#' + current
         
         return configuration.replace(current, new)
+
+    def to_tuple(self):
+        return (self._active, self._value)
 
     def _set_value(self, new_value):
         if self._value == new_value:
