@@ -4,10 +4,11 @@ from .category import CategoryView
 
 
 class RuntimePowerManagementView(CategoryView):
-
-    def __init__(self, loader, name, category):
-        CategoryView.__init__(self, loader, name, category)
-        #self.value_binders.set_binder_by_name('RUNTIME_PM_BLACKLIST', FreeTextParameterBinder)
+    def create_selector(self):
+        selector = ParameterBinderSelector()
+        selector.set_binder_by_name('RUNTIME_PM_BLACKLIST',
+                                    FreeTextParameterBinder)
+        return selector
     
     def load_controls(self, name):
         super().load_controls(name)
