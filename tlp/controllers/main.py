@@ -33,7 +33,7 @@ class MainController:
                 NetworkingController(),
                 AudioController(),
                 #DriveSlotUltrabayController(),
-                #RuntimePowerManagementController(),
+                RuntimePowerManagementController(),
                 #Usb(),
-                #SystemStartAndShutdownController(),
+                SystemStartAndShutdownController(),
                 BatteryChargeThresholdsController()]

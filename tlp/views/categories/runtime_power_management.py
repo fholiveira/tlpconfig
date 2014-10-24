@@ -1,4 +1,5 @@
-from ..binders import FreeTextParameterBinder
+from tlp.views.binders import ParameterBinderSelector
+from tlp.views.binders import FreeTextParameterBinder
 from tlp.models import TextParameter
 from .category import CategoryView
 
@@ -12,7 +13,7 @@ class RuntimePowerManagementView(CategoryView):
     
     def load_controls(self, name):
         super().load_controls(name)
-        self.blacklist = self.load('PM_BLACKLIST')
+        self.blacklist = self.loader.get('PM_BLACKLIST')
     
     def _devices_changed(self, combo):
         value = int(combo.get_active_id())
