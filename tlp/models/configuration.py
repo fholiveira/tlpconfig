@@ -1,5 +1,5 @@
-from .parameter import Parameter
-from tlp import DATA_PATH
+from functools import reduce
+from . import Parameter
 import re
 
 
@@ -32,8 +32,6 @@ class Configuration:
     def save(self, parameters):
         with open(self.file_path, 'w') as config_file:
             text = reduce(lambda text, param: param.write(text),
-                          [param for param in parameters if param.is_changed()],
+                          [param for param in parameters],
                           self.text)
             config_file.write(text)
-
-        self.load()

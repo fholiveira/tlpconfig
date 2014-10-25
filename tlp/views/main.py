@@ -1,4 +1,4 @@
-from . import StatusView, CategoriesStack, SavedMessageView 
+from . import StatusView, CategoriesStack, SavedMessageView, AboutView 
 from gi.repository import Gtk
 
 
@@ -11,11 +11,9 @@ class MainView:
         self.factory = factory
         self._load_ui(loader)
 
-    def save(self, button):
-        parameters = self.categories.get_parameters()
-        self.config.save(parameters)
-
-        load_view(SavedMessage).show(self)
+    def save(self, *args):
+        self.model.save()
+        self.factory.create_dialog(SavedMessageView).show(self)
 
     def save_as(self, button):
         buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
@@ -28,22 +26,21 @@ class MainView:
         dialog.set_default_size(500, 600)
 
         if dialog.run() == Gtk.ResponseType.OK:
-            parameters = self.categories.get_parameters()
-            self.config.save_as(parameters, dialog.get_filename())
-            self.header.set_subtitle(self.config.file_path)
+            self.model.save_as(dialog.get_filename())
+            self.header.set_subtitle(self.model.configuration.file_path)
     
         dialog.destroy()
 
     def status(self, button):
-        load_view(Status).show(self)
+        self.factory.create_dialog(StatusView).show(self)
 
     def show_about(self, *args):
-        load_view(About).show(self.window)
+        self.factory.create_dialog(AboutView).show(self)
 
     def show(self):
         self.categories.render(self.model.categories)
 
-        self.model.changes.watch(lambda config: self.save_button.set_sensitive(config.is_changed()))
+        self.model.changes.watch(lambda config: self.save_button.set_sensitive(config.has_changes()))
         self.model.changes.notify_changes()
 
         self.window.present()

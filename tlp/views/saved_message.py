@@ -9,5 +9,5 @@ class SavedMessageView():
         self.dialog.set_transient_for(parent.window)
         self.dialog.run()
 
-    def _button_clicked(self, button):
+    def response_send(self, *args):
         self.dialog.hide()

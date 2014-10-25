@@ -11,7 +11,7 @@ class MainController:
         self._bind_configuration()
 
     def save(self):
-        self.configuration.save()
+        self.configuration.save(self.changes.changed_parameters())
         self.changes.remember_state()
 
     def _bind_configuration(self):
@@ -28,7 +28,6 @@ class MainController:
         initial_values = self.configuration.load_parameters(names)
         for parameter in parameters:
             state = initial_values[parameter.name]
-            parameter.initial_state = state
             parameter._value = state.get('value')
             parameter.active = state.get('active')
 

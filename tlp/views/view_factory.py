@@ -32,6 +32,17 @@ class ViewFactory:
 
         return view(builder, controller, self)
 
+    def create_dialog(self, view):
+        builder = Builder()
+
+        if not isinstance(view.UI, tuple):
+            builder.load(UI_PATH + view.UI)
+            return view(builder)
+
+        for ui in view.UI:
+            builder.load(UI_PATH + ui)
+
+        return view(builder)
 
 def _view_map():
     return {MainController : MainView,
