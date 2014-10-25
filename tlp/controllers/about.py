@@ -1,2 +1,6 @@
+from tlp import VERSION
+
+
 class AboutController:
-    pass
+    def __init__(self):
+        self.version = VERSION

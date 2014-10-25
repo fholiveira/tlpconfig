@@ -1,3 +1,4 @@
+from tlp.controllers import AboutController
 from tlp.models import ParameterWatcher
 from itertools import chain
 from .categories import *
@@ -6,12 +7,16 @@ from .categories import *
 class MainController:
     def __init__(self, configuration):
         self.configuration = configuration
-
+        self.about = AboutController()
         self.categories = self._create_categories()
         self._bind_configuration()
 
     def save(self):
         self.configuration.save(self.changes.changed_parameters())
+        self.changes.remember_state()
+
+    def save_as(self, filename):
+        self.configuration.save_as(self.changes.changed_parameters(), filename)
         self.changes.remember_state()
 
     def _bind_configuration(self):
