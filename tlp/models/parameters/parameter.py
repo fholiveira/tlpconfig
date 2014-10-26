@@ -2,8 +2,9 @@ from .. import ChangesNotifier
 
 
 class Parameter(ChangesNotifier):
-    def __init__(self, name):
+    def __init__(self, name, reboot_needed=False):
         ChangesNotifier.__init__(self)
+        self.reboot_needed = reboot_needed
         self._active = False
         self.name = name
         self._value = ''

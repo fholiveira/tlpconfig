@@ -1,4 +1,4 @@
-class SavedMessageView():
+class RebootToApplyView():
     UI = 'save.ui'
 
     def __init__(self, loader):

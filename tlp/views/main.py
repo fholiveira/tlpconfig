@@ -1,4 +1,4 @@
-from .dialogs import StatusView, SavedMessageView, AboutView, SaveDialogView
+from .dialogs import StatusView, RebootToApplyView, AboutView, SaveDialogView
 from . import CategoriesStack
 
 
@@ -12,8 +12,11 @@ class MainView:
         self._load_ui(loader)
 
     def save(self, *args):
+        must_reboot = self.model.changes.need_reboot_to_apply()
         self.model.save()
-        self.factory.create_dialog(SavedMessageView).show(self)
+
+        if must_reboot:
+            self.factory.create_dialog(RebootToApplyView).show(self)
 
     def save_as(self, *args):
         dialog = SaveDialogView()

@@ -2,8 +2,8 @@ from . import Parameter
 
 
 class TextParameter(Parameter):
-    def __init__(self, name, quotes=''):
-        Parameter.__init__(self, name)
+    def __init__(self, name, quotes='', reboot_needed=False):
+        Parameter.__init__(self, name, reboot_needed=reboot_needed)
         self.quotes = quotes
 
     @property

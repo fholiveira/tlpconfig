@@ -13,8 +13,14 @@ class ParameterWatcher(ChangesNotifier):
         return not self.actual_state == self.state
 
     def changed_parameters(self):
-        return [param for param in self.parameters
-                if self.state[param.name] != self.actual_state[param.name]]
+        return [param for param in self.parameters if self._is_changed(param)]
+
+    def need_reboot_to_apply(self):
+        return any(param for param in self.parameters 
+                   if param.reboot_needed and self._is_changed(param))
+
+    def _is_changed(self, param):
+        return self.state[param.name] != self.actual_state[param.name]
 
     def remember_state(self):
         self.actual_state = self._take_state_snapshot()
