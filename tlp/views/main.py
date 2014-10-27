@@ -1,9 +1,9 @@
 from .dialogs import StatusView, RebootToApplyView, AboutView, SaveDialogView
-from . import CategoriesStack
+from . import CategoriesStack, HomeStack
 
 
 class MainView:
-    UI = ('window.ui', 'header.ui', 'shell.ui')
+    UI = ('window.ui', 'editor.ui', 'welcome.ui', 'header.ui', 'shell.ui')
 
     def __init__(self, loader, controller, factory):
         loader.connect(self)
@@ -34,11 +34,14 @@ class MainView:
 
     def show(self):
         self.categories.render(self.model.categories)
-
-        self.model.changes.watch(self._on_change_config)
-        self.model.changes.notify_changes()
-
+        self._watch(self.model, self._on_change_config)
+        switch = lambda *p: self.home.switch(self.model.preferences.tlp.value)
+        self._watch(self.model.preferences, switch)
         self.window.present()
+
+    def _watch(self, model, handler):
+        model.changes.watch(handler)
+        model.changes.notify_changes()
 
     def _on_change_config(self, config):
         changed = config.has_changes()
@@ -53,7 +56,14 @@ class MainView:
         self.window = loader.get('window')
         self.header = loader.get('header')
         self.panel = loader.get('panel')
+
         self.window.set_titlebar(self.header)
+
+        self.home = HomeStack(loader.get('welcome'), loader.get('editor'))
+        self.home.bind(self.window, [self.save_button, loader.get('save_as')])
+        enable_and_save = lambda *a: self.model.preferences.enable_and_save()
+        loader.get('TLP_ENABLE').connect('clicked', enable_and_save)
+
         self.categories = CategoriesStack(self.factory)
         self.categories.bind(loader.get('category_content'),
                              loader.get('categories'))

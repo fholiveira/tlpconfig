@@ -1,5 +1,5 @@
 from gi.repository import Gtk
-from .categories import *
+from tlp.views.categories import *
 
 
 class CategoriesStack:

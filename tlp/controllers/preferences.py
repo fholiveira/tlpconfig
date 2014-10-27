@@ -36,3 +36,7 @@ class PreferencesController:
     def save(self):
         self.configuration.save(self.parameters)
         self.changes.remember_state()
+
+    def enable_and_save(self):
+        self.tlp.value = True
+        self.save()
