@@ -5,13 +5,20 @@
   <menu id="appmenu">
    <section>
       <item>
+         <attribute name='label' translatable='yes'>_Preferences</attribute>
+         <attribute name='action'>app.show_preferences</attribute>
+         <attribute name='accel'>&lt;Primary&gt;E</attribute>
+      </item>
+   </section>
+   <section>
+      <item>
 	      <attribute name="label" translatable="yes">_About</attribute>
-	      <attribute name="action">app.about</attribute>
+	      <attribute name="action">app.show_about</attribute>
       </item>	      
       <item>
     	  <attribute name="label" translatable="yes">_Quit</attribute>
 	      <attribute name="action">app.quit</attribute>
-	      <attribute name="accel">&lt;Primary&gt;q</attribute>
+          <attribute name='accel'>&lt;Primary&gt;Q</attribute>
       </item>	      
    </section>	    
   </menu>

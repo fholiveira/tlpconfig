@@ -1,4 +1,4 @@
-from tlp.controllers import AboutController
+from tlp.controllers import AboutController, PreferencesController
 from tlp.models import ParameterWatcher
 from itertools import chain
 from .categories import *
@@ -8,6 +8,7 @@ class MainController:
     def __init__(self, configuration):
         self.configuration = configuration
         self.about = AboutController()
+        self.preferences = PreferencesController(configuration)
         self.categories = self._create_categories()
         self._bind_configuration()
 
@@ -30,11 +31,9 @@ class MainController:
         
     def _set_parameters(self, parameters):
         names = [parameter.name for parameter in parameters]
-        initial_values = self.configuration.load_parameters(names)
-        for parameter in parameters:
-            state = initial_values[parameter.name]
-            parameter._value = state.get('value')
-            parameter.active = state.get('active')
+        values = self.configuration.load_parameters(names)
+        for param in parameters:
+            param._active, param._value = values[param.name]
 
     def _create_categories(self):
         return [FileSystemController(), 

@@ -6,6 +6,7 @@ class BooleanParameter(Parameter):
         Parameter.__init__(self, name, reboot_needed=reboot_needed)
         self.yes = yes
         self.no = no
+        self._value = no
 
     @property
     def value(self):

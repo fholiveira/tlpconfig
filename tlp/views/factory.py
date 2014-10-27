@@ -1,4 +1,4 @@
-from tlp.controllers import MainController, AboutController
+from tlp.controllers import MainController, AboutController, PreferencesController
 from tlp.controllers.categories import *
 from . import MainView, Builder
 from .categories import *
@@ -38,7 +38,9 @@ class ViewFactory:
         return view(builder, *args)
 
 def _view_map():
-    return {MainController : MainView, AboutController : AboutView}
+    return {MainController : MainView, 
+            AboutController : AboutView,
+            PreferencesController: PreferencesView}
 
 def _category_view_map():
     return {SystemStartAndShutdownController : ('system_start_and_shutdown', SystemStartAndShutdownView),

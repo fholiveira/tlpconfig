@@ -33,7 +33,10 @@ class Parameter(ChangesNotifier):
         if not old_active:
             old_text = '#' + old_text
         
-        return configuration.replace(old_text, new_text)
+        if old_text in configuration:
+            return configuration.replace(old_text, new_text)
+        
+        return configuration + '\n' + new_text 
 
     def to_tuple(self):
         return (self._active, self._value)

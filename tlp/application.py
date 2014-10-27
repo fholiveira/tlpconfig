@@ -27,10 +27,16 @@ class App(Gtk.Application):
             self.add_window(self.window.window)
  
         self.set_app_menu(self.window.appmenu)
+        self._bind_actions()
 
-        about_action = Gio.SimpleAction.new('about', None)
+    def _bind_actions(self):
+        about_action = Gio.SimpleAction.new('show_about', None)
         about_action.connect('activate', self.window.show_about)
         self.add_action(about_action)
+
+        preferences_action = Gio.SimpleAction.new('show_preferences', None)
+        preferences_action.connect('activate', self.window.show_preferences)
+        self.add_action(preferences_action)
 
         quit_action = Gio.SimpleAction.new('quit', None)
         quit_action.connect('activate', lambda *args: self.quit())

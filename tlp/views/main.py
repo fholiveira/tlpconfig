@@ -29,6 +29,9 @@ class MainView:
     def show_about(self, *args):
         self.factory.create(self.model.about).show(self)
 
+    def show_preferences(self, *args):
+        self.factory.create(self.model.preferences).show(self)
+
     def show(self):
         self.categories.render(self.model.categories)
 

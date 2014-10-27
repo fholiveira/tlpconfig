@@ -6,7 +6,7 @@ class BooleanParameterBinder:
         self.control = control
         self.parameter.watch(lambda param: control.set_active(param.value))
         self.parameter.notify_changes()
-        control.connect("notify::active", self._set_value)
+        control.connect('notify::active', self._set_value)
 
     def _set_value(self, *args):
         self.parameter.value = self.control.get_active()
@@ -20,7 +20,7 @@ class NumericParameterBinder:
         self.control = control
         self.parameter.watch(lambda param: control.set_value(param.value))
         self.parameter.notify_changes()
-        control.connect("value-changed", self._set_value)
+        control.connect('value-changed', self._set_value)
 
     def _set_value(self, *args):
         self.parameter.value = self.control.get_value()
@@ -34,7 +34,7 @@ class TextParameterBinder:
         self.control = control
         self.parameter.watch(lambda param: control.set_active_id(param.value))
         self.parameter.notify_changes()
-        control.connect("changed", self._set_value)
+        control.connect('changed', self._set_value)
 
     def _set_value(self, *args):
         self.parameter.value = self.control.get_active_id()
@@ -50,7 +50,7 @@ class ListParameterBinder:
         self.parameter.notify_changes()
 
         for child in self.control.get_children():
-            control.connect("notify::active", self._set_value)
+            control.connect('notify::active', self._set_value)
 
     def _set_value(self, parameter):
         parameter.value = [child.get_name() 

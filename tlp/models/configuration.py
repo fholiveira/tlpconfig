@@ -7,10 +7,11 @@ class Configuration:
     def __init__(self, file_path):
         self.file_path = file_path
     
-    def load_parameters(self, parameters_names):
+    def load_parameters(self, names):
         configs = self._get_parameters_from_config()
-        return {name: self._get_param_value(text) 
-                for name, text in configs.items()} 
+        return {name: self._get_param_status_and_value(text) 
+                for name, text in configs.items()
+                if name in names} 
 
     def _get_parameters_from_config(self):
         regex = re.compile('^([A-Z]|_|[0-9]|#)*=.*')
@@ -21,9 +22,8 @@ class Configuration:
                     for row in self.text.splitlines() 
                     if regex.match(row)}
 
-    def _get_param_value(self, text):
-        value = text.split('=')[1]
-        return {'active' : not text.startswith('#'), 'value' : value}
+    def _get_param_status_and_value(self, text):
+        return (not text.startswith('#'), text.split('=')[1])
 
     def save_as(self, parameters, file_path):
         self.file_path = file_path
