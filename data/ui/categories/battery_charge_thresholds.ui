@@ -302,7 +302,12 @@
             <property name="xalign">0</property>
             <property name="label" translatable="yes">Charging starts upon connecting AC power, but only if the remaining capacity is below the value of lower threshold. Charging stops when reaching the  upper threshold value. If, however when you connect the AC adapter, charge is above the lower threshold, then it will not charge.
 
-The &lt;a href="https://github.com/linrunner/TLP/blob/master/default"&gt;default configuration file&lt;/a&gt; provides sample settings designed to minimize battery wear – the battery is charged to 80% only. However these settings are disabled by default and must be enabled explicitly by the user. Note that even the hardware defaults of 96 / 100% – effective without TLP – already prevent battery wear by blocking short charge cycles.</property>
+The &lt;a href="https://github.com/linrunner/TLP/blob/master/default"&gt;default configuration file&lt;/a&gt; provides sample settings designed to minimize battery wear – the battery is charged to 80% only. However these settings are disabled by default and must be enabled explicitly by the user. Note that even the hardware defaults of 96 / 100% – effective without TLP – already prevent battery wear by blocking short charge cycles.
+
+&lt;b&gt;Hints:&lt;/b&gt; 
+    - The charging process is not controlled by software, but by hardware. TLP just writes the thresholds to the hardware registers (via &lt;a href="http://www.thinkwiki.org/wiki/Tp_smapi"&gt;tp-smapi&lt;/a&gt; or &lt;a href="https://github.com/teleshoes/tpacpi-bat"&gt;tpacpi-bat&lt;/a&gt;).
+
+For further questions concerning battery thresholds consult the &lt;a href="./tlp-faq.html#battery"&gt;TLP FAQ&lt;/a&gt;.</property>
             <property name="use_markup">True</property>
             <property name="wrap">True</property>
           </object>
@@ -339,102 +344,6 @@ The &lt;a href="https://github.com/linrunner/TLP/blob/master/default"&gt;default
       </packing>
     </child>
     <child>
-      <object class="GtkBox" id="TPACPIBAT">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkLabel" id="TPACPIBAT_DESCRIPTION">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="xalign">0</property>
-            <property name="label" translatable="yes">Disable use of tpacpi-bat – and use tp-smapi instead – for setting the charge thresholds on Sandy Bridge models (X220, T420 et al.).</property>
-            <property name="use_markup">True</property>
-            <property name="wrap">True</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkBox" id="TPACPIBAT_CONFIG">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
-            <child>
-              <object class="GtkLabel" id="TPACPIBAT_CONFIG_DESCRIPTION">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Disable</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkSwitch" id="DISABLE_TPACPIBAT">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="margin_left">10</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="TPACPIBAT_HINTS">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="xalign">0</property>
-            <property name="label" translatable="yes">&lt;b&gt;Hints:&lt;/b&gt; 
-    - The charging process is not controlled by software, but by hardware. TLP just writes the thresholds to the hardware registers (via &lt;a href="http://www.thinkwiki.org/wiki/Tp_smapi"&gt;tp-smapi&lt;/a&gt; or &lt;a href="https://github.com/teleshoes/tpacpi-bat"&gt;tpacpi-bat&lt;/a&gt;).
-    - Do not use this option with Ivy Bridge models (X230, T430 et al.) where tpacpi-bat is mandatory because tp-smapi does not work.
-
-For further questions concerning battery thresholds consult the &lt;a href="./tlp-faq.html#battery"&gt;TLP FAQ&lt;/a&gt;.</property>
-            <property name="use_markup">True</property>
-            <property name="wrap">True</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">2</property>
-          </packing>
-        </child>
-      </object>
-      <packing>
-        <property name="left_attach">2</property>
-        <property name="top_attach">4</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkSeparator" id="TPACPIBAT_TOP_SEPARATOR">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
-      </object>
-      <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">3</property>
-        <property name="width">3</property>
-      </packing>
-    </child>
-    <child>
       <object class="GtkSeparator" id="TPACPIBAT_BOTTOM_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
@@ -442,7 +351,7 @@ For further questions concerning battery thresholds consult the &lt;a href="./tl
       </object>
       <packing>
         <property name="left_attach">0</property>
-        <property name="top_attach">5</property>
+        <property name="top_attach">3</property>
         <property name="width">3</property>
       </packing>
     </child>
@@ -473,19 +382,6 @@ For further questions concerning battery thresholds consult the &lt;a href="./tl
       </packing>
     </child>
     <child>
-      <object class="GtkSeparator" id="TPACPIBAT_SEPARATOR">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
-        <property name="orientation">vertical</property>
-      </object>
-      <packing>
-        <property name="left_attach">1</property>
-        <property name="top_attach">4</property>
-      </packing>
-    </child>
-    <child>
       <object class="GtkSwitch" id="ACTIVE_CHARGE_THRESHOLDS">
         <property name="height_request">35</property>
         <property name="visible">True</property>
@@ -495,18 +391,6 @@ For further questions concerning battery thresholds consult the &lt;a href="./tl
       <packing>
         <property name="left_attach">0</property>
         <property name="top_attach">2</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkSwitch" id="ACTIVE_TPACPIBAT">
-        <property name="height_request">35</property>
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="valign">center</property>
-      </object>
-      <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">4</property>
       </packing>
     </child>
     <style>

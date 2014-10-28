@@ -8,6 +8,4 @@ class BatteryChargeThresholdsController:
                             [NumericParameter('START_CHARGE_THRESH_BAT0'),
                              NumericParameter('STOP_CHARGE_THRESH_BAT0'),
                              NumericParameter('START_CHARGE_THRESH_BAT1'),
-                             NumericParameter('STOP_CHARGE_THRESH_BAT1')]),
-                      Group('TPACPIBAT', 
-                            [BooleanParameter('DISABLE_TPACPIBAT')])]
+                             NumericParameter('STOP_CHARGE_THRESH_BAT1')])]
