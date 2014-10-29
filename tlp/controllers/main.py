@@ -46,7 +46,7 @@ class MainController:
                 GraphicsCardsController(),
                 NetworkingController(),
                 AudioController(),
-                #DriveSlotUltrabayController(),
+                DriveSlotUltrabayController(),
                 RuntimePowerManagementController(),
                 #Usb(),
                 SystemStartAndShutdownController(),
