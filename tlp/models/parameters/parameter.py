@@ -31,8 +31,8 @@ class Parameter(ChangesNotifier):
         self.initial_state = self.to_tuple()
 
     def _textfy(self, state):
-        text = '{0}={1}'.format(self.name, state[1])
-        return text if state[0] else '#' + text
+        template = '{0}={1}' if state[0] else '#{0}={1}'
+        return template.format(self.name, state[1])
 
     def _set_value(self, new_value):
         if self._value == new_value:
