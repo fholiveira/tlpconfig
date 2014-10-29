@@ -29,10 +29,10 @@
           <object class="GtkBox" id="DEVICE_STATE_CONFIG">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkLabel" id="DEVICE_STATE_CONFIG_DESCRIPTION">
                 <property name="visible">True</property>
@@ -49,7 +49,7 @@
               <object class="GtkSwitch" id="RESTORE_DEVICE_STATE_ON_STARTUP">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="margin_left">10</property>
+                <property name="margin_left">12</property>
                 <signal name="notify::active" handler="change_restore_devices_on_startup" swapped="no"/>
               </object>
               <packing>
@@ -102,10 +102,10 @@
               <object class="GtkBox" id="DEVICES_TO_DISABLE_ON_STARTUP">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_left">20</property>
-                <property name="margin_right">20</property>
-                <property name="margin_top">15</property>
-                <property name="margin_bottom">15</property>
+                <property name="margin_left">18</property>
+                <property name="margin_right">18</property>
+                <property name="margin_top">12</property>
+                <property name="margin_bottom">12</property>
                 <child>
                   <object class="GtkCheckButton" id="DISABLE_ON_STARTUP_BLUETOOTH">
                     <property name="label" translatable="yes">Bluetooth</property>
@@ -188,8 +188,8 @@
             <property name="name">5</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_top">20</property>
-            <property name="margin_bottom">20</property>
+            <property name="margin_top">18</property>
+            <property name="margin_bottom">18</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -221,10 +221,10 @@
               <object class="GtkBox" id="DEVICES_TO_ENABLE_ON_STARTUP">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_left">20</property>
-                <property name="margin_right">20</property>
-                <property name="margin_top">15</property>
-                <property name="margin_bottom">15</property>
+                <property name="margin_left">18</property>
+                <property name="margin_right">18</property>
+                <property name="margin_top">12</property>
+                <property name="margin_bottom">12</property>
                 <child>
                   <object class="GtkCheckButton" id="ENABLE_ON_STARTUP_BLUETOOTH">
                     <property name="label" translatable="yes">Bluetooth</property>
@@ -290,8 +290,8 @@
           <object class="GtkSeparator" id="ENABLE_ON_STARTUP_SEPARATOR">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
             <property name="orientation">vertical</property>
           </object>
           <packing>
@@ -303,8 +303,8 @@
           <object class="GtkSeparator" id="DISABLE_ON_STARTUP_SEPARATOR">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
             <property name="orientation">vertical</property>
           </object>
           <packing>
@@ -340,8 +340,8 @@
           <object class="GtkSeparator" id="DISABLE_ON_STARTUP_TOP_SEPARATOR">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_top">20</property>
-            <property name="margin_bottom">20</property>
+            <property name="margin_top">18</property>
+            <property name="margin_bottom">18</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -380,10 +380,10 @@
           <object class="GtkBox" id="DEVICES_TO_DISABLE_ON_SHUTDOWN">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkCheckButton" id="DISABLE_ON_SHUTDOWN_BLUETOOTH">
                 <property name="label" translatable="yes">Bluetooth</property>
@@ -449,8 +449,8 @@
       <object class="GtkSeparator" id="ENABLE_ON_SHUTDOWN_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -482,10 +482,10 @@
           <object class="GtkBox" id="DEVICES_TO_ENABLE_ON_SHUTDOWN">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkCheckButton" id="ENABLE_ON_SHUTDOWN_BLUETTOTH">
                 <property name="label" translatable="yes">Bluetooth</property>
@@ -551,7 +551,7 @@
       <object class="GtkSeparator" id="ENABLE_ON_SHUTDOWN_BOTTOM_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
+        <property name="margin_top">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -563,7 +563,7 @@
       <object class="GtkSeparator" id="DEVICE_STATE_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -575,8 +575,8 @@
       <object class="GtkSeparator" id="ENABLE_ON_SHUTDOWN_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -588,8 +588,8 @@
       <object class="GtkSeparator" id="DISABLE_ON_SHUTDOWN_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -601,8 +601,8 @@
       <object class="GtkSeparator" id="DEVICE_STATE_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -650,8 +650,8 @@
       <object class="GtkSeparator" id="DISABLE_ON_SHUTDOWN_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>

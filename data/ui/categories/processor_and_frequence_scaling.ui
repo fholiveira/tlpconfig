@@ -55,8 +55,8 @@
       <object class="GtkSeparator" id="CPU_SCALING_GOVERNOR_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -68,8 +68,8 @@
       <object class="GtkSeparator" id="CPU_SCALING_FREQ_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -81,8 +81,8 @@
       <object class="GtkSeparator" id="CPU_BOOST_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -94,8 +94,8 @@
       <object class="GtkSeparator" id="SCHED_POWERSAVE_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -175,10 +175,10 @@
           <object class="GtkBox" id="SCHED_POWERSAVE_CONFIG">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkBox" id="SCHED_POWERSAVE_CONFIG_ENERGY">
                 <property name="visible">True</property>
@@ -201,7 +201,7 @@
                   <object class="GtkSwitch" id="SCHED_POWERSAVE_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -251,7 +251,7 @@
                     <property name="name">10</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -302,10 +302,10 @@
           <object class="GtkBox" id="CPU_SCALING_GOVERNOR_CONFIG">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkBox" id="CPU_SCALING_GOVERNOR_CONFIG_ENERGY">
                 <property name="width_request">250</property>
@@ -329,7 +329,7 @@
                   <object class="GtkComboBox" id="CPU_SCALING_GOVERNOR_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="model">CPU_SCALING_GOVERNOR_CONFIG_COMBO_OPTIONS</property>
                     <property name="active">0</property>
                     <property name="id_column">0</property>
@@ -387,7 +387,7 @@
                   <object class="GtkComboBox" id="CPU_SCALING_GOVERNOR_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="model">CPU_SCALING_GOVERNOR_CONFIG_COMBO_OPTIONS</property>
                     <property name="active">0</property>
                     <property name="id_column">0</property>
@@ -450,7 +450,7 @@
           <object class="GtkLabel" id="CPU_SCALING_FREQ_DESCRIPTION">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_bottom">12</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">Set the min/max frequency available for the scaling governor. Possible values depend on your CPU. For available frequencies consult the output of tlp-stat, section "+++ Processor". A value of 0 means to use processor defaults.</property>
             <property name="use_markup">True</property>
@@ -467,8 +467,8 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="valign">end</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
             <child>
               <object class="GtkGrid" id="CPU_SCALING_FREQ_CONFIG_ENERGY">
                 <property name="visible">True</property>
@@ -477,7 +477,7 @@
                   <object class="GtkLabel" id="CPU_SCALING_FREQ_CONFIG_ENERGY_DESCRIPTION">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_right">10</property>
+                    <property name="margin_right">12</property>
                     <property name="xalign">0</property>
                     <property name="label" translatable="yes">Energy</property>
                   </object>
@@ -491,7 +491,7 @@
                   <object class="GtkLabel" id="CPU_SCALING_FREQ_CONFIG_ENERGY_MIN_DESCRIPTION">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_right">5</property>
+                    <property name="margin_right">6</property>
                     <property name="xalign">0</property>
                     <property name="label" translatable="yes">min</property>
                   </object>
@@ -504,7 +504,7 @@
                   <object class="GtkLabel" id="CPU_SCALING_FREQ_CONFIG_ENERGY_MAX_DESCRIPTION">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_right">5</property>
+                    <property name="margin_right">6</property>
                     <property name="xalign">0</property>
                     <property name="label" translatable="yes">max</property>
                   </object>
@@ -517,7 +517,7 @@
                   <object class="GtkSpinButton" id="CPU_SCALING_MIN_FREQ_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">5</property>
+                    <property name="margin_left">6</property>
                     <property name="margin_bottom">2</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">CPU_SCALING_FREQ_CONFIG_ENERGY_MIN_ADJUSTMENT</property>
@@ -532,7 +532,7 @@
                   <object class="GtkSpinButton" id="CPU_SCALING_MAX_FREQ_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">5</property>
+                    <property name="margin_left">6</property>
                     <property name="margin_top">2</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">CPU_SCALING_FREQ_CONFIG_ENERGY_MAX_ADJUSTMENT</property>
@@ -566,8 +566,8 @@
               <object class="GtkBox" id="CPU_SCALING_FREQ_CONFIG_BATTERY_FRAME">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_left">20</property>
-                <property name="margin_right">20</property>
+                <property name="margin_left">18</property>
+                <property name="margin_right">18</property>
                 <child>
                   <object class="GtkGrid" id="CPU_SCALING_FREQ_CONFIG_BATTERY">
                     <property name="visible">True</property>
@@ -576,7 +576,7 @@
                       <object class="GtkLabel" id="CPU_SCALING_FREQ_CONFIG_BATTERY_DESCRIPTION">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="margin_right">10</property>
+                        <property name="margin_right">12</property>
                         <property name="xalign">0</property>
                         <property name="label" translatable="yes">Battery</property>
                       </object>
@@ -590,7 +590,7 @@
                       <object class="GtkLabel" id="CPU_SCALING_FREQ_CONFIG_BATTERY_MIN_DESCRIPTION">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="margin_right">5</property>
+                        <property name="margin_right">6</property>
                         <property name="xalign">0</property>
                         <property name="label" translatable="yes">min</property>
                       </object>
@@ -603,7 +603,7 @@
                       <object class="GtkLabel" id="CPU_SCALING_FREQ_CONFIG_BATTERY_MAX_DESCRIPTION">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="margin_right">5</property>
+                        <property name="margin_right">6</property>
                         <property name="xalign">0</property>
                         <property name="label" translatable="yes">max</property>
                       </object>
@@ -616,7 +616,7 @@
                       <object class="GtkSpinButton" id="CPU_SCALING_MIN_FREQ_ON_BAT">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="margin_left">5</property>
+                        <property name="margin_left">6</property>
                         <property name="margin_bottom">2</property>
                         <property name="text" translatable="yes">0</property>
                         <property name="adjustment">CPU_SCALING_FREQ_CONFIG_ENERGY_MIN_ADJUSTMENT</property>
@@ -631,7 +631,7 @@
                       <object class="GtkSpinButton" id="CPU_SCALING_MAX_FREQ_ON_BAT">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="margin_left">5</property>
+                        <property name="margin_left">6</property>
                         <property name="margin_top">2</property>
                         <property name="text" translatable="yes">0</property>
                         <property name="adjustment">CPU_SCALING_FREQ_CONFIG_ENERGY_MAX_ADJUSTMENT</property>
@@ -668,7 +668,7 @@
           <object class="GtkLabel" id="CPU_SCALING_FREQ_HINTS">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_top">15</property>
+            <property name="margin_top">12</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">&lt;b&gt;Hint:&lt;/b&gt; after enabling the processor defaults a restart is required to ensure that the new setting takes.
 
@@ -712,10 +712,10 @@
           <object class="GtkBox" id="CPU_BOOST_CONFIG">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkBox" id="CPU_BOOST_CONFIG_ENERGY">
                 <property name="visible">True</property>
@@ -738,7 +738,7 @@
                   <object class="GtkSwitch" id="CPU_BOOST_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -788,7 +788,7 @@
                     <property name="name">10</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -838,7 +838,7 @@
       <object class="GtkSeparator" id="SCHED_POWERSAVE_BOTTOM_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
+        <property name="margin_top">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -850,7 +850,7 @@
       <object class="GtkSeparator" id="CPU_SCALING_GOVERNOR_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -862,8 +862,8 @@
       <object class="GtkSeparator" id="SCHED_POWERSAVE_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -875,8 +875,8 @@
       <object class="GtkSeparator" id="CPU_BOOST_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -888,8 +888,8 @@
       <object class="GtkSeparator" id="CPU_SCALING_FREQ_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>

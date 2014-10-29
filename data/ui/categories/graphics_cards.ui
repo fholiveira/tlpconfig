@@ -63,8 +63,8 @@
       <object class="GtkSeparator" id="separator2">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -89,8 +89,8 @@
         <property name="name">0</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -102,8 +102,8 @@
       <object class="GtkSeparator" id="separator4">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -133,7 +133,7 @@
         <property name="name">15</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_bottom">15</property>
+        <property name="margin_bottom">12</property>
         <property name="xalign">0</property>
         <property name="label" translatable="yes">Radeon DPM (new)</property>
         <style>
@@ -150,7 +150,7 @@
       <object class="GtkLabel" id="RADEON_DMP_DESCRIPTION">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">10</property>
+        <property name="margin_left">12</property>
         <property name="xalign">0</property>
         <property name="label" translatable="yes">Since kernel 3.11 the new radeon dynamic power management (DPM) is available. Supported by the radeon driver only, not fglrx.
 
@@ -169,8 +169,8 @@
         <property name="name">0</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -195,8 +195,8 @@
         <property name="name">0</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -208,8 +208,8 @@
       <object class="GtkSeparator" id="separator5">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -233,8 +233,8 @@
       <object class="GtkSeparator" id="separator7">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -246,7 +246,7 @@
       <object class="GtkSeparator" id="separator3">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
+        <property name="margin_top">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -278,10 +278,10 @@
           <object class="GtkBox" id="group123">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkBox" id="RADEON_POWER_PROFILE_ENERGY">
                 <property name="width_request">250</property>
@@ -305,7 +305,7 @@
                   <object class="GtkComboBox" id="RADEON_POWER_PROFILE_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="model">RADEON_POWER_PROFILE_COMBO_OPTIONS</property>
                     <property name="active">0</property>
                     <property name="id_column">0</property>
@@ -350,7 +350,7 @@
                   <object class="GtkLabel" id="RADEON_POWER_PROFILE_BATTERY_DESCRIPTION">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="xalign">1</property>
                     <property name="label" translatable="yes">Battery</property>
                   </object>
@@ -365,7 +365,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="model">RADEON_POWER_PROFILE_COMBO_OPTIONS</property>
                     <property name="active">0</property>
                     <property name="id_column">0</property>
@@ -444,9 +444,9 @@
           <object class="GtkBox" id="group645">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
             <child>
               <object class="GtkBox" id="RADEON_DPM_STATE_ENERGY">
                 <property name="width_request">250</property>
@@ -470,7 +470,7 @@
                   <object class="GtkComboBox" id="RADEON_DPM_STATE_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="model">RADEON_DPM_STATE_COMBO_OPTIONS</property>
                     <property name="active">0</property>
                     <property name="id_column">0</property>
@@ -528,7 +528,7 @@
                   <object class="GtkComboBox" id="RADEON_DPM_STATE_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="model">RADEON_DPM_STATE_COMBO_OPTIONS</property>
                     <property name="active">0</property>
                     <property name="id_column">0</property>
@@ -592,9 +592,9 @@
           <object class="GtkBox" id="group12345">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
             <child>
               <object class="GtkBox" id="RADEON_DPM_PERF_LEVEL_ENERGY">
                 <property name="width_request">250</property>
@@ -618,7 +618,7 @@
                   <object class="GtkComboBox" id="RADEON_DPM_PERF_LEVEL_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="model">RADEON_DPM_PERF_LEVEL_COMBO_OPTIONS</property>
                     <property name="active">0</property>
                     <property name="id_column">0</property>
@@ -676,7 +676,7 @@
                   <object class="GtkComboBox" id="RADEON_DPM_PERF_LEVEL_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="model">RADEON_DPM_PERF_LEVEL_COMBO_OPTIONS</property>
                     <property name="active">0</property>
                     <property name="id_column">0</property>

@@ -30,8 +30,8 @@
       <object class="GtkSeparator" id="MAX_LOST_WORK_SECS_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
         <style>
           <class name="configuration"/>
         </style>
@@ -46,8 +46,8 @@
       <object class="GtkSeparator" id="DISK_IDLE_SECS_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -72,7 +72,7 @@
       <object class="GtkSeparator" id="MAX_LOST_WORK_SECS_BOTTOM_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
+        <property name="margin_top">18</property>
         <style>
           <class name="configuration"/>
         </style>
@@ -87,7 +87,7 @@
       <object class="GtkSeparator" id="DISK_IDLE_SECS_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_bottom">18</property>
         <style>
           <class name="configuration"/>
         </style>
@@ -124,10 +124,10 @@
           <object class="GtkBox" id="DISK_IDLE_SECS_CONFIG">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkBox" id="DISK_IDLE_SECS_CONFIG_ENERGY">
                 <property name="width_request">250</property>
@@ -151,7 +151,7 @@
                   <object class="GtkSpinButton" id="DISK_IDLE_SECS_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">DISK_IDLE_SECS_ENERGY_ADJUSTMENT</property>
                   </object>
@@ -202,7 +202,7 @@
                   <object class="GtkSpinButton" id="DISK_IDLE_SECS_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">DISK_IDLE_SECS_BATTERY_ADJUSTMENT</property>
                   </object>
@@ -249,8 +249,8 @@
       <object class="GtkSeparator" id="MAX_LOST_WORK_SECS_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -283,10 +283,10 @@
           <object class="GtkBox" id="writing_timeout">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkBox" id="writing_timeout_left">
                 <property name="width_request">250</property>
@@ -310,7 +310,7 @@
                   <object class="GtkSpinButton" id="MAX_LOST_WORK_SECS_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">MAX_LOST_WORK_SECS_ENERGY_ADJUSTMENT</property>
                   </object>
@@ -348,7 +348,7 @@
                   <object class="GtkLabel" id="label2">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="xalign">1</property>
                     <property name="label" translatable="yes">Battery</property>
                   </object>
@@ -362,7 +362,7 @@
                   <object class="GtkSpinButton" id="MAX_LOST_WORK_SECS_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">MAX_LOST_WORK_SECS_BATTERY_ADJUSTMENT</property>
                   </object>

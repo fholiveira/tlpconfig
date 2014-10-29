@@ -10,7 +10,7 @@
       <object class="GtkSeparator" id="PHC_BOTTOM_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
+        <property name="margin_top">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -22,7 +22,7 @@
       <object class="GtkSeparator" id="PHC_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -34,8 +34,8 @@
       <object class="GtkSeparator" id="PHC_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -79,10 +79,10 @@
           <object class="GtkBox" id="PHC_CONFIG">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkLabel" id="PHC_CONFIG_DESCRIPTION">
                 <property name="visible">True</property>
@@ -99,7 +99,7 @@
               <object class="GtkEntry" id="PHC_CONTROLS">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="margin_left">10</property>
+                <property name="margin_left">12</property>
               </object>
               <packing>
                 <property name="expand">False</property>

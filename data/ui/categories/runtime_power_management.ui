@@ -27,8 +27,8 @@
       <object class="GtkSeparator" id="RUNTIME_PM_BOTTOM_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -40,7 +40,7 @@
       <object class="GtkSeparator" id="RUNTIME_PM_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -52,8 +52,8 @@
       <object class="GtkSeparator" id="RUNTIME_PM_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -77,8 +77,8 @@
       <object class="GtkSeparator" id="RUNTIME_PM_ALL_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -90,7 +90,7 @@
       <object class="GtkSeparator" id="RUNTIME_PM_BLACKLIST_BOTTOM_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
+        <property name="margin_top">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -107,8 +107,8 @@
           <object class="GtkSeparator" id="RUNTIME_PM_BLACKLIST_TOP_SEPARATOR">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_top">20</property>
-            <property name="margin_bottom">20</property>
+            <property name="margin_top">18</property>
+            <property name="margin_bottom">18</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -137,8 +137,8 @@
               <object class="GtkSeparator" id="RUNTIME_PM_BLACKLIST_SEPARATOR">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_left">20</property>
-                <property name="margin_right">20</property>
+                <property name="margin_left">18</property>
+                <property name="margin_right">18</property>
                 <property name="orientation">vertical</property>
               </object>
               <packing>
@@ -174,10 +174,10 @@
                   <object class="GtkEntry" id="RUNTIME_PM_BLACKLIST">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">20</property>
-                    <property name="margin_right">20</property>
-                    <property name="margin_top">15</property>
-                    <property name="margin_bottom">15</property>
+                    <property name="margin_left">18</property>
+                    <property name="margin_right">18</property>
+                    <property name="margin_top">12</property>
+                    <property name="margin_bottom">12</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -233,10 +233,10 @@
           <object class="GtkBox" id="RUNTIME_PM_CONFIG">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkBox" id="RUNTIME_PM_CONFIG_ENERGY">
                 <property name="width_request">250</property>
@@ -260,7 +260,7 @@
                   <object class="GtkSwitch" id="RUNTIME_PM_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -309,7 +309,7 @@
                   <object class="GtkSwitch" id="RUNTIME_PM_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -390,10 +390,10 @@
           <object class="GtkComboBox" id="RUNTIME_PM_ALL">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <property name="model">RUNTIME_PM_ALL_COMBO_OPTIONS</property>
             <property name="active">0</property>
             <property name="id_column">0</property>

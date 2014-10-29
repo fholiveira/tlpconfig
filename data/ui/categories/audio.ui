@@ -37,7 +37,7 @@
       <object class="GtkSeparator" id="SOUND_POWER_SAVE_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -49,8 +49,8 @@
       <object class="GtkSeparator" id="SOUND_POWER_SAVE_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
@@ -93,10 +93,10 @@
           <object class="GtkBox" id="SOUND_POWER_SAVE_CONFIG">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkBox" id="SOUND_POWER_SAVE_ENERGY">
                 <property name="width_request">250</property>
@@ -120,7 +120,7 @@
                   <object class="GtkSpinButton" id="SOUND_POWER_SAVE_ON_AC">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">SOUND_POWER_SAVE_ON_AC_ADJUSTMENT</property>
                   </object>
@@ -171,7 +171,7 @@
                   <object class="GtkSpinButton" id="SOUND_POWER_SAVE_ON_BAT">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">SOUND_POWER_SAVE_ON_BAT_ADJUSTMENT</property>
                   </object>
@@ -220,8 +220,8 @@
       <object class="GtkSeparator" id="SOUND_POWER_CONTROLLER_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -234,7 +234,7 @@
         <property name="name">20</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
+        <property name="margin_top">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -289,10 +289,10 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="halign">start</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <property name="model">SOUND_POWER_CONTROLLER_COMBO_OPTIONS</property>
             <property name="active">0</property>
             <property name="id_column">0</property>

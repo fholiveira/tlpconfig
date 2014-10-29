@@ -48,8 +48,8 @@
           <object class="GtkLabel" id="THRESHOLDS_MAIN_CONFIG_TITLE">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_top">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_top">12</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">Main battery</property>
             <property name="wrap">True</property>
@@ -67,10 +67,10 @@
           <object class="GtkBox" id="THRESHOLDS_MAIN_CONFIG">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkBox" id="THRESHOLDS_MAIN_CONFIG_LOWER">
                 <property name="width_request">250</property>
@@ -94,7 +94,7 @@
                   <object class="GtkSpinButton" id="START_CHARGE_THRESH_BAT0">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">THRESHOLDS_MAIN_LOWER_ADJUSTMENT</property>
                     <property name="numeric">True</property>
@@ -146,7 +146,7 @@
                   <object class="GtkSpinButton" id="STOP_CHARGE_THRESH_BAT0">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">THRESHOLDS_MAIN_UPPER_ADJUSTMENT</property>
                   </object>
@@ -174,8 +174,8 @@
           <object class="GtkLabel" id="THRESHOLDS_AUX_CONFIG_TITLE">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_top">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_top">12</property>
             <property name="xalign">0</property>
             <property name="label" translatable="yes">Auxiliary/Ultrabay battery</property>
             <property name="wrap">True</property>
@@ -193,10 +193,10 @@
           <object class="GtkBox" id="THRESHOLDS_AUX_CONFIG">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">20</property>
-            <property name="margin_right">20</property>
-            <property name="margin_top">15</property>
-            <property name="margin_bottom">15</property>
+            <property name="margin_left">18</property>
+            <property name="margin_right">18</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">12</property>
             <child>
               <object class="GtkBox" id="THRESHOLDS_AUX_CONFIG_LOWER">
                 <property name="width_request">250</property>
@@ -220,7 +220,7 @@
                   <object class="GtkSpinButton" id="START_CHARGE_THRESH_BAT1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">THRESHOLDS_AUX_LOWER_ADJUSTMENT</property>
                   </object>
@@ -271,7 +271,7 @@
                   <object class="GtkSpinButton" id="STOP_CHARGE_THRESH_BAT1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="margin_left">10</property>
+                    <property name="margin_left">12</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">THRESHOLDS_AUX_UPPER_ADJUSTMENT</property>
                   </object>
@@ -347,7 +347,7 @@ For further questions concerning battery thresholds consult the &lt;a href="./tl
       <object class="GtkSeparator" id="TPACPIBAT_BOTTOM_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
+        <property name="margin_top">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -359,8 +359,8 @@ For further questions concerning battery thresholds consult the &lt;a href="./tl
       <object class="GtkSeparator" id="CHARGE_THRESHOLDS_TOP_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">20</property>
-        <property name="margin_bottom">20</property>
+        <property name="margin_top">18</property>
+        <property name="margin_bottom">18</property>
       </object>
       <packing>
         <property name="left_attach">0</property>
@@ -372,8 +372,8 @@ For further questions concerning battery thresholds consult the &lt;a href="./tl
       <object class="GtkSeparator" id="CHARGE_THRESHOLDS_SEPARATOR">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">20</property>
-        <property name="margin_right">20</property>
+        <property name="margin_left">18</property>
+        <property name="margin_right">18</property>
         <property name="orientation">vertical</property>
       </object>
       <packing>
