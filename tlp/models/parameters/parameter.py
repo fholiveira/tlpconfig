@@ -20,29 +20,19 @@ class Parameter(ChangesNotifier):
 
         self._active = value
         self.notify_changes()
-
-    def write(self, configuration):
-        old_active, old_value = self.initial_state
-        template = '{0}={1}'
-        old_text = template.format(self.name, old_value)
-        new_text = template.format(self.name, self._value)
-
-        if not self.active:
-            new_text = '#' + new_text
-
-        if not old_active:
-            old_text = '#' + old_text
-        
-        if old_text in configuration:
-            return configuration.replace(old_text, new_text)
-        
-        return configuration + '\n' + new_text 
+    
+    def to_text(self):
+        return (self._textfy(self.initial_state), self._textfy(self.to_tuple()))
 
     def to_tuple(self):
         return (self._active, self._value)
 
     def remember_state(self):
         self.initial_state = self.to_tuple()
+
+    def _textfy(self, state):
+        text = '{0}={1}'.format(self.name, state[1])
+        return text if state[0] else '#' + text
 
     def _set_value(self, new_value):
         if self._value == new_value:

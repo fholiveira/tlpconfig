@@ -33,7 +33,8 @@ class MainController:
         names = [parameter.name for parameter in parameters]
         values = self.configuration.load_parameters(names)
         for param in parameters:
-            param._active, param._value = values[param.name]
+            if param.name in values:
+                param._active, param._value = values[param.name]
 
     def _create_categories(self):
         return [FileSystemController(), 

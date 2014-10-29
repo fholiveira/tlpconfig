@@ -31,7 +31,14 @@ class Configuration:
 
     def save(self, parameters):
         with open(self.file_path, 'w') as config_file:
-            text = reduce(lambda text, param: param.write(text),
+            text = reduce(lambda text, param: self._write(text, param.to_text()),
                           [param for param in parameters],
                           self.text)
             config_file.write(text)
+            self.text = text
+
+    def _write(self, text, changes):
+        old_parameter, new_parameter = changes
+        if old_parameter in text:
+            return text.replace(old_parameter, new_parameter)
+        return text + '\n' + new_parameter 
