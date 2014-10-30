@@ -55,5 +55,5 @@ def _category_view_map():
             FileSystemController : ('file_system', CategoryView),
             NetworkingController : ('networking', CategoryView),
             KernelController : ('kernel', CategoryView),
-            AudioController : ('audio', CategoryView)}
-            #Usb : ('usb', CategoryView)}
+            AudioController : ('audio', CategoryView),
+            UsbController : ('usb', UsbView)}

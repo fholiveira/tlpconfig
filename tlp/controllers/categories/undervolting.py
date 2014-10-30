@@ -1,4 +1,4 @@
-from tlp.models import Group, NumericParameter, TextParameter
+from tlp.models import Group, TextParameter
 
 
 class UndervoltingController:

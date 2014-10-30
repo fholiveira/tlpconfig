@@ -48,6 +48,6 @@ class MainController:
                 AudioController(),
                 DriveSlotUltrabayController(),
                 RuntimePowerManagementController(),
-                #Usb(),
+                UsbController(),
                 SystemStartAndShutdownController(),
                 BatteryChargeThresholdsController()]
