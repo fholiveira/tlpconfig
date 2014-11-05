@@ -1,18 +1,36 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+from signal import signal, SIGINT, SIG_DFL
+from sys import exit, argv, excepthook
 from tlp import DATA_PATH, VERSION
 from tlp.application import App
-from sys import exit, argv
 from docopt import docopt
 
 
-if __name__ == '__main__':
-    arguments = {}
+def install_excepthook():
+    from gi.repository import Gtk
+    old_hook = excepthook
 
+    def new_hook(etype, evalue, etb):
+        old_hook(etype, evalue, etb)
+        while Gtk.main_level():
+            Gtk.main_quit()
+        exit()
+
+    excepthook = new_hook
+
+
+def parse_arguments():
     try:
         with open(DATA_PATH + 'help') as help_file:
-            arguments = docopt(help_file.read(), version=VERSION)
+            return docopt(help_file.read(), version=VERSION)
     except Exception as error:
         print(error.message)
 
-    config = arguments.get('<configuration-file>') or '/etc/default/tlp'
-    exit(App().start(config))
+    return {}
+
+
+if __name__ == '__main__':
+    config = parse_arguments().get('<configuration-file>') or '/etc/default/tlp'
+    status = App().start(config)
+    signal(SIGINT, SIG_DFL)
+    exit(status)
