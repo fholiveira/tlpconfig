@@ -41,7 +41,7 @@ class MainController:
                 ProcessorAndFrequenceScalingController(),
                 KernelController(),
                 UndervoltingController(),
-                #DisksAndControllersController(),
+                DisksAndControllersController(),
                 PciExpressBusController(),
                 GraphicsCardsController(),
                 NetworkingController(),

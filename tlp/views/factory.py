@@ -47,7 +47,7 @@ def _category_view_map():
             RuntimePowerManagementController : ('runtime_power_management', RuntimePowerManagementView),
             ProcessorAndFrequenceScalingController : ('processor_and_frequence_scaling', CategoryView),
             BatteryChargeThresholdsController : ('battery_charge_thresholds', CategoryView),
-            #DisksAndControllersController : ('disks_and_controllers', CategoryView),
+            DisksAndControllersController : ('disks_and_controllers', CategoryView),
             DriveSlotUltrabayController : ('drive_slot_ultrabay', DriveSlotUltrabayView),
             UndervoltingController : ('undervolting', UndervoltingView),
             PciExpressBusController : ('pci_express_bus', CategoryView),

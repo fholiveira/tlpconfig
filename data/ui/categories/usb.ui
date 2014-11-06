@@ -25,6 +25,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="valign">start</property>
+        <property name="hexpand">True</property>
         <property name="vexpand">False</property>
         <child>
           <object class="GtkSwitch" id="ACTIVE_USB_AUTOSUSPEND_GROUP">
@@ -67,6 +68,7 @@
               <object class="GtkLabel" id="WIFI_PWR_DESCRIPTION">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="hexpand">True</property>
                 <property name="xalign">0</property>
                 <property name="label" translatable="yes">Set autosuspend mode for all USB devices upon system start or a change of power source. Input devices like mice and keyboards are exluded by default.</property>
                 <property name="use_markup">True</property>
@@ -86,6 +88,7 @@
                 <property name="margin_right">12</property>
                 <property name="margin_top">12</property>
                 <property name="margin_bottom">12</property>
+                <property name="hexpand">True</property>
                 <child>
                   <object class="GtkLabel" id="NMI_CONFIG_DESCRIPTION">
                     <property name="visible">True</property>
@@ -122,6 +125,7 @@
                 <property name="name">40</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="hexpand">True</property>
                 <property name="xalign">0</property>
                 <property name="label" translatable="yes">&lt;b&gt;Note:&lt;/b&gt; TLP activates USB autosuspend independent of the power source, i.e. on battery &lt;i&gt;and&lt;/i&gt; ac.</property>
                 <property name="use_markup">True</property>
@@ -175,6 +179,7 @@
           <object class="GtkBox" id="boxx">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="hexpand">True</property>
             <child>
               <object class="GtkSwitch" id="ACTIVE_USB_BLACKLIST_GROUP">
                 <property name="height_request">35</property>
@@ -206,11 +211,13 @@
               <object class="GtkBox" id="USB_BLACKLIST_GROUP">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="hexpand">True</property>
                 <property name="orientation">vertical</property>
                 <child>
                   <object class="GtkLabel" id="WIFI_PWR_DESCRIPTION1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="hexpand">True</property>
                     <property name="xalign">0</property>
                     <property name="label" translatable="yes">Exclude USB devices from autosuspend mode. Useful for devices having difficulties in waking up from autosuspend. Use lsusb to determine IDs. Multiple IDs are separated with blanks.</property>
                     <property name="use_markup">True</property>
@@ -230,6 +237,7 @@
                     <property name="margin_right">12</property>
                     <property name="margin_top">12</property>
                     <property name="margin_bottom">12</property>
+                    <property name="hexpand">True</property>
                     <child>
                       <object class="GtkLabel" id="WAKE_ON_LAN_CONFIG_DESCRIPTION">
                         <property name="visible">True</property>
@@ -265,6 +273,7 @@
                   <object class="GtkLabel" id="WIFI_PWR_DESCRIPTION2">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="hexpand">True</property>
                     <property name="xalign">0</property>
                     <property name="label" translatable="yes">Exclude &lt;i&gt;builtin&lt;/i&gt; wwan devices from autosuspend mode.</property>
                     <property name="use_markup">True</property>
@@ -284,6 +293,7 @@
                     <property name="margin_right">12</property>
                     <property name="margin_top">12</property>
                     <property name="margin_bottom">12</property>
+                    <property name="hexpand">True</property>
                     <child>
                       <object class="GtkLabel" id="NMI_CONFIG_DESCRIPTION1">
                         <property name="visible">True</property>
@@ -320,6 +330,7 @@
                     <property name="name">40</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="hexpand">True</property>
                     <property name="xalign">0</property>
                     <property name="label" translatable="yes">&lt;b&gt;Note:&lt;/b&gt; currently works for USB IDs 05c6:* (Qualcomm), 0bdb:* (Ericsson) and 1199:* (Sierra) only.</property>
                     <property name="use_markup">True</property>
@@ -377,6 +388,7 @@
           <object class="GtkBox" id="box123">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="hexpand">True</property>
             <child>
               <object class="GtkSwitch" id="ACTIVE_USB_AUTOSUSPEND_DISABLE_ON_SHUTDOWN_GROUP">
                 <property name="height_request">35</property>
@@ -418,6 +430,7 @@
                   <object class="GtkLabel" id="WIFI_PWR_DESCRIPTION3">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="hexpand">True</property>
                     <property name="xalign">0</property>
                     <property name="label" translatable="yes">Disables USB autosuspend mode upon system shutdown. This is intended as a workaround if suspended USB devices disturb the shutdown process.</property>
                     <property name="use_markup">True</property>
@@ -437,6 +450,7 @@
                     <property name="margin_right">12</property>
                     <property name="margin_top">12</property>
                     <property name="margin_bottom">12</property>
+                    <property name="hexpand">True</property>
                     <child>
                       <object class="GtkLabel" id="NMI_CONFIG_DESCRIPTION2">
                         <property name="visible">True</property>
