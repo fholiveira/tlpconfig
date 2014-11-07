@@ -18,9 +18,12 @@ class ViewFactory:
         builder = Builder()
         name, view = self.categories[type(category)]
         builder.load(self.categories_path.format(name))
-        return view(builder, name, category)
+        return view(builder, name, category, self)
 
     def create_dialog(self, view):
+        return self._create(view)
+
+    def create_part(self, view):
         return self._create(view)
 
     def create(self, controller):
@@ -46,8 +49,8 @@ def _category_view_map():
     return {SystemStartAndShutdownController : ('system_start_and_shutdown', SystemStartAndShutdownView),
             RuntimePowerManagementController : ('runtime_power_management', RuntimePowerManagementView),
             ProcessorAndFrequenceScalingController : ('processor_and_frequence_scaling', CategoryView),
+            DisksAndControllersController : ('disks_and_controllers', DisksAndControllersView),
             BatteryChargeThresholdsController : ('battery_charge_thresholds', CategoryView),
-            DisksAndControllersController : ('disks_and_controllers', CategoryView),
             DriveSlotUltrabayController : ('drive_slot_ultrabay', DriveSlotUltrabayView),
             UndervoltingController : ('undervolting', UndervoltingView),
             PciExpressBusController : ('pci_express_bus', CategoryView),

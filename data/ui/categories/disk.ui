@@ -57,9 +57,11 @@
       </row>
     </data>
   </object>
-  <object class="GtkBox" id="box3">
+  <object class="GtkBox" id="options">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="margin_left">6</property>
+    <property name="margin_right">6</property>
     <property name="orientation">vertical</property>
     <child>
       <object class="GtkBox" id="box2">
@@ -380,7 +382,7 @@
                     <property name="can_focus">False</property>
                     <property name="hexpand">True</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">&lt;b&gt;Note:&lt;/b&gt; TLP's default settings work well with SSDs, there is no immediate need to tune them.</property>
+                    <property name="label" translatable="yes">Timeout value until the spindle motor stops when the disk is idle</property>
                     <property name="use_markup">True</property>
                     <property name="wrap">True</property>
                   </object>
@@ -418,43 +420,15 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="box4">
+                          <object class="GtkScale" id="DISK_SPINDOWN_TIMEOUT_ON_AC">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
+                            <property name="can_focus">True</property>
                             <property name="margin_left">12</property>
-                            <property name="margin_top">12</property>
-                            <property name="margin_bottom">12</property>
-                            <property name="orientation">vertical</property>
-                            <child>
-                              <object class="GtkLabel" id="label1">
-                                <property name="name">60</property>
-                                <property name="width_request">80</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="xalign">1</property>
-                                <property name="label" translatable="yes">Disabled</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkScale" id="DISK_SPINDOWN_TIMEOUT_ON_AC">
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="hexpand">True</property>
-                                <property name="adjustment">adjustment1</property>
-                                <property name="fill_level">251</property>
-                                <property name="draw_value">False</property>
-                              </object>
-                              <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
+                            <property name="hexpand">True</property>
+                            <property name="adjustment">adjustment1</property>
+                            <property name="fill_level">251</property>
+                            <property name="round_digits">0</property>
+                            <property name="value_pos">right</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -489,56 +463,28 @@
                         <property name="can_focus">False</property>
                         <property name="baseline_position">bottom</property>
                         <child>
-                          <object class="GtkLabel" id="PCIE_ASPM_CONFIG_BATTERY_DESCRIPTION1">
+                          <object class="GtkLabel" id="PCIE_ASPM_CONFIG_ENERGY_DESCRIPTION3">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="xalign">1</property>
                             <property name="label" translatable="yes">Battery</property>
                           </object>
                           <packing>
-                            <property name="expand">True</property>
+                            <property name="expand">False</property>
                             <property name="fill">True</property>
                             <property name="position">0</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="box7">
+                          <object class="GtkScale" id="DISK_SPINDOWN_TIMEOUT_ON_BAT">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
+                            <property name="can_focus">True</property>
                             <property name="margin_left">12</property>
-                            <property name="margin_top">12</property>
-                            <property name="margin_bottom">12</property>
-                            <property name="orientation">vertical</property>
-                            <child>
-                              <object class="GtkLabel" id="label2">
-                                <property name="name">60</property>
-                                <property name="width_request">80</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="xalign">1</property>
-                                <property name="label" translatable="yes">Disabled</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkScale" id="DISK_SPINDOWN_TIMEOUT_ON_BAT">
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="hexpand">True</property>
-                                <property name="adjustment">adjustment2</property>
-                                <property name="fill_level">251</property>
-                                <property name="draw_value">False</property>
-                              </object>
-                              <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
+                            <property name="hexpand">True</property>
+                            <property name="adjustment">adjustment2</property>
+                            <property name="fill_level">251</property>
+                            <property name="round_digits">0</property>
+                            <property name="value_pos">right</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -733,10 +679,10 @@
   </object>
   <object class="GtkSizeGroup" id="parameter_size">
     <widgets>
-      <widget name="box7"/>
-      <widget name="box4"/>
-      <widget name="DISK_APM_LEVEL_ON_BAT"/>
-      <widget name="DISK_APM_LEVEL_ON_AC"/>
+      <widget name="PCIE_ASPM_CONFIG_BATTERY1"/>
+      <widget name="PCIE_ASPM_CONFIG_ENERGY1"/>
+      <widget name="PCIE_ASPM_CONFIG_ENERGY"/>
+      <widget name="PCIE_ASPM_CONFIG_BATTERY"/>
     </widgets>
   </object>
   <object class="GtkSizeGroup" id="separator_width">
@@ -744,6 +690,12 @@
       <widget name="separator7"/>
       <widget name="separator9"/>
       <widget name="separator11"/>
+    </widgets>
+  </object>
+  <object class="GtkSizeGroup" id="sizegroup1">
+    <widgets>
+      <widget name="DISK_SPINDOWN_TIMEOUT_ON_BAT"/>
+      <widget name="DISK_SPINDOWN_TIMEOUT_ON_AC"/>
     </widgets>
   </object>
   <object class="GtkSizeGroup" id="switch_size">

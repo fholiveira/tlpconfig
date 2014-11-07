@@ -7,10 +7,11 @@ from itertools import chain
 
 
 class CategoryView:
-    def __init__(self, loader, name, category):
+    def __init__(self, loader, name, category, factory=None):
         loader.connect(self)
 
         self.category = category
+        self.factory = factory
         self.loader = loader
         self.load_controls(name)
         self.bind_groups()

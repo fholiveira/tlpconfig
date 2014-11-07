@@ -1,0 +1,28 @@
+from gi.repository import Gtk
+from datetime import timedelta
+
+class DiskOptionsView:
+    UI = 'categories/disk.ui'
+
+    def __init__(self, loader):
+        self.controls = loader.get('options')
+        self.loader = loader
+
+        self.header = Gtk.Label()
+        self.header.set_hexpand(True)
+
+        self.scale = [(  1, lambda x: 'Disabled'),
+                      (241, lambda x: str(timedelta(seconds=x * 5))),
+                      (252, lambda x: str(timedelta(minutes=(x -240) * 30)))]
+
+        loader.get('DISK_SPINDOWN_TIMEOUT_ON_AC').connect('format-value',
+                                                          self._scale_changed)
+        loader.get('DISK_SPINDOWN_TIMEOUT_ON_BAT').connect('format-value',
+                                                           self._scale_changed)
+
+    def _scale_changed(self, scale, value):
+        return next(func(value) for index, func in self.scale
+                    if value < index)
+
+    def set_header(self, text):
+        self.header.set_text(text)
