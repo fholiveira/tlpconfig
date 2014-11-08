@@ -2,6 +2,6 @@ from .changes_notifier import ChangesNotifier
 
 from .parameters import *
 
+from .commands import get_status, get_disks
 from .configuration import Configuration
-from .status import get_status
 from .group import Group

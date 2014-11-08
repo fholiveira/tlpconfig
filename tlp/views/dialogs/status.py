@@ -9,7 +9,7 @@ class StatusView:
         self.dialog = loader.get('status')
         self.content = loader.get('content')
 
-        self.content.set_text(get_status('tlp-stat'))
+        self.content.set_text(get_status())
 
     def show(self, parent):
         self.dialog.set_transient_for(parent.window)

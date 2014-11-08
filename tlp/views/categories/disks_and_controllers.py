@@ -1,5 +1,6 @@
 from .category import CategoryView
 from .disk import DiskOptionsView
+from tlp.models import get_disks
 
 
 class DisksAndControllersView(CategoryView):
@@ -9,7 +10,7 @@ class DisksAndControllersView(CategoryView):
         self._load_disks_options()
 
     def _load_disks_options(self):
-        for disk in ['sda - 256 GB', 'sdb - 1 TB', 'sdc - 32 GB']:
+        for diskid, diskname in self.category.disks:
             tab = self.factory.create_part(DiskOptionsView)
-            tab.set_header(disk)
+            tab.set_header(diskname)
             self.tabs.append_page(tab.controls, tab.header)
