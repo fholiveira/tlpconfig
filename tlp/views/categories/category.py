@@ -19,10 +19,13 @@ class CategoryView:
     def bind_groups(self):
         selector = self.create_selector()
         self.group_binder = [GroupBinder(selector, group) 
-                             for group in self.category.groups]
+                             for group in self.groups_to_bind()]
 
         for binder in self.group_binder:
             binder.bind(self.loader)
+
+    def groups_to_bind(self):
+        return self.category.groups
 
     def create_selector(self):
         return ParameterBinderSelector()

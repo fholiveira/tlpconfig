@@ -13,3 +13,8 @@ class NumericParameter(Parameter):
     @value.setter
     def value(self, value):
         self._set_value(str(value).replace('.0', ''))
+
+    def clone(self):
+        param = NumericParameter(self.name, self.reboot_needed)
+        param._value = self._value
+        return param

@@ -15,3 +15,8 @@ class BooleanParameter(Parameter):
     @value.setter
     def value(self, value):
         self._set_value(self.yes if value else self.no)
+
+    def clone(self):
+        param = BooleanParameter(self.name, self.yes, self.no, reboot_needed)
+        param._value = self._value
+        return param

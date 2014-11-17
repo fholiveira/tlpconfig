@@ -13,3 +13,8 @@ class TextParameter(Parameter):
     @value.setter
     def value(self, value):
         self._set_value('{0}{1}{0}'.format(self.quotes, value.strip()))
+
+    def clone(self):
+        param = TextParameter(self.name, self.quotes, self.reboot_needed)
+        param._value = self._value
+        return param
