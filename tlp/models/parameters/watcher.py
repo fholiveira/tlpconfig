@@ -38,6 +38,6 @@ class ParameterWatcher(ChangesNotifier):
         changed_before = self.has_changes()
         self.actual_state[parameter.name] = parameter.to_tuple()
         changed_after = self.has_changes()
-
+        
         if (not changed_before and changed_after) or (changed_before and not changed_after):
             self.notify_changes()

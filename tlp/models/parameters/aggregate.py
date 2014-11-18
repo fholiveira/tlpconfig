@@ -41,7 +41,7 @@ class Subparameter(Parameter):
 
     @property
     def value(self):
-        return ' '.join(param._value for param in self.parameters.values())
+        return self._value
 
     @value.setter
     def value(self, values):
@@ -49,12 +49,23 @@ class Subparameter(Parameter):
             param = self.parameters[name]
             param._value = value
 
-            param.watch(lambda p: self.notify_changes())
             param.notify_changes()
 
     def expand(self, names):
         params = {name: self.parameters.get(name) or self.template.clone()
                   for name in names}
+        
+        for param in params.values():
+            param.watch(lambda p: self.notify_changes())
 
         self.parameters = params
         self.order = names
+    
+    def initialize(self, active, value):
+        self._active = active
+        self.value = value
+
+    def notify_changes(self):
+        self._value = ' '.join(self.parameters[uid]._value 
+                               for uid in self.order)
+        ChangesNotifier.notify_changes(self)

@@ -1,5 +1,6 @@
 from functools import reduce
 from . import Parameter
+from re import compile, MULTILINE
 import re
 
 
@@ -40,5 +41,6 @@ class Configuration:
     def _write(self, text, changes):
         old_parameter, new_parameter = changes
         if old_parameter in text:
-            return text.replace(old_parameter, new_parameter)
+            regex = re.compile('^.*' + old_parameter + '.*$', MULTILINE)
+            return regex.sub(new_parameter, text)
         return text + '\n' + new_parameter 
