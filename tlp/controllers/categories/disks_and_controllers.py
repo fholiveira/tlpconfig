@@ -13,13 +13,13 @@ class DisksAndControllersController:
                          TextParameter('SATA_LINKPWR_ON_AC')])]
 
         children = [Group('DISK_APM_LEVEL',
-                          [Subparameter(TextParameter('DISK_APM_LEVEL_ON_AC', quotes='"')),
-                               Subparameter(TextParameter('DISK_APM_LEVEL_ON_BAT', quotes='"'))]),
+                          [Subparameter(TextParameter('DISK_APM_LEVEL_ON_AC'), quotes='"'),
+                           Subparameter(TextParameter('DISK_APM_LEVEL_ON_BAT'), quotes='"')]),
                     Group('DISK_SPINDOWN_TIMEOUT',
-                          [Subparameter(NumericParameter('DISK_SPINDOWN_TIMEOUT_ON_AC')),
-                           Subparameter(NumericParameter('DISK_SPINDOWN_TIMEOUT_ON_BAT'))]),
+                          [Subparameter(NumericParameter('DISK_SPINDOWN_TIMEOUT_ON_AC'), quotes='"'),
+                           Subparameter(NumericParameter('DISK_SPINDOWN_TIMEOUT_ON_BAT'), quotes='"')]),
                     Group('DISK_IOSCHED_GROUP', 
-                          [Subparameter(TextParameter('DISK_IOSCHED'))])]
+                          [Subparameter(TextParameter('DISK_IOSCHED'), quotes='"')])]
 
         parameters = [param for group in children for param in group.parameters]
 

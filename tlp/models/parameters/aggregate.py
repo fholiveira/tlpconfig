@@ -31,13 +31,12 @@ class AggregateParameter(Parameter):
 
 
 class Subparameter(Parameter):
-    def __init__(self, template_parameter):
-        Parameter.__init__(self,
-                           template_parameter.name,
-                           template_parameter.reboot_needed)
-        self.name = template_parameter.name 
-        self.template = template_parameter
+    def __init__(self, template, quotes=''):
+        Parameter.__init__(self, template.name, template.reboot_needed)
+        self.name = template.name 
+        self.template = template
         self.parameters = {}
+        self.quotes = quotes
 
     @property
     def value(self):
@@ -45,11 +44,8 @@ class Subparameter(Parameter):
 
     @value.setter
     def value(self, values):
-        for name, value in zip(self.order, values.split()):
-            param = self.parameters[name]
-            param._value = value
-
-            param.notify_changes()
+        subvalues = values.split() if not self.quotes else values[1:-1].split()
+        self._set_subparameters(subvalues)
 
     def expand(self, names):
         params = {name: self.parameters.get(name) or self.template.clone()
@@ -66,6 +62,17 @@ class Subparameter(Parameter):
         self.value = value
 
     def notify_changes(self):
-        self._value = ' '.join(self.parameters[uid]._value 
-                               for uid in self.order)
+        params = [self.parameters[uid] for uid in self.order]
+        value = ' '.join(param._value if param.active else '_' 
+                         for param in params)
+
+        self._value = '{0}{1}{0}'.format(self.quotes, value)
         ChangesNotifier.notify_changes(self)
+
+    def _set_subparameters(self, values):
+        for name, value in zip(self.order, values):
+            param = self.parameters[name]
+            param.active = value not in ('keep', '_')
+            if param.active:
+                param._value = value
+            param.notify_changes()

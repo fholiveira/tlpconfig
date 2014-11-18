@@ -26,7 +26,7 @@ class Parameter(ChangesNotifier):
         self._value = value
 
     def to_text(self):
-        return (self._textfy(self.initial_state), self._textfy(self.to_tuple()))
+        return (self.name + '=', self._textfy(self.to_tuple()))
 
     def to_tuple(self):
         return (self._active, self._value)
