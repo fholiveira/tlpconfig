@@ -35,6 +35,7 @@ class ParameterWatcher(ChangesNotifier):
         return {param.name: param.to_tuple() for param in self.parameters}
 
     def _parameter_changed(self, parameter):
+        print(parameter.name, parameter.to_tuple())
         changed_before = self.has_changes()
         self.actual_state[parameter.name] = parameter.to_tuple()
         changed_after = self.has_changes()

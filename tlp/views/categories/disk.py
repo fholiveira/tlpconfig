@@ -1,3 +1,4 @@
+from tlp.views.binders import ParameterBinderSelector, GroupBinder
 from gi.repository import Gtk
 from datetime import timedelta
 
@@ -26,3 +27,16 @@ class DiskOptionsView:
 
     def set_header(self, text):
         self.header.set_text(text)
+
+    def bind_groups(self, head, groups):
+        selector = ParameterBinderSelector()
+
+        head_binder = selector.get_from(head)
+        head_binder.bind(self.loader.get(head.name))
+
+        group_binders = [GroupBinder(selector, group) for group in groups]
+        for binder in group_binders:
+            binder.bind(self.loader)
+
+        self.binders = [head_binder] + group_binders
+                

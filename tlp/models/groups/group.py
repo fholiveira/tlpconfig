@@ -1,4 +1,4 @@
-from . import ChangesNotifier
+from .. import ChangesNotifier
 
 
 class Group(ChangesNotifier):
