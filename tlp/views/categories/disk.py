@@ -38,6 +38,7 @@ class DiskOptionsView:
 
         head_binder = selector.get_from(head)
         head_binder.bind(self.loader.get(head.name))
+        self.loader.get('DISK_CONFIG').set_sensitive(head.value)
 
         group_binders = [GroupBinder(selector, group) for group in groups]
         for binder in group_binders:

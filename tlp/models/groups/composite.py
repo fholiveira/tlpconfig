@@ -33,6 +33,7 @@ class CompositeGroup(ChangesNotifier):
     
         for param in self.tail:
             param.order = enabled
+            param.active = head.active
 
     def subgroups(self):
         return {disk.id: self._create_subgroups(disk.id, self._subgroups)

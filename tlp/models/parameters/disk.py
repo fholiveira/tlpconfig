@@ -34,10 +34,7 @@ class DiskParameter(Parameter):
         self.value = value
 
     def _update_value(self):
-        params = [self.parameters[uid] for uid in self.order]
-        value = ' '.join(param._value if param.active else '_' 
-                         for param in params)
-
+        value = ' '.join(param._value for param in self.parameters.values())
         self._active = any(param.value for param in self.parameters.values())
         self._value = '"{0}"'.format(value)
         self.notify_changes()
@@ -48,4 +45,6 @@ class DiskParameter(Parameter):
         self.order = [disk.id for disk in disks if disk]
 
         for disk, param in self.parameters.items():
-            param.value = disk in self.order 
+            param.value = disk in self.order
+
+        self.notify_changes()
