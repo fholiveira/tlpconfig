@@ -1,5 +1,5 @@
 from tlp.models import (Group, TextParameter, CompositeGroup, Subparameter,
-                        NumericParameter, BooleanParameter, get_disks)
+                        NumericParameter, DiskParameter, get_disks)
 
 
 class DisksAndControllersController:
@@ -15,8 +15,7 @@ class DisksAndControllersController:
         common = [Group('SATA_LINKPWR', 
                         [TextParameter('SATA_LINKPWR_ON_BAT'),
                          TextParameter('SATA_LINKPWR_ON_AC')]),
-                  CompositeGroup([uid for uid, _ in self.disks],
-                                 Subparameter(BooleanParameter('DISK_DEVICES'), quotes='"'),
+                  CompositeGroup(DiskParameter('DISK_DEVICES', self.disks),
                                  children)]
 
         self.disks_groups = common[1]

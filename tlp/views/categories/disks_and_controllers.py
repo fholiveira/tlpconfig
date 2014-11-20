@@ -13,10 +13,10 @@ class DisksAndControllersView(CategoryView):
     def _load_disks_options(self):
         groups = self.category.disks_groups.subgroups()
         head = self.category.disks_groups.head 
-        for diskid, diskname in self.category.disks:
+        for disk in self.category.disks:
             tab = self.factory.create_part(DiskOptionsView)
-            tab.set_header(diskname)
-            tab.bind_groups(head.parameters[diskid], groups[diskid])
+            tab.set_header(disk.alias + " - " + disk.size)
+            tab.bind_groups(head.parameters[disk.id], groups[disk.id])
 
             self.tabs.append_page(tab.controls, tab.header)
 

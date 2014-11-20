@@ -1,4 +1,6 @@
 from subprocess import Popen, PIPE
+from collections import namedtuple
+from . import Disk
 
 
 def _run_command(command_text):
@@ -16,11 +18,12 @@ def get_status():
 
 
 def get_disks():
-    disknames = _run_command('lsblk --nodeps -n --output NAME,SIZE').split('\n')
-    disknames = (name.split() for name in disknames if name)
-    disknames = {name: '{0} - {1}'.format(name, diskid) 
-                 for name, diskid in disknames}
+    disksizes = _run_command('lsblk --nodeps -n --output NAME,SIZE').split('\n')
+    disksizes = (line.split() for line in disksizes if line)
+    disksizes = {name: size for name, size in disksizes}
   
     diskids = _run_command('tlp diskid').split('\n')
     diskids = (diskid.split(': ') for diskid in diskids if diskid)
-    return [(diskid, disknames[name]) for name, diskid in diskids]
+
+    return [Disk(diskid, alias=name, size=disksizes[name])
+            for name, diskid in diskids]
