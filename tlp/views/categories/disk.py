@@ -20,6 +20,11 @@ class DiskOptionsView:
                                                           self._scale_changed)
         loader.get('DISK_SPINDOWN_TIMEOUT_ON_BAT').connect('format-value',
                                                            self._scale_changed)
+        loader.get('DISK_DEVICES').connect('notify::active',
+                                           self._active_options)
+
+    def _active_options(self, switch, arg):
+        self.loader.get('DISK_CONFIG').set_sensitive(switch.get_active())
 
     def _scale_changed(self, scale, value):
         return next(func(value) for index, func in self.scale
@@ -39,4 +44,3 @@ class DiskOptionsView:
             binder.bind(self.loader)
 
         self.binders = [head_binder] + group_binders
-                

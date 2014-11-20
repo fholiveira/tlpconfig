@@ -41,6 +41,5 @@ class Parameter(ChangesNotifier):
     def _set_value(self, new_value):
         if self._value == new_value:
             return
-
         self._value = new_value
         self.notify_changes()
