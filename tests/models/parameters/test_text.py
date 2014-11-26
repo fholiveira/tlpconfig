@@ -14,3 +14,14 @@ class TestTextParameter(TestCase):
         parameter._value = '#test#'
 
         self.assertEqual('test', parameter.value)
+
+    def test_parameter_should_clone_itself(self):
+        param = TextParameter('Test', quotes="$", reboot_needed=True)
+        param.initialize(True, '$aaaaaaaa$')
+        clone = param.clone()
+
+        self.assertEqual(param.reboot_needed, clone.reboot_needed)
+        self.assertEqual(param._active, clone._active)
+        self.assertEqual(param._value, clone._value)
+        self.assertEqual(param.quotes, clone.quotes)
+        self.assertEqual(param.name, clone.name)

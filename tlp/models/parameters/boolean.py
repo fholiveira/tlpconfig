@@ -19,4 +19,5 @@ class BooleanParameter(Parameter):
     def clone(self):
         param = BooleanParameter(self.name, self.yes, self.no, self.reboot_needed)
         param._value = self._value
+        param._active = self._active
         return param

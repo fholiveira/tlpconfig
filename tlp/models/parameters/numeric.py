@@ -16,5 +16,6 @@ class NumericParameter(Parameter):
 
     def clone(self):
         param = NumericParameter(self.name, self.reboot_needed)
+        param._active = self._active
         param._value = self._value
         return param

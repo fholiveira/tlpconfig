@@ -14,3 +14,13 @@ class TestListParameter(TestCase):
         parameter._value = '"This is a test."'
 
         self.assertEqual(['This', 'is', 'a', 'test.'], parameter.value)
+
+    def test_parameter_should_clone_itself(self):
+        param = ListParameter('Test', reboot_needed=True)
+        param.initialize(True, 'v1 v2 v3')
+        clone = param.clone()
+
+        self.assertEqual(param.reboot_needed, clone.reboot_needed)
+        self.assertEqual(param._active, clone._active)
+        self.assertEqual(param._value, clone._value)
+        self.assertEqual(param.name, clone.name)

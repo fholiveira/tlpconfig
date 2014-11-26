@@ -16,5 +16,6 @@ class TextParameter(Parameter):
 
     def clone(self):
         param = TextParameter(self.name, self.quotes, self.reboot_needed)
+        param._active = self._active
         param._value = self._value
         return param

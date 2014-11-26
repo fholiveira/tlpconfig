@@ -12,5 +12,6 @@ class ListParameter(Parameter):
 
     def clone(self):
         param = ListParameter(self.name, self.reboot_needed)
+        param._active = self._active
         param._value = self._value
         return param

@@ -1,53 +1,51 @@
+from tlp.models.parameters import Parameter
 from unittest import TestCase
-from tlp.models.parameter import Parameter
+from unittest.mock import MagicMock
 
 
 class TestParameter(TestCase):
+    def test_should_remember_state(self):
+        param = Parameter('TEST')
+        param.initialize(False, 123)
+        param.remember_state()
+        param._value = 321
+        self.assertEqual((False, 123), param.initial_state)
 
-    def test_should_be_changed_if_value_has_changed(self):
-        parameter = Parameter('TEST')
-        parameter.initial_state = {'active': True, 'value': '1'}
-        parameter.active = True
-        parameter._value = '2'
+    def test_should_set_value_on_initialize(self):
+        param = Parameter('TEST')
+        param.initialize(False, 123)
+        self.assertEqual(123, param._value)
 
-        self.assertTrue(parameter.is_changed())
+    def test_should_set_active_on_initialize(self):
+        param = Parameter('TEST')
+        param.initialize(False, 123)
+        self.assertFalse(param.active)
 
-    def test_should_be_changed_if_active_state_has_changedi_to_true(self):
-        parameter = Parameter('TEST')
-        parameter.initial_state = {'active': False, 'value': '1'}
-        parameter.active = True
-        parameter._value = '1'
+    def test_inactive_parameter_should_be_converted_to_text(self):
+        param = Parameter('TEST')
+        param.initialize(False, 123)
+        self.assertEqual(("TEST=", "#TEST=123" ), param.to_text())
 
-        self.assertTrue(parameter.is_changed())
+    def test_active_parameter_should_be_converted_to_text(self):
+        param = Parameter('TEST')
+        param.initialize(True, 123)
+        self.assertEqual(("TEST=", "TEST=123" ), param.to_text())
 
-    def test_should_be_changed_if_active_state_has_changedi_to_false(self):
-        parameter = Parameter('TEST')
-        parameter.initial_state = {'active': True, 'value': '1'}
-        parameter.active = False
-        parameter._value = '1'
+    def test_should_create_a_tuple_with_represent_parameter(self):
+        param = Parameter('TEST')
+        param.initialize(False, 123)
+        self.assertEqual((False, 123), param.to_tuple())
 
-        self.assertTrue(parameter.is_changed())
+    def test_parameter_should_notify_when_set_active(self):
+        param = Parameter('TEST')
+        param.initialize(True, 123)
+        param.notify_changes = MagicMock()
+        param.active = False
+        param.notify_changes.assert_any_call()
 
-    def test_should_not_be_changed_if_parameter_has_always_not_active(self):
-        parameter = Parameter('TEST')
-        parameter.initial_state = {'active': False, 'value': '1'}
-        parameter.active = False
-        parameter._value = '2'
-
-        self.assertFalse(parameter.is_changed())
-
-    def test_should_write_commented_parameter(self):
-        parameter = Parameter('TEST')
-        parameter.initial_state = {'active': True, 'value': '1'}
-        parameter.active = False
-        parameter._value = '2'
-
-        self.assertEqual('#TEST=2', parameter.write('TEST=1'))
-
-    def test_should_write_not_commented_parameter(self):
-        parameter = Parameter('TEST')
-        parameter.initial_state = {'active': False, 'value': '1'}
-        parameter.active = True
-        parameter._value = '254'
-
-        self.assertEqual('TEST=254', parameter.write('#TEST=1'))
+    def test_parameter_should_not_notify_when_set_active_with_same_value(self):
+        param = Parameter('TEST')
+        param.initialize(True, 123)
+        param.notify_changes = MagicMock()
+        param.active = True
+        self.assertFalse(param.notify_changes.called)

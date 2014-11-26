@@ -20,3 +20,13 @@ class TestNumericParameter(TestCase):
         parameter.value = float(245.0)
 
         self.assertEqual('245', parameter._value)
+
+    def test_parameter_should_clone_itself(self):
+        param = NumericParameter('Test', reboot_needed=True)
+        param.initialize(True, 111)
+        clone = param.clone()
+
+        self.assertEqual(param.reboot_needed, clone.reboot_needed)
+        self.assertEqual(param._active, clone._active)
+        self.assertEqual(param._value, clone._value)
+        self.assertEqual(param.name, clone.name)
