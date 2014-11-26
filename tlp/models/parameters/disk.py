@@ -34,17 +34,17 @@ class DiskParameter(Parameter):
         self.value = value
 
     def _update_value(self):
-        value = ' '.join(param._value for param in self.parameters.values())
-        self._active = any(param.value for param in self.parameters.values())
+        params = [self.parameters[name] for name in self.order]
+        value = ' '.join(param._value for param in params)
+        self._active = any(param.value for param in params)
         self._value = '"{0}"'.format(value)
         self.notify_changes()
 
     def _set_subparameters(self, values):
         disks = (next((disk for disk in self.disks if disk.know_as(name)), None)
                  for name in values)
+
         self.order = [disk.id for disk in disks if disk]
 
         for disk, param in self.parameters.items():
             param.value = disk in self.order
-
-        self.notify_changes()

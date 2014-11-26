@@ -14,14 +14,15 @@ def _run_command(command_text):
 
     
 def get_status():
-    _run_command('tlp-stat')
+    return _run_command('tlp-stat')
 
 
 def get_disks():
-    disksizes = _run_command('lsblk --nodeps -n --output NAME,SIZE').split('\n')
+    lsblk = 'lsblk --nodeps -n --output NAME,SIZE'
+    disksizes = _run_command(lsblk).split('\n')
     disksizes = (line.split() for line in disksizes if line)
     disksizes = {name: size for name, size in disksizes}
-  
+
     diskids = _run_command('tlp diskid').split('\n')
     diskids = (diskid.split(': ') for diskid in diskids if diskid)
 

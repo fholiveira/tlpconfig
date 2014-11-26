@@ -17,7 +17,6 @@ class Subparameter(Parameter):
     def value(self, values):
         subvalues = values.split() if not self.quotes else values[1:-1].split()
         self._set_subparameters(subvalues)
-        self._update_value()
 
     def expand(self, names):
         params = {name: self.parameters.get(name) or self.template.clone()
@@ -45,7 +44,6 @@ class Subparameter(Parameter):
         for name, value in zip(self.order, values):
             param = self.parameters[name]
             param.active = value not in ('keep', '_')
-            if param.active:
+            if param.active and param._value != value:
                 param._value = value
-
-            param.notify_changes()
+                param.notify_changes()

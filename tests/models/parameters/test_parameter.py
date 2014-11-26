@@ -1,6 +1,6 @@
 from tlp.models.parameters import Parameter
-from unittest import TestCase
 from unittest.mock import MagicMock
+from unittest import TestCase
 
 
 class TestParameter(TestCase):

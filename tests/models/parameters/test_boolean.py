@@ -1,5 +1,6 @@
-from unittest import TestCase
 from tlp.models import BooleanParameter
+from unittest.mock import MagicMock
+from unittest import TestCase
 
 
 class TestBooleanParameter(TestCase):
@@ -38,3 +39,17 @@ class TestBooleanParameter(TestCase):
         self.assertEqual(param.name, clone.name)
         self.assertEqual(param.yes, clone.yes)
         self.assertEqual(param.no, clone.no)
+
+    def test_should_notify_when_set_value(self):
+        param = BooleanParameter('TEST')
+        param.initialize(True, '1')
+        param.notify_changes = MagicMock()
+        param.value = False
+        self.assertTrue(param.notify_changes.called)
+
+    def test_parameter_should_not_notify_when_set_value_with_same_value(self):
+        param = BooleanParameter('TEST')
+        param.initialize(True, '1')
+        param.notify_changes = MagicMock()
+        param.value = True
+        self.assertFalse(param.notify_changes.called)

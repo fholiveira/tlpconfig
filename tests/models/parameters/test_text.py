@@ -1,5 +1,6 @@
-from unittest import TestCase
 from tlp.models import TextParameter
+from unittest.mock import MagicMock
+from unittest import TestCase
 
 
 class TestTextParameter(TestCase):
@@ -25,3 +26,17 @@ class TestTextParameter(TestCase):
         self.assertEqual(param._value, clone._value)
         self.assertEqual(param.quotes, clone.quotes)
         self.assertEqual(param.name, clone.name)
+
+    def test_should_notify_when_set_value(self):
+        param = TextParameter('TEST')
+        param.initialize(True, 'abc')
+        param.notify_changes = MagicMock()
+        param.value = 'xyz'
+        self.assertTrue(param.notify_changes.called)
+
+    def test_parameter_should_not_notify_when_set_value_with_same_value(self):
+        param = TextParameter('TEST')
+        param.initialize(True, 'abc')
+        param.notify_changes = MagicMock()
+        param.value = 'abc'
+        self.assertFalse(param.notify_changes.called)

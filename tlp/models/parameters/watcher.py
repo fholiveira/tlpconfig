@@ -9,6 +9,8 @@ class ParameterWatcher(ChangesNotifier):
         for parameter in parameters:
             parameter.watch(self._parameter_changed)
 
+        self.remember_state()
+
     def has_changes(self):
         return not self.actual_state == self.state
 
@@ -39,5 +41,6 @@ class ParameterWatcher(ChangesNotifier):
         self.actual_state[parameter.name] = parameter.to_tuple()
         changed_after = self.has_changes()
         
-        if (not changed_before and changed_after) or (changed_before and not changed_after):
+        if (not changed_before and changed_after) \
+           or (changed_before and not changed_after):
             self.notify_changes()
